@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="dist"> 
+	<path id="top_bpath">
+		<pathelement path="bin" />
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="clean">
+		<delete dir="bin"/>
+		<delete dir="dist"/>
+	</target>
+	
+	<target name="build" depends="clean">
+		<mkdir dir="bin" />	
+		<javac classpathref="top_bpath" srcdir="src" destdir="bin" />
+	</target>
+
+	<target name="run" depends="build">
+		<java fork="true" classpathref="top_bpath" classname="com.myjavaserver.aillusions.Main" />
+	</target>
+	
+	<target name="dist" depends="build">
+		<mkdir dir="dist" />
+		<mkdir dir="dist/audio" />
+		<mkdir dir="dist/lib" />
+		
+		<copy todir="bin">
+			<fileset dir="src" excludes="**/*.java"/>
+		</copy>
+		
+		<jar destfile="dist/Dictionary.jar"	basedir="bin">
+			<manifest>
+			  <attribute name="Built-By" value="OZ"/>
+			  <attribute name="Implementation-Vendor" value="AGD inc."/>
+			  
+			  <attribute name="Main-Class" value="com.myjavaserver.aillusions.Main"/>
+			  <attribute name="Class-Path" value="lib/jl1.0.jar lib/xstream-1.3.jar"/>
+			</manifest>
+		</jar>
+		 <copy todir="dist/audio">
+			<fileset dir="audio"/>
+		</copy>
+		 <copy todir="dist/lib">
+			<fileset dir="lib"/>
+		</copy>
+		<copy file="Words.xml" todir="dist"/>
+		<copy file="start.bat" todir="dist"/>
+		
+	</target>
+</project>
+
