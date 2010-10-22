@@ -1,11 +1,14 @@
-package com.myjavaserver.aillusions.model;
+package com.aillusions.dictionary.model;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.aillusions.dictionary.model.Pair;
+import com.aillusions.dictionary.model.PairDao;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
@@ -116,4 +119,9 @@ public class PairXmlDao implements PairDao{
 			res =  pairs.get(indexSibl); 
 		return res;
 	}
+	
+	  public void shuffle()
+	  {
+	    Collections.shuffle(this.pairs);
+	  }
 }

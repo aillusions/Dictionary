@@ -1,8 +1,11 @@
-package com.myjavaserver.aillusions.audio;
+package com.aillusions.dictionary.audio;
 
 import javazoom.jl.player.*;
 
 import java.io.*;
+
+import com.aillusions.dictionary.audio.MP3Player;
+
 
 public class MP3Player {
 	

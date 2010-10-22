@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions.audio;
+package com.aillusions.dictionary.audio;
 
 
 import java.io.IOException;
@@ -11,6 +11,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.AudioFileFormat;
+
+import com.aillusions.dictionary.audio.SimpleAudioRecorder;
 
 public class SimpleAudioRecorder extends Thread
 {

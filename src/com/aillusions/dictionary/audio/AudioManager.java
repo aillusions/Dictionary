@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions.audio;
+package com.aillusions.dictionary.audio;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,6 +16,9 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.TargetDataLine;
+
+import com.aillusions.dictionary.audio.ConcurrentPlayer;
+import com.aillusions.dictionary.audio.SimpleAudioRecorder;
 
 public class AudioManager {
 	public SimpleAudioRecorder recorder = null;

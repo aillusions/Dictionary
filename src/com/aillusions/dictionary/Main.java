@@ -1,9 +1,9 @@
 
-package com.myjavaserver.aillusions;
+package com.aillusions.dictionary;
 
 import javax.swing.SwingUtilities;
 
-import com.myjavaserver.aillusions.view.TopEditor;
+import com.aillusions.dictionary.view.TopEditor;
 
 
 public class Main {
@@ -20,9 +20,10 @@ public class Main {
     	
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				TopEditor inst = new TopEditor();
-				inst.setLocationRelativeTo(null);
-				inst.setVisible(true);
+		        TopEditor localTopEditor = new TopEditor();
+		        localTopEditor.setLocationRelativeTo(null);
+		        localTopEditor.setVisible(true);
+		        localTopEditor.setSize(570, 320);
 			}
 		});
     }    

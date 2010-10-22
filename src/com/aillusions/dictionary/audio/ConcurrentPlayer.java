@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions.audio;
+package com.aillusions.dictionary.audio;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,9 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import com.aillusions.dictionary.audio.ConcurrentPlayer;
+import com.aillusions.dictionary.audio.MP3Player;
 
 public class ConcurrentPlayer implements Runnable {
 

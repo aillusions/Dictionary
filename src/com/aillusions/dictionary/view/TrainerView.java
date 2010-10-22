@@ -1,9 +1,9 @@
-package com.myjavaserver.aillusions.view;
+package com.aillusions.dictionary.view;
 
-import com.cloudgarden.layout.AnchorConstraint;
-import com.cloudgarden.layout.AnchorLayout;
-import com.myjavaserver.aillusions.model.Pair;
-import com.myjavaserver.aillusions.model.TrainerViewListener;
+import com.aillusions.dictionary.model.Pair;
+import com.aillusions.dictionary.model.TrainerViewListener;
+import com.aillusions.dictionary.view.layout.AnchorConstraint;
+import com.aillusions.dictionary.view.layout.AnchorLayout;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

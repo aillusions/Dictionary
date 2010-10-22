@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions.model;
+package com.aillusions.dictionary.model;
 
 import java.util.LinkedList;
 import java.util.List;

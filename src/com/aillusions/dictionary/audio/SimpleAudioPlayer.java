@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions.audio;
+package com.aillusions.dictionary.audio;
 
 import java.io.File;
 import java.io.IOException;

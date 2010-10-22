@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-stylesheet type="text/xsl" href="Words_prn.xsl"?>
 <dictionary>
+  <correspondence inuse="false">
+    <english>retire</english>
+    <russian>уходить</russian>
+    <transcription>rı&apos;taıə</transcription>
+    <sample>The Archive of Folk Culture continues to grow.  Individuals who have made a career of collecting folklore material want their collections to go to the Library of Congress when they retire.</sample>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>clash</english>
+    <russian>конфликт, столкновение</russian>
+    <transcription>klæ∫</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>consequence</english>
+    <russian>следствие, вывод</russian>
+    <transcription>&apos;kɔnsıkwəns</transcription>
+    <sample>his decision had depressing consequences for business</sample>
+    <sample>a phenomenon that follows and is caused by some previous phenomenon</sample>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>harm</english>
+    <russian>вред, убыток</russian>
+    <transcription>ha:m</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>earphone</english>
+    <russian>наушники</russian>
+    <transcription>&apos;ıəfəun</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>prove</english>
+    <russian>доказывать</russian>
+    <transcription>pru:v</transcription>
+    <sample>Peggy Bulger says the recordings in the Archive of Folk Culture prove that voices are very powerful. </sample>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="true">
+    <english>complaint</english>
+    <russian>жалоба, недовольство</russian>
+    <transcription>kəm&apos;pleınt</transcription>
+    <sample>expression of grief, pain, or dissatisfaction</sample>
+    <sample>A cause or reason for complaining; a grievance.</sample>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>predominantly</english>
+    <russian>преимущественно</russian>
+    <transcription>pri&apos;dɔminəntli</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>crushing</english>
+    <russian>сокрушительный, тяжелый</russian>
+    <transcription>&apos;krʌ∫ıŋ</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="true">
+    <english>judge</english>
+    <russian>судья</russian>
+    <transcription>&apos;dƷʌdƷ</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="true">
+    <english>vigorously</english>
+    <russian>энергично</russian>
+    <transcription>&apos;vıg(ə)rəslı</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
   <correspondence inuse="true">
     <english>augment</english>
     <russian>приращение</russian>
@@ -8,6 +102,22 @@
     <asksQuantity>1</asksQuantity>
     <rightAnswerQuantity>1</rightAnswerQuantity>
     <attemtpsQuantity>5</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>loan</english>
+    <russian>заем, одалживать</russian>
+    <transcription>ləun</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
+  </correspondence>
+  <correspondence inuse="false">
+    <english>crush</english>
+    <russian>дробить, сокрушить</russian>
+    <transcription>krʌ∫</transcription>
+    <asksQuantity>0</asksQuantity>
+    <rightAnswerQuantity>0</rightAnswerQuantity>
+    <attemtpsQuantity>0</attemtpsQuantity>
   </correspondence>
   <correspondence inuse="false">
     <english>comprise</english>
@@ -24,116 +134,6 @@
     <sample>They refuse to obey orders or do any work.</sample>
     <sample>Always obey the speed limit and never travel faster than..</sample>
     <asksQuantity>1</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>retire</english>
-    <russian>уходить</russian>
-    <transcription>rı&apos;taıə</transcription>
-    <sample>The Archive of Folk Culture continues to grow.  Individuals who have made a career of collecting folklore material want their collections to go to the Library of Congress when they retire.</sample>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>vigorously</english>
-    <russian>энергично</russian>
-    <transcription>&apos;vıg(ə)rəslı</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>predominantly</english>
-    <russian>преимущественно</russian>
-    <transcription>pri&apos;dɔminəntli</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>prove</english>
-    <russian>доказывать</russian>
-    <transcription>pru:v</transcription>
-    <sample>Peggy Bulger says the recordings in the Archive of Folk Culture prove that voices are very powerful. </sample>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>clash</english>
-    <russian>конфликт, столкновение</russian>
-    <transcription>klæ∫</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="true">
-    <english>complaint</english>
-    <russian>жалоба, недовольство</russian>
-    <transcription>kəm&apos;pleınt</transcription>
-    <sample>expression of grief, pain, or dissatisfaction</sample>
-    <sample>A cause or reason for complaining; a grievance.</sample>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>consequence</english>
-    <russian>следствие, вывод</russian>
-    <transcription>&apos;kɔnsıkwəns</transcription>
-    <sample>his decision had depressing consequences for business</sample>
-    <sample>a phenomenon that follows and is caused by some previous phenomenon</sample>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>crush</english>
-    <russian>дробить, сокрушить</russian>
-    <transcription>krʌ∫</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>crushing</english>
-    <russian>сокрушительный, тяжелый</russian>
-    <transcription>&apos;krʌ∫ıŋ</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>earphone</english>
-    <russian>наушники</russian>
-    <transcription>&apos;ıəfəun</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>harm</english>
-    <russian>вред, убыток</russian>
-    <transcription>ha:m</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="true">
-    <english>judge</english>
-    <russian>судья</russian>
-    <transcription>&apos;dƷʌdƷ</transcription>
-    <asksQuantity>0</asksQuantity>
-    <rightAnswerQuantity>0</rightAnswerQuantity>
-    <attemtpsQuantity>0</attemtpsQuantity>
-  </correspondence>
-  <correspondence inuse="false">
-    <english>loan</english>
-    <russian>заем, одалживать</russian>
-    <transcription>ləun</transcription>
-    <asksQuantity>0</asksQuantity>
     <rightAnswerQuantity>0</rightAnswerQuantity>
     <attemtpsQuantity>0</attemtpsQuantity>
   </correspondence>

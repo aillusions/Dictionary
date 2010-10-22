@@ -1,6 +1,6 @@
 /*
  */
-package com.cloudgarden.layout;
+package com.aillusions.dictionary.view.layout;
 
 /**
  * Used by both AnchorLayout (SWT) and AnchorLayoutManager (Swing)

@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions.model;
+package com.aillusions.dictionary.model;
 
 public interface TrainerViewListener {
 

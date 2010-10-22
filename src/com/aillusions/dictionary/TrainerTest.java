@@ -1,4 +1,4 @@
-package com.myjavaserver.aillusions;
+package com.aillusions.dictionary;
 
 /*import static org.junit.Assert.*;
 

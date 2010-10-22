@@ -1,6 +1,6 @@
 /*
  */
-package com.cloudgarden.layout;
+package com.aillusions.dictionary.view.layout;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.LayoutManager2;
 import java.awt.Rectangle;
 import java.util.HashMap;
+
 
 /**
  * Lays out components, using a combination of their "bounds" property

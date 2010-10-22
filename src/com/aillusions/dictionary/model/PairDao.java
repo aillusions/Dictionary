@@ -1,4 +1,6 @@
-package com.myjavaserver.aillusions.model;
+package com.aillusions.dictionary.model;
+
+import com.aillusions.dictionary.model.Pair;
 
 public interface PairDao {
 	void load();
@@ -9,4 +11,5 @@ public interface PairDao {
 	Pair addNew(String eng);
 	Pair getPair(String eng);
 	Pair remove(Pair pair);
+	void shuffle();
 }
