@@ -1,5 +1,7 @@
 package com.aillusions.dictionary.util;
 
+import java.awt.Component;
+import java.awt.Frame;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,19 +17,20 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 
 public class VersionChecker {
-	
+
 	private String lastAvailableVersion;
 	private String currentVersion;
+	
+	
 	private static final Logger l = Logger.getLogger(VersionChecker.class);
 	
-	public static void checkVersionInSeparateThread(){
+	public static void checkVersionInSeparateThread(Frame container){
+
+		AsynchronousVersionUpdater r = new AsynchronousVersionUpdater();
+		r.setCurrentContainer(container);
 		
-		new Runnable(){	
-			public void run() {				
-				VersionChecker vc = new VersionChecker();				
-				l.log(Priority.INFO, "Newer version available: " + vc.isNewerVersionAvailable());				
-			}			
-		}.run();
+		new Thread(r).start();
+		
 	}
 
 	public boolean isNewerVersionAvailable(){

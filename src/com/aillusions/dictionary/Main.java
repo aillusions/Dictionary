@@ -11,16 +11,7 @@ import com.aillusions.dictionary.view.TopEditor;
 
 
 public class Main {
-	
-    
-    /** Creates a new instance of Main */
-    public Main() {
-    }
-    
-    
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
     	
 		SwingUtilities.invokeLater(new Runnable() {
@@ -33,7 +24,8 @@ public class Main {
 		        
 		    	Logger l = Logger.getLogger(Main.class);
 		    	l.log(Priority.INFO, "Started.");
-		    	VersionChecker.checkVersionInSeparateThread();
+		    	
+		    	VersionChecker.checkVersionInSeparateThread(localTopEditor);
 		    	
 			}
 		});
