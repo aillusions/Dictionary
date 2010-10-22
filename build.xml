@@ -17,7 +17,7 @@
 	
 	<target name="build" depends="clean">
 		<mkdir dir="bin" />	
-		<javac classpathref="top_bpath" srcdir="src" destdir="bin" />
+		<javac classpathref="top_bpath" srcdir="src" destdir="bin" encoding="UTF-8"/>
 	</target>
 
 	<target name="run" depends="build">
@@ -52,6 +52,7 @@
 		
 		<filter token="build_version" value="${build_version}" />
 		<copy file="start.bat" todir="dist" filtering="true"/>
+		<copy file="config.properties" todir="dist" filtering="true"/>
 		
 	</target>
 </project>
