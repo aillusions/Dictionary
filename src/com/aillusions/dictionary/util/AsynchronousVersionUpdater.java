@@ -1,6 +1,5 @@
 package com.aillusions.dictionary.util;
 
-import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Frame;
 import java.io.File;
@@ -10,7 +9,10 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
+import java.util.zip.ZipFile;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
@@ -20,15 +22,19 @@ import com.aillusions.dictionary.view.DownloadUpdateDialog;
 
 public class AsynchronousVersionUpdater implements Runnable {
 
+	public static final String CONTENT_LENGTH = "Content-Length";
+	public static final String COPY_OVERRITE_UPDATE = "cmd.exe /c copy .\\" + "update\\"	+ "Unzipped\\*.* .\\ /Y /n";
+	public static final String CMD_RUN_DICT = "cmd.exe /c java -jar Dictionary1.2.jar /n";
+	public static final String UPDATE_ZIP_FOLDER = "http://github.com/downloads/aillusions/Dictionary/";
 	private static final Logger l = Logger
 			.getLogger(AsynchronousVersionUpdater.class);
-	public Frame currentContainer;
+	public JFrame currentContainer;
 
 	public Frame getCurrentContainer() {
 		return currentContainer;
 	}
 
-	public void setCurrentContainer(Frame currentContainer) {
+	public void setCurrentContainer(JFrame currentContainer) {
 		this.currentContainer = currentContainer;
 	}
 
@@ -37,7 +43,8 @@ public class AsynchronousVersionUpdater implements Runnable {
 		VersionChecker vc = new VersionChecker();
 		boolean continueAscting = vc.isNewerVersionAvailable();
 
-		l.log(Priority.INFO, "Newer version available: " + continueAscting);
+		l.log(Priority.INFO, "Newer version available: " + continueAscting + "; current: " + vc.getCurrentVersion() + "; avail: " + vc.getLastAvailableVersion() );
+		String zipName = "Dictionary" + vc.getLastAvailableVersion() + ".zip";
 
 		if (continueAscting) {
 
@@ -51,13 +58,11 @@ public class AsynchronousVersionUpdater implements Runnable {
 			if (n == 0) {
 
 				URLConnection ucn = null;
-				String zipName = "Dictionary" + vc.getLastAvailableVersion()
-						+ ".zip";
 
 				try {
-					ucn = new URL(
-							"http://github.com/downloads/aillusions/Dictionary/"
-									+ zipName).openConnection();
+					ucn = new URL(UPDATE_ZIP_FOLDER + zipName).openConnection();
+					// ucn = new
+					// URL("file:///c:/Dictionary1.2.zip").openConnection();
 				} catch (MalformedURLException e) {
 					l.log(Priority.ERROR, e);
 				} catch (IOException e) {
@@ -71,49 +76,108 @@ public class AsynchronousVersionUpdater implements Runnable {
 					return;
 				}
 
+				List value = ucn.getHeaderFields().get(CONTENT_LENGTH);
+
+				int size = -1;
+				if (value != null && !value.isEmpty()) {
+
+					String sLength = (String) value.get(0);
+
+					if (sLength != null) {
+						size = Integer.parseInt(sLength);
+					}
+				}
+
 				try {
 					InputStream isr = ucn.getInputStream();
 
-					boolean success = (new File("./update")).mkdir();
-					if (success) {
-						System.out.println("Directory: created");
-					} else {
-						System.out.println("fuck");
+					File updateDir = new File("./update");
+					if (updateDir.exists()) {
+						Unzip.deleteDirectory(updateDir);
 					}
 
+					updateDir.mkdir();
+
+					File targetFile = new File("update/" + zipName);
+					if (targetFile.exists()) {
+						targetFile.delete();
+					}
 					FileOutputStream fos = new FileOutputStream("update/"
 							+ zipName, false);
 
 					currentContainer.setCursor(Cursor
 							.getPredefinedCursor(Cursor.WAIT_CURSOR));
 
-					DownloadUpdateDialog dud = new DownloadUpdateDialog();
+					DownloadUpdateDialog dud = new DownloadUpdateDialog(
+							currentContainer);
 					dud.setVisible(true);
+
+					l.log(Priority.INFO, "Size of update: " + size);
 
 					byte[] b = new byte[10000];
 					int read = 0;
-					while ((read = isr.read(b)) != 0) {
-						fos.write(b);
+					int overalRead = 0;
+
+					while ((read = isr.read(b)) > 0 && !dud.isStoped()) {
+						fos.write(b, 0, read);
+						overalRead += read;
+						if (size > 0) {
+							dud.setValue((overalRead * 100 / size));
+						} else {
+							dud.setValue(50);
+						}
 					}
+
 					isr.close();
 					fos.close();
 					fos = null;
 
+					currentContainer.setCursor(Cursor
+							.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+
+					continueAscting = !dud.isStoped();
+					dud.setVisible(false);
+					dud.dispose();
+					dud = null;
+
+					Unzip unz = new Unzip();
+					unz.unzip("update/" + zipName, "update/unzipped");
+
 				} catch (IOException e) {
 					l.log(Priority.ERROR, e);
 				}
+			} else {
+				continueAscting = false;
 			}
 		}
 
-		Object[] options1 = { "Yes", "No" };
-		int n1 = JOptionPane.showOptionDialog(null, "Restart Dictionary now?",
-				"Latest version was installed!",
-				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
-				null, options1, options1[0]);
+		if (continueAscting) {
 
-		JOptionPane.showMessageDialog(null,
-				"You have latest version of Dictionary", "Congratulations!",
-				JOptionPane.INFORMATION_MESSAGE);
+			Object[] options1 = { "Yes", "No" };
+			int n1 = JOptionPane.showOptionDialog(null,
+					"Can we restart Dictionary now?",
+					"Latest version will be installed!",
+					JOptionPane.YES_NO_CANCEL_OPTION,
+					JOptionPane.QUESTION_MESSAGE, null, options1, options1[0]);
 
+			if (n1 == 0) {
+
+				Runnable rnb = new Runnable() {
+
+					public void run() {
+						try {
+							Runtime.getRuntime().exec(COPY_OVERRITE_UPDATE);
+							Runtime.getRuntime().exec(CMD_RUN_DICT);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+
+				};
+
+				new Thread(rnb).run();
+				System.exit(0);
+			}
+		}
 	}
 }

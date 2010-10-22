@@ -1,30 +1,31 @@
 package com.aillusions.dictionary.util;
 
-import java.awt.Component;
-import java.awt.Frame;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Properties;
+
+import javax.swing.JFrame;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 
 public class VersionChecker {
 
+	public static final String LAST_VERSION_FILE_URL = "http://github.com/downloads/aillusions/Dictionary/last_version.inf";
 	private String lastAvailableVersion;
 	private String currentVersion;
 	
 	
 	private static final Logger l = Logger.getLogger(VersionChecker.class);
 	
-	public static void checkVersionInSeparateThread(Frame container){
+	public static void checkVersionInSeparateThread(JFrame container){
 
 		AsynchronousVersionUpdater r = new AsynchronousVersionUpdater();
 		r.setCurrentContainer(container);
@@ -47,7 +48,16 @@ public class VersionChecker {
 		String lastAvailableVersion = null;
 		
 		try {			
-			URLConnection ucn = new URL("http://github.com/downloads/aillusions/Dictionary/last_version.inf").openConnection();
+			HttpURLConnection ucn = (HttpURLConnection)new URL(LAST_VERSION_FILE_URL + "?param=" + System.currentTimeMillis()).openConnection();
+			
+			ucn.setDefaultUseCaches(false);
+			ucn.setUseCaches(false);
+			ucn.setRequestProperty("Cache-Control", "no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
+			ucn.setRequestProperty("Expires", "0");
+			ucn.setRequestProperty("Pragma", "no-cache");
+			ucn.setRequestProperty("Content-Type", "text/html");
+
+			//URLConnection ucn = new URL("file:///c:/last_version.inf").openConnection();
 			BufferedReader bis = new BufferedReader(new InputStreamReader(ucn.getInputStream()));
 			lastAvailableVersion = bis.readLine();
 			
