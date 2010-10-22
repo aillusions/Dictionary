@@ -6,10 +6,12 @@ import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 
+import com.aillusions.dictionary.util.VersionChecker;
 import com.aillusions.dictionary.view.TopEditor;
 
 
 public class Main {
+	
     
     /** Creates a new instance of Main */
     public Main() {
@@ -23,6 +25,7 @@ public class Main {
     	
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
+				
 		        TopEditor localTopEditor = new TopEditor();
 		        localTopEditor.setLocationRelativeTo(null);
 		        localTopEditor.setVisible(true);
@@ -30,6 +33,8 @@ public class Main {
 		        
 		    	Logger l = Logger.getLogger(Main.class);
 		    	l.log(Priority.INFO, "Started.");
+		    	VersionChecker.checkVersionInSeparateThread();
+		    	
 			}
 		});
     }    
