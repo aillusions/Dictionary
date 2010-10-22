@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="dist"> 
+
+	<property file="build.properties" />
+
 	<path id="top_bpath">
 		<pathelement path="bin" />
 		<fileset dir="lib">
@@ -30,7 +33,7 @@
 			<fileset dir="src" excludes="**/*.java"/>
 		</copy>
 		
-		<jar destfile="dist/Dictionary.jar"	basedir="bin">
+		<jar destfile="dist/Dictionary${build_version}.jar"	basedir="bin">
 			<manifest>
 			  <attribute name="Built-By" value="OZ"/>
 			  <attribute name="Implementation-Vendor" value="AGD inc."/>
@@ -46,7 +49,9 @@
 			<fileset dir="lib"/>
 		</copy>
 		<copy file="Words.xml" todir="dist"/>
-		<copy file="start.bat" todir="dist"/>
+		
+		<filter token="build_version" value="${build_version}" />
+		<copy file="start.bat" todir="dist" filtering="true"/>
 		
 	</target>
 </project>

@@ -1,0 +1,1 @@
+java -jar Dictionary1.0.jar
