@@ -10,7 +10,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
-import java.util.zip.ZipFile;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -23,8 +22,9 @@ import com.aillusions.dictionary.view.DownloadUpdateDialog;
 public class AsynchronousVersionUpdater implements Runnable {
 
 	public static final String CONTENT_LENGTH = "Content-Length";
-	public static final String COPY_OVERRITE_UPDATE = "cmd.exe /c copy .\\" + "update\\"	+ "Unzipped\\*.* .\\ /Y /n";
-	public static final String CMD_RUN_DICT = "cmd.exe /c java -jar Dictionary1.2.jar /n";
+	//public static final String COPY_OVERRITE_UPDATE = "cmd.exe /c copy .\\" + "update\\"	+ "unzipped\\*.* .\\ /Y /n";
+	public static final String COPY_OVERRITE_UPDATE = "cmd.exe /c xcopy .\\" + "update\\"	+ "unzipped\\*.* /a /e /k /Y /n";
+	public static final String CMD_RUN_DICT = "cmd.exe /c java -jar Dictionary.jar /n";
 	public static final String UPDATE_ZIP_FOLDER = "http://github.com/downloads/aillusions/Dictionary/";
 	private static final Logger l = Logger
 			.getLogger(AsynchronousVersionUpdater.class);
@@ -44,7 +44,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 		boolean continueAscting = vc.isNewerVersionAvailable();
 
 		l.log(Priority.INFO, "Newer version available: " + continueAscting + "; current: " + vc.getCurrentVersion() + "; avail: " + vc.getLastAvailableVersion() );
-		String zipName = "Dictionary" + vc.getLastAvailableVersion() + ".zip";
+		String zipName = "Dictionary-" + vc.getLastAvailableVersion() + ".zip";
 
 		if (continueAscting) {
 

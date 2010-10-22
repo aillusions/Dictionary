@@ -13,6 +13,7 @@
 	<target name="clean">
 		<delete dir="bin"/>
 		<delete dir="dist"/>
+		<delete dir="install" />
 	</target>
 	
 	<target name="build" depends="clean">
@@ -28,12 +29,13 @@
 		<mkdir dir="dist" />
 		<mkdir dir="dist/audio" />
 		<mkdir dir="dist/lib" />
+		<mkdir dir="install" />
 		
 		<copy todir="bin" overwrite="true">
 			<fileset dir="src" excludes="**/*.java"/>
 		</copy>
 		
-		<jar destfile="dist/Dictionary${build_version}.jar"	basedir="bin">
+		<jar destfile="dist/Dictionary.jar"	basedir="bin">
 			<manifest>
 			  <attribute name="Built-By" value="OZ"/>
 			  <attribute name="Implementation-Vendor" value="AGD inc."/>			  
@@ -53,7 +55,7 @@
 		<copy file="start.bat" todir="dist" filtering="true" overwrite="true"/>
 		<copy file="config.properties" todir="dist" filtering="true" overwrite="true" />
 		
-		<zip destfile="install/Dictionary${build_version}.zip" basedir="dist" excludes="Words.xml, *.log ,audio/*.mp3, audio/*.wav"/>
+		<zip destfile="install/Dictionary-${build_version}.zip" basedir="dist" excludes="Words.xml, *.log ,audio/*.mp3, audio/*.wav"/>
 		
 	</target>
 </project>

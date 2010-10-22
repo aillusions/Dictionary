@@ -1,1 +1,1 @@
-java -jar Dictionary@build_version@.jar
+java -jar Dictionary.jar

@@ -60,9 +60,9 @@ public class VersionChecker {
 			//URLConnection ucn = new URL("file:///c:/last_version.inf").openConnection();
 			
 			String content = readFileAsString(ucn.getInputStream());
-			int indexOfLastDict = content.indexOf(".zip\">Dictionary");
+			int indexOfLastDict = content.indexOf(".zip\">Dictionary-");
 			int indexOfLastFileExt = content.indexOf(".zip", indexOfLastDict + 4);
-			lastAvailableVersion = content.substring(indexOfLastDict + 16, indexOfLastFileExt);
+			lastAvailableVersion = content.substring(indexOfLastDict + 17, indexOfLastFileExt);
 			
 		} catch (MalformedURLException e) {
 			l.log(Priority.ERROR, e);
