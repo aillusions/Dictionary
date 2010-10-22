@@ -52,7 +52,6 @@
 		<filter token="build_version" value="${build_version}" />
 		<copy file="start.bat" todir="dist" filtering="true" overwrite="true"/>
 		<copy file="config.properties" todir="dist" filtering="true" overwrite="true" />
-		<copy file="last_version.inf" todir="install" filtering="true" overwrite="true"/>		
 		
 		<zip destfile="install/Dictionary${build_version}.zip" basedir="dist" excludes="Words.xml, *.log ,audio/*.mp3, audio/*.wav"/>
 		

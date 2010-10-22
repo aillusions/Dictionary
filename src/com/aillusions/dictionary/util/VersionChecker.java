@@ -18,7 +18,7 @@ import org.apache.log4j.Priority;
 
 public class VersionChecker {
 
-	public static final String LAST_VERSION_FILE_URL = "http://github.com/downloads/aillusions/Dictionary/last_version.inf";
+	public static final String LAST_VERSION_FILE_URL = "http://github.com/aillusions/Dictionary/downloads";
 	private String lastAvailableVersion;
 	private String currentVersion;
 	
@@ -58,8 +58,11 @@ public class VersionChecker {
 			ucn.setRequestProperty("Content-Type", "text/html");
 
 			//URLConnection ucn = new URL("file:///c:/last_version.inf").openConnection();
-			BufferedReader bis = new BufferedReader(new InputStreamReader(ucn.getInputStream()));
-			lastAvailableVersion = bis.readLine();
+			
+			String content = readFileAsString(ucn.getInputStream());
+			int indexOfLastDict = content.indexOf(".zip\">Dictionary");
+			int indexOfLastFileExt = content.indexOf(".zip", indexOfLastDict + 4);
+			lastAvailableVersion = content.substring(indexOfLastDict + 16, indexOfLastFileExt);
 			
 		} catch (MalformedURLException e) {
 			l.log(Priority.ERROR, e);
@@ -69,6 +72,22 @@ public class VersionChecker {
 		
 		return lastAvailableVersion;
 	}
+	
+    private static String readFileAsString(InputStream is)
+    throws java.io.IOException{
+        StringBuffer fileData = new StringBuffer(1000);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        char[] buf = new char[1024];
+        int numRead=0;
+        while((numRead=reader.read(buf)) != -1){
+            String readData = String.valueOf(buf, 0, numRead);
+            fileData.append(readData);
+            buf = new char[1024];
+        }
+        reader.close();
+        return fileData.toString();
+    }
+
 	
 	public String getCurrentVersion(){
 		
