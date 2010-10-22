@@ -18,7 +18,7 @@
 	</target>
 
 	<target name="run" depends="build">
-		<java fork="true" classpathref="top_bpath" classname="com.myjavaserver.aillusions.Main" />
+		<java fork="true" classpathref="top_bpath" classname="com.aillusions.dictionary.Main" />
 	</target>
 	
 	<target name="dist" depends="build">
