@@ -55,7 +55,7 @@
 		<copy file="last_version.inf" todir="install" filtering="true"/>
 		
 		
-		<zip destfile="install/Dictionary${build_version}.zip"	basedir="dist"/>
+		<zip destfile="install/Dictionary${build_version}.zip" basedir="dist"/>
 		
 		
 	</target>
