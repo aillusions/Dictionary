@@ -24,6 +24,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 	public static final String CONTENT_LENGTH = "Content-Length";
 	//public static final String COPY_OVERRITE_UPDATE = "cmd.exe /c copy .\\" + "update\\"	+ "unzipped\\*.* .\\ /Y /n";
 	public static final String COPY_OVERRITE_UPDATE = "cmd.exe /c xcopy .\\" + "update\\"	+ "unzipped\\*.* /a /e /k /Y /n";
+	public static final String UPDATE_REMOVE = "cmd.exe /c rd /S /Q update /n";
 	public static final String CMD_RUN_DICT = "cmd.exe /c java -jar Dictionary.jar /n";
 	public static final String UPDATE_ZIP_FOLDER = "http://github.com/downloads/aillusions/Dictionary/";
 	private static final Logger l = Logger
@@ -167,6 +168,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 					public void run() {
 						try {
 							Runtime.getRuntime().exec(COPY_OVERRITE_UPDATE);
+							Runtime.getRuntime().exec(UPDATE_REMOVE);
 							Runtime.getRuntime().exec(CMD_RUN_DICT);
 						} catch (IOException e) {
 							e.printStackTrace();
