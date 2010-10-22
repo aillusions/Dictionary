@@ -1,21 +1,14 @@
 package com.aillusions.dictionary.view;
 
-import com.aillusions.dictionary.Dictionary;
-import com.aillusions.dictionary.audio.AudioManager;
-import com.aillusions.dictionary.model.Pair;
-import com.aillusions.dictionary.view.About;
-import com.aillusions.dictionary.view.TopEditor;
-
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.PrintStream;
 import java.util.Random;
+
 import javax.swing.AbstractListModel;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -32,6 +25,9 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import com.aillusions.dictionary.Dictionary;
+import com.aillusions.dictionary.model.Pair;
 
 public class TopEditor extends JFrame
 {

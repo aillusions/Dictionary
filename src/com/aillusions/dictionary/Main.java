@@ -3,6 +3,9 @@ package com.aillusions.dictionary;
 
 import javax.swing.SwingUtilities;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
+
 import com.aillusions.dictionary.view.TopEditor;
 
 
@@ -24,6 +27,9 @@ public class Main {
 		        localTopEditor.setLocationRelativeTo(null);
 		        localTopEditor.setVisible(true);
 		        localTopEditor.setSize(570, 320);
+		        
+		    	Logger l = Logger.getLogger(Main.class);
+		    	l.log(Priority.INFO, "Started.");
 			}
 		});
     }    

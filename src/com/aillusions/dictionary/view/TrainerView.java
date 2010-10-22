@@ -1,25 +1,21 @@
 package com.aillusions.dictionary.view;
 
-import com.aillusions.dictionary.model.Pair;
-import com.aillusions.dictionary.model.TrainerViewListener;
-import com.aillusions.dictionary.view.layout.AnchorConstraint;
-import com.aillusions.dictionary.view.layout.AnchorLayout;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.table.TableColumn;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.ListModel;
+
+import com.aillusions.dictionary.model.TrainerViewListener;
+import com.aillusions.dictionary.view.layout.AnchorConstraint;
+import com.aillusions.dictionary.view.layout.AnchorLayout;
 
 /**
  * This code was edited or generated using CloudGarden's Jigloo SWT/Swing GUI
