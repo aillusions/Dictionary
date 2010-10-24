@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.aillusions.dictionary.model.Pair;
-import com.aillusions.dictionary.model.TrainerViewListener;
 import com.aillusions.dictionary.view.TrainerView;
+import com.aillusions.dictionary.view.TrainerViewListener;
 
 public class Trainer
   implements TrainerViewListener
 {
-  private Dictionary dictionary;
+  private Manager dictionary;
   private TrainerView view;
   private boolean isEngRus;
   Random generatorQuestion = new Random(0L);
@@ -21,7 +21,7 @@ public class Trainer
   Random generatorENG_RUS = new Random(0L);
   private Pair currentPair = null;
 
-  public Trainer(Dictionary paramDictionary)
+  public Trainer(Manager paramDictionary)
   {
     this.dictionary = paramDictionary;
   }

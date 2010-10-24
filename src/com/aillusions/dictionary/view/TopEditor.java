@@ -26,13 +26,13 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import com.aillusions.dictionary.Dictionary;
+import com.aillusions.dictionary.Manager;
 import com.aillusions.dictionary.model.Pair;
 
 public class TopEditor extends JFrame
 {
   private static final long serialVersionUID = 1L;
-  Dictionary dictionary;
+  Manager dictionary;
   int prevSelectedIndex;
   Random nextSelRandom;
   private JButton Load_Btn;
@@ -125,7 +125,7 @@ public class TopEditor extends JFrame
     {
       localException.printStackTrace();
     }
-    this.dictionary = new Dictionary("words.xml");
+    this.dictionary = new Manager("words.xml");
     this.prevSelectedIndex = 0;
     this.nextSelRandom = new Random(0L);
     initComponents();

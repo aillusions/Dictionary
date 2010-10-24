@@ -13,7 +13,6 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.ListModel;
 
-import com.aillusions.dictionary.model.TrainerViewListener;
 import com.aillusions.dictionary.view.layout.AnchorConstraint;
 import com.aillusions.dictionary.view.layout.AnchorLayout;
 

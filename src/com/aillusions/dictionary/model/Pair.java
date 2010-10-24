@@ -3,12 +3,11 @@ package com.aillusions.dictionary.model;
 import java.util.LinkedList;
 import java.util.List;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
+@XStreamAlias("correspondence")
 public class Pair {
 
 	@XStreamAlias("english")
@@ -24,6 +23,9 @@ public class Pair {
 	@XStreamAsAttribute()
 	private boolean inuse;
 	
+	@XStreamAsAttribute()
+	private boolean removed;
+	
 	@XStreamAlias("asksQuantity")
 	private int asksQuantity; 
 	
@@ -33,6 +35,13 @@ public class Pair {
 	@XStreamAlias("attemtpsQuantity")
 	private int attemttsQuantity;	
 	
+	public boolean isRemoved() {
+		return removed;
+	}
+
+	public void setRemoved(boolean removed) {
+		this.removed = removed;
+	}
 
 	public int getAttemttsQuantity() {
 		return attemttsQuantity;
