@@ -8,7 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 
-public class DownloadUpdateDialog extends JDialog  {
+import com.aillusions.dictionary.util.ProcProgressTracker;
+
+public class DownloadUpdateDialog extends JDialog implements ProcProgressTracker {
 
 	private static final long serialVersionUID = 1L;
 
@@ -47,10 +49,6 @@ public class DownloadUpdateDialog extends JDialog  {
 
 	public boolean isStoped() {
 		return stoped;
-	}
-
-	public void setStoped(boolean stoped) {
-		this.stoped = stoped;
 	}
     
 }
