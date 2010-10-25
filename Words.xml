@@ -2,23 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="Words_prn.xsl"?>
 <dictionary>
   <working-list>
-    <correspondence inuse="false" removed="false">
-      <english>xdfsdfsdfs</english>
-      <russian></russian>
-      <transcription></transcription>
-      <asksQuantity>0</asksQuantity>
-      <rightAnswerQuantity>0</rightAnswerQuantity>
-      <attemtpsQuantity>0</attemtpsQuantity>
-    </correspondence>
-    <correspondence inuse="false" removed="false">
-      <english>dfsdfsd</english>
-      <russian></russian>
-      <transcription></transcription>
-      <asksQuantity>0</asksQuantity>
-      <rightAnswerQuantity>0</rightAnswerQuantity>
-      <attemtpsQuantity>0</attemtpsQuantity>
-    </correspondence>
-    <correspondence inuse="false" removed="false">
+    <correspondence inuse="false">
       <english>fsdfsd</english>
       <russian></russian>
       <transcription></transcription>
@@ -27,4 +11,22 @@
       <attemtpsQuantity>0</attemtpsQuantity>
     </correspondence>
   </working-list>
+  <removed-list>
+    <correspondence inuse="false">
+      <english>xdfsdfsdfs</english>
+      <russian></russian>
+      <transcription></transcription>
+      <asksQuantity>0</asksQuantity>
+      <rightAnswerQuantity>0</rightAnswerQuantity>
+      <attemtpsQuantity>0</attemtpsQuantity>
+    </correspondence>
+    <correspondence inuse="false">
+      <english>dfsdfsd</english>
+      <russian></russian>
+      <transcription></transcription>
+      <asksQuantity>0</asksQuantity>
+      <rightAnswerQuantity>0</rightAnswerQuantity>
+      <attemtpsQuantity>0</attemtpsQuantity>
+    </correspondence>
+  </removed-list>
 </dictionary>

@@ -3,9 +3,7 @@ package com.aillusions.dictionary.dao;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.model.Pair;
@@ -14,7 +12,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class PairXmlDao implements PairDao{
 
-	List<Pair> pairs = null;
+	//List<Pair> pairs = null;
 	Dictionary dictionary;
 	XStream xstream = null;
 	String fName = "";
@@ -43,14 +41,8 @@ public class PairXmlDao implements PairDao{
 			e.printStackTrace();
 		}
 		
-		pairs =  dictionary.getPairs();
-		
-		if(pairs == null){
-			pairs = new ArrayList<Pair>();
-			dictionary.setPairs(pairs);
-		}
-		
-		
+		//pairs =  dictionary.getPairs();
+
 	}
 	
 	public void save() {
@@ -69,7 +61,7 @@ public class PairXmlDao implements PairDao{
 		}
 	}
 	public Pair[] getAllPairs(){
-		return pairs.toArray(new Pair[pairs.size()]);		
+		return dictionary.getPairs().toArray(new Pair[dictionary.getPairs().size()]);		
 	}
 
 	public void addNew(Pair pair) {		
@@ -83,15 +75,15 @@ public class PairXmlDao implements PairDao{
 			fw.setEnglish(eng);
 			fw.setTranscription("");
 			fw.setTranscription("");
-			pairs.add(fw);
+			dictionary.getPairs().add(fw);
 		}
 		return fw;
 	}
 
 	public String[] getAllEnglish() {//TODO ADD sort options 
-		String[] res = new String[pairs.size()];
+		String[] res = new String[dictionary.getPairs().size()];
 		int i = 0;
-		for (Pair word : pairs) {
+		for (Pair word : dictionary.getPairs()) {
 			res[i] = word.getEnglish();
 			i++;
 		}
@@ -101,7 +93,7 @@ public class PairXmlDao implements PairDao{
 
 	public Pair getPair(String eng) {
 		Pair res = null;
-		for (Pair word : pairs) {
+		for (Pair word : dictionary.getPairs()) {
 			if (word.getEnglish().equals(eng)) {
 				res = word;
 			}
@@ -111,22 +103,23 @@ public class PairXmlDao implements PairDao{
 
 	public Pair remove(Pair pair) {
 		Pair res = null;
-		int indexDel = pairs.indexOf(pair);
+		int indexDel = dictionary.getPairs().indexOf(pair);
 		int indexSibl = -1; 
-		pairs.remove(pair);	
-		if(pairs.size() > indexDel){
+		dictionary.getPairs().remove(pair);	
+		dictionary.getTrash().add(pair);
+		if(dictionary.getPairs().size() > indexDel){
 			indexSibl = indexDel;
 		}
-		else if(pairs.size() > 0 && pairs.size() <= indexDel){
-			indexSibl = pairs.size()-1;
+		else if(dictionary.getPairs().size() > 0 && dictionary.getPairs().size() <= indexDel){
+			indexSibl = dictionary.getPairs().size()-1;
 		}
 		if(indexSibl != -1)
-			res =  pairs.get(indexSibl); 
+			res =  dictionary.getPairs().get(indexSibl); 
 		return res;
 	}
 	
 	  public void shuffle()
 	  {
-	    Collections.shuffle(this.pairs);
+	    Collections.shuffle(this.dictionary.getPairs());
 	  }
 }

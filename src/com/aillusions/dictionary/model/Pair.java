@@ -23,9 +23,6 @@ public class Pair {
 	@XStreamAsAttribute()
 	private boolean inuse;
 	
-	@XStreamAsAttribute()
-	private boolean removed;
-	
 	@XStreamAlias("asksQuantity")
 	private int asksQuantity; 
 	
@@ -34,14 +31,7 @@ public class Pair {
 	
 	@XStreamAlias("attemtpsQuantity")
 	private int attemttsQuantity;	
-	
-	public boolean isRemoved() {
-		return removed;
-	}
 
-	public void setRemoved(boolean removed) {
-		this.removed = removed;
-	}
 
 	public int getAttemttsQuantity() {
 		return attemttsQuantity;
