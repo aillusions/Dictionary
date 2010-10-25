@@ -1,8 +1,10 @@
-package com.aillusions.dictionary.util;
+package com.aillusions.dictionary.util.update;
 
 import javax.swing.JFrame;
 
 import org.apache.log4j.Logger;
+
+import com.aillusions.dictionary.util.Config;
 
 public class VersionChecker {
 
@@ -11,10 +13,7 @@ public class VersionChecker {
 	private static final Logger l = Logger.getLogger(VersionChecker.class);
 	
 	public static void checkVersionInSeparateThread(JFrame container){
-
-		AsynchronousVersionUpdater r = new AsynchronousVersionUpdater();
-		r.setCurrentContainer(container);
-		
+		AsynchronousVersionUpdater r = new AsynchronousVersionUpdater(container);
 		new Thread(r).start();
 		
 	}

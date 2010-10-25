@@ -1,7 +1,6 @@
-package com.aillusions.dictionary.util;
+package com.aillusions.dictionary.util.update;
 
 import java.awt.Cursor;
-import java.awt.Frame;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -22,12 +21,8 @@ public class AsynchronousVersionUpdater implements Runnable {
 	public JFrame currentContainer;
 	
 	private UpdateRepository updateRepo = UpdateRepository.getInstance();
-
-	public Frame getCurrentContainer() {
-		return currentContainer;
-	}
-
-	public void setCurrentContainer(JFrame currentContainer) {
+	
+	public AsynchronousVersionUpdater(JFrame currentContainer){
 		this.currentContainer = currentContainer;
 	}
 
@@ -50,6 +45,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 			if (n == 0) {
 
 				DownloadUpdateDialog dud = new DownloadUpdateDialog(currentContainer);
+				dud.setLocationRelativeTo(currentContainer);
 				dud.setVisible(true);				
 				currentContainer.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));				
 				updateRepo.downloadUpdate(dud, vc.getLastAvailableVersion());				

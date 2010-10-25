@@ -8,8 +8,9 @@ import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 
+import com.aillusions.dictionary.util.IOTools;
 import com.aillusions.dictionary.util.Unzip;
-import com.aillusions.dictionary.util.VersionChecker;
+import com.aillusions.dictionary.util.update.VersionChecker;
 import com.aillusions.dictionary.view.TopEditor;
 
 
@@ -30,7 +31,7 @@ public class Main {
 		    	
 		    	File updateDir = new File("update");
 		    	if(updateDir.exists()){
-		    		Unzip.deleteDirectory(updateDir);
+		    		IOTools.deleteDirectory(updateDir);
 		    	}
 		    	
 		    	VersionChecker.checkVersionInSeparateThread(localTopEditor);

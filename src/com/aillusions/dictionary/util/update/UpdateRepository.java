@@ -1,6 +1,5 @@
-package com.aillusions.dictionary.util;
+package com.aillusions.dictionary.util.update;
 
-import java.awt.Cursor;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,23 +15,23 @@ import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Priority;
 
-import com.aillusions.dictionary.view.DownloadUpdateDialog;
+import com.aillusions.dictionary.util.Config;
+import com.aillusions.dictionary.util.IOTools;
+import com.aillusions.dictionary.util.ProcProgressTracker;
+import com.aillusions.dictionary.util.Unzip;
 
 public class UpdateRepository {
 	
-	public static final String CONTENT_LENGTH = "Content-Length";
-	
+	private static final Logger l = Logger.getLogger(UpdateRepository.class);	
+	public static final String CONTENT_LENGTH = "Content-Length";	
 	private static UpdateRepository instanse = new UpdateRepository();
 	
-	private UpdateRepository(){
-		
+	private UpdateRepository(){		
 	}
 	
 	public static UpdateRepository getInstance(){
 		return instanse;
 	}
-
-	private static final Logger l = Logger.getLogger(UpdateRepository.class);
 	
 	public String getLastAvailableVersion(){
 		
@@ -47,8 +46,6 @@ public class UpdateRepository {
 			ucn.setRequestProperty("Expires", "0");
 			ucn.setRequestProperty("Pragma", "no-cache");
 			ucn.setRequestProperty("Content-Type", "text/html");
-
-			//URLConnection ucn = new URL("file:///c:/last_version.inf").openConnection();
 			
 			String content = IOTools.readStreamAsString(ucn.getInputStream());
 			int indexOfLastDict = content.indexOf(".zip\">Dictionary-");
@@ -148,7 +145,7 @@ public class UpdateRepository {
 	private void prepareUpdate( String lastAvailableVersion){
 		File updateDir = new File("./update");
 		if (updateDir.exists()) {
-			Unzip.deleteDirectory(updateDir);
+			IOTools.deleteDirectory(updateDir);
 		}
 
 		updateDir.mkdir();

@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.aillusions.dictionary.util.VersionChecker;
+import com.aillusions.dictionary.util.update.VersionChecker;
 import com.aillusions.dictionary.view.layout.AnchorConstraint;
 import com.aillusions.dictionary.view.layout.AnchorLayout;
 

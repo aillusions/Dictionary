@@ -10,7 +10,12 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
+
 public class Unzip {
+	
+	private static final Logger l = Logger.getLogger(Unzip.class);	
 
 	public void copyInputStream(InputStream in, OutputStream out)
 			throws IOException {
@@ -23,28 +28,14 @@ public class Unzip {
 		in.close();
 		out.close();
 	}
-
-	public static boolean deleteDirectory(File path) {
-		if (path.exists()) {
-			File[] files = path.listFiles();
-			for (int i = 0; i < files.length; i++) {
-				if (files[i].isDirectory()) {
-					deleteDirectory(files[i]);
-				} else {
-					files[i].delete();
-				}
-			}
-		}
-		return (path.delete());
-	}
-
+	
 	public void unzip(String args, String subDir) {
 		Enumeration entries;
 		ZipFile zipFile;
 
 		File f = new File(subDir);
 		if (f.exists()) {
-			deleteDirectory(f);
+			IOTools.deleteDirectory(f);
 		}
 		f.mkdir();
 
@@ -59,15 +50,12 @@ public class Unzip {
 				if (entry.isDirectory()) {
 					// Assume directories are stored parents first then
 					// children.
-					System.out.println("Extracting directory: " + subDir + "/"
-							+ entry.getName());
+					l.log(Priority.INFO, "Extracting directory: " + subDir + "/" + entry.getName());
 					// This is not robust, just for demonstration purposes.
 					(new File(subDir + "/" + entry.getName())).mkdir();
 					continue;
 				}
-
-				System.out.println("Extracting file: " + subDir + "/"
-						+ entry.getName());
+				l.log(Priority.INFO, "Extracting file: " + subDir + "/" + entry.getName());
 				copyInputStream(zipFile.getInputStream(entry),
 						new BufferedOutputStream(new FileOutputStream(subDir
 								+ "/" + entry.getName())));
@@ -75,9 +63,7 @@ public class Unzip {
 
 			zipFile.close();
 		} catch (IOException ioe) {
-			System.err.println("Unhandled exception:");
-			ioe.printStackTrace();
-			return;
+			l.log(Priority.ERROR, ioe);
 		}
 	}
 
