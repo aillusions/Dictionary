@@ -4,15 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 @XStreamAlias("dictionary")
 public class Dictionary {
 	
 	@XStreamAlias("working-list")
-	List<Pair> pairs;
+	private List<Pair> pairs;
 	
 	@XStreamAlias("removed-list")
-	List<Pair> trash;
+	private List<Pair> trash;
+	
+	@XStreamAlias("display-name")
+	private String displayName;
+	
+	@XStreamAsAttribute()
+	private String id;
 	
 	public List<Pair> getPairs() {
 		if(pairs == null){
@@ -33,6 +40,20 @@ public class Dictionary {
 	public void setTrash(List<Pair> trash) {
 		this.trash = trash;
 	}
+	public String getDisplayName() {
+		return displayName;
+	}
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	
 	
 	
 }

@@ -3,19 +3,22 @@ package com.aillusions.dictionary.dao;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.model.Pair;
+import com.aillusions.dictionary.model.Workspace;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class PairXmlDao implements PairDao{
 
-	//List<Pair> pairs = null;
-	Dictionary dictionary;
-	XStream xstream = null;
-	String fName = "";
+	private Workspace workspace;
+	private Dictionary currentDictionary;
+	private XStream xstream = null;
+	private String fName = "";
 	
 	public PairXmlDao(String fName) {
 		super();
@@ -24,6 +27,7 @@ public class PairXmlDao implements PairDao{
 		
 		xstream.processAnnotations(Pair.class);
 		xstream.processAnnotations(Dictionary.class);		
+		xstream.processAnnotations(Workspace.class);		
 	}
 	
 	@SuppressWarnings( { "unchecked" })
@@ -32,17 +36,28 @@ public class PairXmlDao implements PairDao{
 			if(new File(fName).exists()){
 				FileInputStream is = new FileInputStream(fName);
 				
-				dictionary = (Dictionary) xstream.fromXML(is);
+				workspace = (Workspace) xstream.fromXML(is);
 				is.close();
 			}
 			else
-				dictionary = new Dictionary();
+				workspace = new Workspace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		//pairs =  dictionary.getPairs();
-
+		if(workspace.getDictioanries() != null ){
+			if(workspace.getDictioanries().size() > 0){
+				currentDictionary = workspace.getDictioanries().get(0);
+			}else{
+				currentDictionary = new Dictionary();
+				workspace.getDictioanries().add(currentDictionary);
+			}
+		}else{
+			List<Dictionary> dicts = new ArrayList<Dictionary>();
+			currentDictionary = new Dictionary();
+			workspace.getDictioanries().add(currentDictionary);
+			dicts.add(currentDictionary);
+			workspace.setDictioanries(dicts);
+		}
 	}
 	
 	public void save() {
@@ -52,7 +67,7 @@ public class PairXmlDao implements PairDao{
 							.getBytes());
 			fos.write("\r\n<?xml-stylesheet type=\"text/xsl\" href=\"Words_prn.xsl\"?>\r\n"
 							.getBytes());
-			fos.write(xstream.toXML(dictionary).getBytes("UTF-8"));
+			fos.write(xstream.toXML(workspace).getBytes("UTF-8"));
 			fos.flush();
 			fos.close();
 
@@ -61,7 +76,7 @@ public class PairXmlDao implements PairDao{
 		}
 	}
 	public Pair[] getAllPairs(){
-		return dictionary.getPairs().toArray(new Pair[dictionary.getPairs().size()]);		
+		return currentDictionary.getPairs().toArray(new Pair[currentDictionary.getPairs().size()]);		
 	}
 
 	public void addNew(Pair pair) {		
@@ -75,15 +90,15 @@ public class PairXmlDao implements PairDao{
 			fw.setEnglish(eng);
 			fw.setTranscription("");
 			fw.setTranscription("");
-			dictionary.getPairs().add(fw);
+			currentDictionary.getPairs().add(fw);
 		}
 		return fw;
 	}
 
 	public String[] getAllEnglish() {//TODO ADD sort options 
-		String[] res = new String[dictionary.getPairs().size()];
+		String[] res = new String[currentDictionary.getPairs().size()];
 		int i = 0;
-		for (Pair word : dictionary.getPairs()) {
+		for (Pair word : currentDictionary.getPairs()) {
 			res[i] = word.getEnglish();
 			i++;
 		}
@@ -93,7 +108,7 @@ public class PairXmlDao implements PairDao{
 
 	public Pair getPair(String eng) {
 		Pair res = null;
-		for (Pair word : dictionary.getPairs()) {
+		for (Pair word : currentDictionary.getPairs()) {
 			if (word.getEnglish().equals(eng)) {
 				res = word;
 			}
@@ -103,23 +118,23 @@ public class PairXmlDao implements PairDao{
 
 	public Pair remove(Pair pair) {
 		Pair res = null;
-		int indexDel = dictionary.getPairs().indexOf(pair);
+		int indexDel = currentDictionary.getPairs().indexOf(pair);
 		int indexSibl = -1; 
-		dictionary.getPairs().remove(pair);	
-		dictionary.getTrash().add(pair);
-		if(dictionary.getPairs().size() > indexDel){
+		currentDictionary.getPairs().remove(pair);	
+		currentDictionary.getTrash().add(pair);
+		if(currentDictionary.getPairs().size() > indexDel){
 			indexSibl = indexDel;
 		}
-		else if(dictionary.getPairs().size() > 0 && dictionary.getPairs().size() <= indexDel){
-			indexSibl = dictionary.getPairs().size()-1;
+		else if(currentDictionary.getPairs().size() > 0 && currentDictionary.getPairs().size() <= indexDel){
+			indexSibl = currentDictionary.getPairs().size()-1;
 		}
 		if(indexSibl != -1)
-			res =  dictionary.getPairs().get(indexSibl); 
+			res =  currentDictionary.getPairs().get(indexSibl); 
 		return res;
 	}
 	
 	  public void shuffle()
 	  {
-	    Collections.shuffle(this.dictionary.getPairs());
+	    Collections.shuffle(this.currentDictionary.getPairs());
 	  }
 }

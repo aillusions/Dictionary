@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-stylesheet type="text/xsl" href="Words_prn.xsl"?>
-<dictionary>
-  <working-list>
-    <correspondence inuse="false">
-      <english>fsdfsd</english>
-      <russian></russian>
-      <transcription></transcription>
-      <asksQuantity>0</asksQuantity>
-      <rightAnswerQuantity>0</rightAnswerQuantity>
-      <attemtpsQuantity>0</attemtpsQuantity>
-    </correspondence>
-  </working-list>
-  <removed-list>
-    <correspondence inuse="false">
-      <english>xdfsdfsdfs</english>
-      <russian></russian>
-      <transcription></transcription>
-      <asksQuantity>0</asksQuantity>
-      <rightAnswerQuantity>0</rightAnswerQuantity>
-      <attemtpsQuantity>0</attemtpsQuantity>
-    </correspondence>
-    <correspondence inuse="false">
-      <english>dfsdfsd</english>
-      <russian></russian>
-      <transcription></transcription>
-      <asksQuantity>0</asksQuantity>
-      <rightAnswerQuantity>0</rightAnswerQuantity>
-      <attemtpsQuantity>0</attemtpsQuantity>
-    </correspondence>
-  </removed-list>
-</dictionary>
+<workspace>
+  <dictionaries>
+    <dictionary id="english">
+      <working-list>
+        <correspondence inuse="false">
+          <english>fsdfsd</english>
+          <russian>asdasd</russian>
+          <transcription>aSdasdasdasd</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>asdasdasdasd</english>
+          <russian>asdasd</russian>
+          <transcription>asdasd</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>asdasdasd</english>
+          <russian>asdasdasd</russian>
+          <transcription>asdasd</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
+      <removed-list>
+        <correspondence inuse="false">
+          <english>xdfsdfsdfs</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>dfsdfsd</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </removed-list>
+      <display-name>English</display-name>
+    </dictionary>
+  </dictionaries>
+  <default-dict-id>
+		english
+	</default-dict-id>
+</workspace>

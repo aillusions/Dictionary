@@ -12,8 +12,10 @@ public class Pair {
 
 	@XStreamAlias("english")
 	private String english;
+	
 	@XStreamAlias("russian")
 	private String russian;
+	
 	@XStreamAlias("transcription")
 	private String transcription;
 
