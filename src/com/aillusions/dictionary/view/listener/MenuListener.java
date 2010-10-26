@@ -32,6 +32,7 @@ public class MenuListener implements ActionListener {
 	public static final String REMOVE_CURRENT_WORD = "14";
 	public static final String ADD_NEW_DICT = "15";
 	public static final String SELECT_DICT = "16";
+	public static final String SAVE_EXIT = "17";
 	
 	public MenuListener(Manager dictionary, TopEditor topEditor){
 		this.dictionary = dictionary;
@@ -92,6 +93,9 @@ public class MenuListener implements ActionListener {
 			}else if(e.getActionCommand().equals(SELECT_DICT)){				
 				dictionary.selectDictionary(((JMenuItem)e.getSource()).getText());
 				topEditor.refresh(true, true);
+			}else if(e.getActionCommand().equals(SAVE_EXIT)){				
+				dictionary.saveInFile();
+				System.exit(1);
 			}
 	}
 

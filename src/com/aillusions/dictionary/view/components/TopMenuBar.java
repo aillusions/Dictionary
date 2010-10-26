@@ -83,6 +83,7 @@ public class TopMenuBar extends JMenuBar{
 		menu.addSeparator();	
 		menuItem = new JMenuItem("Save and exit");
 		menuItem.addActionListener(menuListener);
+		menuItem.setActionCommand(MenuListener.SAVE_EXIT);
 		menu.add(menuItem);
 		
 		//---------------
