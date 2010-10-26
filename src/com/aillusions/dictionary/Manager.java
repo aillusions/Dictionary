@@ -28,9 +28,9 @@ public class Manager {
 	private PairDao pdao = null;
 	private String currSample;
 	Trainer trainer;
-	private static String ALL_WORDS_XSL = "com/myjavaserver/aillusions/TransSheet.xsl";
-	private static String INUSE_WORDS_XSL = "com/myjavaserver/aillusions/TransSheetInUse.xsl";
-	private static String ALL_SAMPLES_XSL = "com/myjavaserver/aillusions/TransSheetSamples.xsl";
+	private static String ALL_WORDS_XSL = "com/aillusions/dictionary/TransSheet.xsl";
+	private static String INUSE_WORDS_XSL = "com/aillusions/dictionary/TransSheetInUse.xsl";
+	private static String ALL_SAMPLES_XSL = "com/aillusions/dictionary/TransSheetSamples.xsl";
 	private static String w1 = "c:\\Program Files\\MSOffice\\OFFICE11\\WINWORD.EXE";
 	private static String w2 = "c:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE";
 
@@ -265,17 +265,13 @@ public class Manager {
 		try {
 			InputStream localInputStream = null;
 			if (!(paramBoolean1))
-				localInputStream = super.getClass().getClassLoader()
-						.getResourceAsStream(ALL_WORDS_XSL);
+				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_WORDS_XSL);
 			else if (!(paramBoolean2))
-				localInputStream = super.getClass().getClassLoader()
-						.getResourceAsStream(INUSE_WORDS_XSL);
+				localInputStream = super.getClass().getClassLoader().getResourceAsStream(INUSE_WORDS_XSL);
 			else
-				localInputStream = super.getClass().getClassLoader()
-						.getResourceAsStream(ALL_SAMPLES_XSL);
+				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_SAMPLES_XSL);
 			if (localInputStream != null)
-				localTransformer = localTransformerFactory
-						.newTransformer(new StreamSource(localInputStream));
+				localTransformer = localTransformerFactory.newTransformer(new StreamSource(localInputStream));
 			else
 				System.out.println(localInputStream);
 		} catch (TransformerConfigurationException localTransformerConfigurationException) {
@@ -288,8 +284,7 @@ public class Manager {
 			localFileNotFoundException.printStackTrace();
 		}
 		try {
-			localTransformer.transform(new StreamSource(localFile),
-					new StreamResult(localFileOutputStream));
+			localTransformer.transform(new StreamSource(localFile),	new StreamResult(localFileOutputStream));
 		} catch (Exception localException) {
 			localException.printStackTrace();
 		}

@@ -440,7 +440,8 @@ xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:dt="uuid:C2F41010-6
 		
 	   
 
-		      <xsl:for-each select="dictionary/correspondence">		     
+		      <xsl:for-each select="workspace/dictionaries/dictionary/working-list/correspondence">	
+
 		
 			<w:p wsp:rsidR="00D82FB2" wsp:rsidRPr="00D82FB2" wsp:rsidRDefault="00D82FB2" wsp:rsidP="00D82FB2">
 				<w:pPr>

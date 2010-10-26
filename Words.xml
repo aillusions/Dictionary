@@ -4,10 +4,11 @@
   <dictionaries>
     <dictionary id="english">
       <working-list>
-        <correspondence inuse="false">
+        <correspondence inuse="true">
           <english>fsdfsd</english>
           <russian>asdasd</russian>
-          <transcription>aSdasdasdasd</transcription>
+          <transcription>aSdasdasdasd--</transcription>
+          <sample>33333333333333333</sample>
           <asksQuantity>0</asksQuantity>
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
@@ -16,6 +17,7 @@
           <english>asdasdasdasd</english>
           <russian>asdasd</russian>
           <transcription>asdasd</transcription>
+          <sample>2222222222222222</sample>
           <asksQuantity>0</asksQuantity>
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
@@ -24,6 +26,7 @@
           <english>asdasdasd</english>
           <russian>asdasdasd</russian>
           <transcription>asdasd</transcription>
+          <sample>1111111111111</sample>
           <asksQuantity>0</asksQuantity>
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
@@ -40,6 +43,14 @@
         </correspondence>
         <correspondence inuse="false">
           <english>dfsdfsd</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>qweqweqwe</english>
           <russian></russian>
           <transcription></transcription>
           <asksQuantity>0</asksQuantity>

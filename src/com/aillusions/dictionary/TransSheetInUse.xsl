@@ -440,7 +440,7 @@ xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:dt="uuid:C2F41010-6
 		
 	   
 
-		      <xsl:for-each select="dictionary/correspondence">		     
+		      <xsl:for-each select="workspace/dictionaries/dictionary/working-list/correspondence">		     
 		
 		<xsl:if test="@inuse = 'true'">
 
