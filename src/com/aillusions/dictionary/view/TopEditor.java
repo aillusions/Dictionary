@@ -7,16 +7,22 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 import java.util.Random;
 
 import javax.swing.AbstractListModel;
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -24,6 +30,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import com.aillusions.dictionary.Manager;
+import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.components.AudioPanel;
 import com.aillusions.dictionary.view.components.KeyBoardPanel;
 import com.aillusions.dictionary.view.components.SpecialSymbolsPanel;
@@ -79,13 +86,15 @@ public class TopEditor extends JFrame {
 		}
 
 		dictionary = new Manager("words.xml");
+		dictionary.Load();
+		
 		menuListener = new MenuListener(dictionary, this);
 		mainDictPanelListener = new MainDictPanelListener(dictionary, this);
 		prevSelectedIndex = 0;
 		nextSelRandom = new Random(0L);
 		initComponents();
-		setJMenuBar(new TopMenuBar(menuListener));
-		dictionary.Load();
+		setJMenuBar(new TopMenuBar(menuListener, dictionary));
+		
 		WordsList_Lst.setListData(dictionary.getAllWords());
 		jListSamples.setListData(new String[0]);
 		refresh(true, true);
@@ -99,20 +108,16 @@ public class TopEditor extends JFrame {
 	private void initComponents() {
 
 		getContentPane().setLayout(null);
-
-		Rename_Btn = new JButton();
+		
 		specialSymbolsPanel = new SpecialSymbolsPanel(mainDictPanelListener);
 		keyBoardPanel = new KeyBoardPanel(mainDictPanelListener);
 		audioPanel = new AudioPanel(mainDictPanelListener);
-
 		Word_TextF = new JTextField();
 		Translate_TextF = new JTextField();
 		Transcription_TextF = new JTextField();
 		Remove_Btn = new JButton();
 		jButtRemSample = new JButton();
-
 		jTxtSearch = new JTextField();
-
 		jScrollPane3 = new JScrollPane();
 		selectNextRandomBtn = new JButton();
 		dellFromRight_all = new JButton();
@@ -120,16 +125,11 @@ public class TopEditor extends JFrame {
 		addToRight_all = new JButton();
 		addToRight_one = new JButton();
 		jTextSamplesSearch = new JTextField();
+		Rename_Btn = new JButton();
 
-		specialSymbolsPanel.setBounds(5, 92, 350, 28);
 		add(specialSymbolsPanel);
-
-		keyBoardPanel.setBounds(5, 120, 350, 85);
 		add(keyBoardPanel);
-
-		audioPanel.setBounds(240, 10, 150, 25);
 		add(audioPanel);
-
 		add(Remove_Btn);
 		add(Rename_Btn);
 		add(Transcription_TextF);
@@ -145,6 +145,9 @@ public class TopEditor extends JFrame {
 		add(jTextSamplesSearch);
 		add(jTxtSearch);
 
+		specialSymbolsPanel.setBounds(5, 92, 350, 28);
+		keyBoardPanel.setBounds(5, 120, 350, 85);
+		audioPanel.setBounds(240, 10, 150, 25);		
 		Translate_TextF.setBounds(6, 38, 230, 21);
 
 		jButtRemSample.setText("del");
@@ -490,4 +493,26 @@ public class TopEditor extends JFrame {
 		inUseListRefresh();
 	}
 
+	public void regenDictList() {
+		
+		JMenu submenu;
+		JMenuItem menuItem;
+	
+		submenu = (JMenu)getJMenuBar().getMenu(0).getItem(3);
+		submenu.removeAll();	
+		
+		List<Dictionary> dictioanries = dictionary.getWorkspace().getDictioanries();
+		ButtonGroup group = new ButtonGroup();	
+		
+		for(Dictionary d : dictioanries){
+			menuItem = new JRadioButtonMenuItem(d.getDisplayName());
+			group.add(menuItem);
+			menuItem.addActionListener(menuListener);
+			menuItem.setActionCommand(MenuListener.SELECT_DICT);
+			if(dictionary.getCurrentDictrionary().getDisplayName().equals(d.getDisplayName())){
+				menuItem.setSelected(true);
+			}
+			submenu.add(menuItem);
+		}
+	}
 }

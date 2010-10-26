@@ -2,6 +2,7 @@ package com.aillusions.dictionary.view.components;
 
 import java.awt.Font;
 import java.awt.Insets;
+import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBoxMenuItem;
@@ -10,13 +11,15 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 
+import com.aillusions.dictionary.Manager;
+import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.listener.MenuListener;
 
 public class TopMenuBar extends JMenuBar{
 	
 	private static final long serialVersionUID = 1L;
 
-	public TopMenuBar(MenuListener menuListener) {
+	public TopMenuBar(MenuListener menuListener, Manager namager) {
 		
 		//JMenuBar menuBar;
 		JMenu menu, submenu;
@@ -39,19 +42,30 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(MenuListener.LOAD);
 		menu.add(menuItem);
 		menu.addSeparator();		
-		submenu = new JMenu("Select current");
-		menuItem = new JMenuItem("English");
-		menuItem.addActionListener(menuListener);
-		submenu.add(menuItem);
-		menuItem = new JMenuItem("Italian");
-		menuItem.addActionListener(menuListener);
-		submenu.add(menuItem);
+		submenu = new JMenu("Select current > ");
+		
+		List<Dictionary> dictioanries = namager.getWorkspace().getDictioanries();
+		
+		ButtonGroup group = new ButtonGroup();	
+		
+		for(Dictionary d : dictioanries){
+			JRadioButtonMenuItem menuItem1 = new JRadioButtonMenuItem(d.getDisplayName());
+			group.add(menuItem1);
+			menuItem1.addActionListener(menuListener);
+			menuItem1.setActionCommand(MenuListener.SELECT_DICT);
+			if(namager.getCurrentDictrionary().getDisplayName().equals(d.getDisplayName())){
+				menuItem1.setSelected(true);
+			}
+			submenu.add(menuItem1);
+		}
 		menu.add(submenu);
+		
 		menuItem = new JMenuItem("Use current as default");
 		menuItem.addActionListener(menuListener);
 		menu.add(menuItem);		
 		menuItem = new JMenuItem("Create new");
 		menuItem.addActionListener(menuListener);
+		menuItem.setActionCommand(MenuListener.ADD_NEW_DICT);
 		menu.add(menuItem);			
 		menu.addSeparator();	
 		menuItem = new JMenuItem("Convert all and open Word");
@@ -81,7 +95,7 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(MenuListener.EXPAND);
 		menu.add(menuItem);
 
-		ButtonGroup group = new ButtonGroup();	
+		group = new ButtonGroup();	
 		
 		submenu = new JMenu("Language");
 		menuItem = new JRadioButtonMenuItem("English");
@@ -121,10 +135,10 @@ public class TopMenuBar extends JMenuBar{
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Remove current");
 		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.REMOVE_CURRENT);
+		menuItem.setActionCommand(MenuListener.REMOVE_CURRENT_WORD);
 		menu.add(menuItem);
 		menu.addSeparator();
-		menuItem = new JMenuItem("Mov sample up");
+		menuItem = new JMenuItem("Move sample up");
 		menuItem.addActionListener(menuListener);
 		menuItem.setActionCommand(MenuListener.MOVE_SAMPLE_UP);
 		menu.add(menuItem);

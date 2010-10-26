@@ -18,14 +18,15 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import com.aillusions.dictionary.audio.AudioManager;
-import com.aillusions.dictionary.dao.PairDao;
 import com.aillusions.dictionary.dao.PairXmlDao;
+import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.model.Pair;
+import com.aillusions.dictionary.model.Workspace;
 
 public class Manager {
 	private Pair currentPair;
 	private AudioManager audioMan = new AudioManager();
-	private PairDao pdao = null;
+	private PairXmlDao pdao = null;
 	private String currSample;
 	Trainer trainer;
 	private boolean playOnSelections;
@@ -45,11 +46,13 @@ public class Manager {
 		return playOnSelections;
 	}
 
+	public Workspace getWorkspace(){
+		return pdao.getWorkspace();
+	}
 
 	public void setPlayOnSelections(boolean playOnSelections) {
 		this.playOnSelections = playOnSelections;
 	}
-
 
 	public AudioManager getAudioMan() {
 		return this.audioMan;
@@ -92,6 +95,24 @@ public class Manager {
 			i = 1;
 		}
 		return getBool(i);
+	}
+	
+	public void selectDictionary(String name) {
+		pdao.setCurrentDict(pdao.getDictionary(name));
+	}
+	
+	public boolean addNewDictionary() {
+		
+		String paramString = null;
+		if ((paramString == null) || (paramString.trim().equals("")))
+			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),
+					"Input word please:", "Add new word", 3);
+		if ((paramString != null) && (paramString.length() > 0)
+				&& (this.pdao.getDictionary(paramString) == null)) {
+			 this.pdao.addNewDictionary(paramString);
+		}
+		
+		return true;
 	}
 
 	private boolean getBool(int i) {
@@ -345,6 +366,11 @@ public class Manager {
 
 	public void shuffle() {
 		this.pdao.shuffle();
+	}
+
+
+	public Dictionary getCurrentDictrionary() {
+		return pdao.getCurrentDictionary();
 	}
 }
 

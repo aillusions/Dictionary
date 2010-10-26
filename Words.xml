@@ -2,17 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="Words_prn.xsl"?>
 <workspace>
   <dictionaries>
-    <dictionary id="english">
-      <working-list>
-        <correspondence inuse="false">
-          <english>qweqweqwe</english>
-          <russian>adasda</russian>
-          <transcription>sdasdas</transcription>
-          <asksQuantity>0</asksQuantity>
-          <rightAnswerQuantity>0</rightAnswerQuantity>
-          <attemtpsQuantity>0</attemtpsQuantity>
-        </correspondence>
-      </working-list>
+    <dictionary>
+      <working-list/>
       <removed-list>
         <correspondence inuse="false">
           <english>xdfsdfsdfs</english>
@@ -97,8 +88,44 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
+        <correspondence inuse="false">
+          <english>qweqweqwe</english>
+          <russian>adasda</russian>
+          <transcription>sdasdas</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>123123123</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>123123123123123</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>123123123234re</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
       </removed-list>
       <display-name>English</display-name>
+    </dictionary>
+    <dictionary>
+      <working-list/>
+      <display-name>Italian</display-name>
     </dictionary>
   </dictionaries>
   <default-dict-id>

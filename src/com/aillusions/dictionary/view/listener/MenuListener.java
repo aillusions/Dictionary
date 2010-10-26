@@ -9,6 +9,7 @@ import javax.swing.JMenuItem;
 import com.aillusions.dictionary.Manager;
 import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.TopEditor;
+import com.aillusions.dictionary.view.components.TopMenuBar;
 
 public class MenuListener implements ActionListener {
 	
@@ -28,7 +29,9 @@ public class MenuListener implements ActionListener {
 	public static final String EXPAND = "11";
 	public static final String MOVE_SAMPLE_UP = "12";
 	public static final String EDIT_CURRENT = "13";
-	public static final String REMOVE_CURRENT = "14";
+	public static final String REMOVE_CURRENT_WORD = "14";
+	public static final String ADD_NEW_DICT = "15";
+	public static final String SELECT_DICT = "16";
 	
 	public MenuListener(Manager dictionary, TopEditor topEditor){
 		this.dictionary = dictionary;
@@ -77,10 +80,17 @@ public class MenuListener implements ActionListener {
 					return;
 				dictionary.renameCurrent(null);
 				topEditor.refresh(true, true);
-			}else if(e.getActionCommand().equals(REMOVE_CURRENT)){				
+			}else if(e.getActionCommand().equals(REMOVE_CURRENT_WORD)){				
 				if (dictionary.getCurrentPair() == null)
 					topEditor.Alert("You have to select one before!");
 				dictionary.removeCurrent();
+				topEditor.refresh(true, true);
+			}else if(e.getActionCommand().equals(ADD_NEW_DICT)){				
+				dictionary.addNewDictionary();
+				topEditor.refresh(true, true);
+				topEditor.regenDictList();
+			}else if(e.getActionCommand().equals(SELECT_DICT)){				
+				dictionary.selectDictionary(((JMenuItem)e.getSource()).getText());
 				topEditor.refresh(true, true);
 			}
 	}

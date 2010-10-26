@@ -18,9 +18,6 @@ public class Dictionary {
 	@XStreamAlias("display-name")
 	private String displayName;
 	
-	@XStreamAsAttribute()
-	private String id;
-	
 	public List<Pair> getPairs() {
 		if(pairs == null){
 			pairs = new ArrayList<Pair>();
@@ -46,14 +43,5 @@ public class Dictionary {
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	
-	
 	
 }
