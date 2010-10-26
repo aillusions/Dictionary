@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet type="text/xsl" href="Words_prn.xsl"?>
+<?xml-stylesheet type="text/xsl" href="words_prn.xsl"?>
 <workspace>
   <dictionaries>
     <dictionary>
-      <working-list/>
+      <working-list>
+        <correspondence inuse="true">
+          <english>1111111</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="true">
+          <english>weqweqwe</english>
+          <russian>qwe</russian>
+          <transcription>qweqwe</transcription>
+          <sample>qweqweqweqwe</sample>
+          <sample>qweqwe</sample>
+          <sample>qweqwe</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>qweqweqwdfsf</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="true">
+          <english>qewrtfgdaeq34etgfd</english>
+          <russian>qwe</russian>
+          <transcription>qweqwe</transcription>
+          <sample>qwee123452453353256</sample>
+          <sample>qweqweqwe</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
       <removed-list>
         <correspondence inuse="false">
           <english>xdfsdfsdfs</english>
@@ -124,8 +162,39 @@
       <display-name>English</display-name>
     </dictionary>
     <dictionary>
-      <working-list/>
+      <working-list>
+        <correspondence inuse="false">
+          <english>qweqwe</english>
+          <russian>asd</russian>
+          <transcription>asdasdasd</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>aSDasASasaasd</english>
+          <russian>asd</russian>
+          <transcription>∫asdasdʌ-:nb  uedeɔx</transcription>
+          <sample>asdasdasdasd</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
       <display-name>Italian</display-name>
+    </dictionary>
+    <dictionary>
+      <working-list>
+        <correspondence inuse="false">
+          <english>3r4234234234</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
+      <display-name>1234567</display-name>
     </dictionary>
   </dictionaries>
   <default-dict-id>

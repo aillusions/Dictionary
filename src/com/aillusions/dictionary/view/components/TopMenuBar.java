@@ -53,7 +53,7 @@ public class TopMenuBar extends JMenuBar{
 			group.add(menuItem1);
 			menuItem1.addActionListener(menuListener);
 			menuItem1.setActionCommand(MenuListener.SELECT_DICT);
-			if(namager.getCurrentDictrionary().getDisplayName().equals(d.getDisplayName())){
+			if(namager.getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
 				menuItem1.setSelected(true);
 			}
 			submenu.add(menuItem1);
@@ -68,15 +68,15 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(MenuListener.ADD_NEW_DICT);
 		menu.add(menuItem);			
 		menu.addSeparator();	
-		menuItem = new JMenuItem("Convert all and open Word");
+		menuItem = new JMenuItem("Open all in Word");
 		menuItem.addActionListener(menuListener);
 		menuItem.setActionCommand(MenuListener.OPEN_ALL_WORDS_IN_WORD);
 		menu.add(menuItem);
-		menuItem = new JMenuItem("Convert selected and open Word");
+		menuItem = new JMenuItem("Open selected in Word");
 		menuItem.addActionListener(menuListener);
 		menuItem.setActionCommand(MenuListener.OPEN_SELECTED_WORDS_IN_WORD);
 		menu.add(menuItem);
-		menuItem = new JMenuItem("Convert samples and open Word");
+		menuItem = new JMenuItem("Open examples in Word");
 		menuItem.addActionListener(menuListener);
 		menuItem.setActionCommand(MenuListener.OPEN_SAMPLES_IN_WORD);
 		menu.add(menuItem);

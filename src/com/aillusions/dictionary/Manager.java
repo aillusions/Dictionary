@@ -1,65 +1,90 @@
 package com.aillusions.dictionary;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
+import java.util.Collections;
 import java.util.LinkedList;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
-
 import com.aillusions.dictionary.audio.AudioManager;
-import com.aillusions.dictionary.dao.PairXmlDao;
+import com.aillusions.dictionary.dao.XmlStorage;
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.model.Pair;
 import com.aillusions.dictionary.model.Workspace;
+import com.aillusions.dictionary.xsl.DocConverter;
 
 public class Manager {
+
+	private Workspace workspace;
+	private Dictionary currentDictionary;
 	private Pair currentPair;
 	private AudioManager audioMan = new AudioManager();
-	private PairXmlDao pdao = null;
+	private XmlStorage pdao = null;
 	private String currSample;
-	Trainer trainer;
+	private Trainer trainer;
 	private boolean playOnSelections;
-	private static String ALL_WORDS_XSL = "com/aillusions/dictionary/TransSheet.xsl";
-	private static String INUSE_WORDS_XSL = "com/aillusions/dictionary/TransSheetInUse.xsl";
-	private static String ALL_SAMPLES_XSL = "com/aillusions/dictionary/TransSheetSamples.xsl";
-	private static String w1 = "c:\\Program Files\\MSOffice\\OFFICE11\\WINWORD.EXE";
-	private static String w2 = "c:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE";
+
+	public Manager(String paramString) {
+		this.pdao = new XmlStorage(paramString);
+	}
+
+	public void setCurrentDict(Dictionary dict) {
+		if (dict == null) {
+			throw new RuntimeException("Dictionary can not be null.");
+		}
+		if (workspace.getDictioanries().contains(dict)) {
+			currentDictionary = dict;
+		}
+	}
+
+	public Pair[] getAllPairs() {
+		return currentDictionary.getPairs().toArray(
+				new Pair[currentDictionary.getPairs().size()]);
+	}
+
+	public String[] getAllEnglish() {
+		String[] res = new String[currentDictionary.getPairs().size()];
+		int i = 0;
+		for (Pair word : currentDictionary.getPairs()) {
+			res[i] = word.getEnglish();
+			i++;
+		}
+
+		return res;
+	}
+
+	public Pair getPair(String eng) {
+		Pair res = null;
+		for (Pair word : currentDictionary.getPairs()) {
+			if (word.getEnglish().equals(eng)) {
+				res = word;
+			}
+		}
+		return res;
+	}
+
+	public Pair remove(Pair pair) {
+		Pair res = null;
+		int indexDel = currentDictionary.getPairs().indexOf(pair);
+		int indexSibl = -1;
+		currentDictionary.getPairs().remove(pair);
+		currentDictionary.getTrash().add(pair);
+		if (currentDictionary.getPairs().size() > indexDel) {
+			indexSibl = indexDel;
+		} else if (currentDictionary.getPairs().size() > 0
+				&& currentDictionary.getPairs().size() <= indexDel) {
+			indexSibl = currentDictionary.getPairs().size() - 1;
+		}
+		if (indexSibl != -1)
+			res = currentDictionary.getPairs().get(indexSibl);
+		return res;
+	}
+
+	public void shuffle() {
+		Collections.shuffle(this.currentDictionary.getPairs());
+	}
 
 	public void runTrainer() {
 		this.trainer = new Trainer(this);
 		this.trainer.startTraining();
-	}
-	
-
-	public boolean isPlayOnSelections() {
-		return playOnSelections;
-	}
-
-	public Workspace getWorkspace(){
-		return pdao.getWorkspace();
-	}
-
-	public void setPlayOnSelections(boolean playOnSelections) {
-		this.playOnSelections = playOnSelections;
-	}
-
-	public AudioManager getAudioMan() {
-		return this.audioMan;
-	}
-
-	public Manager(String paramString) {
-		this.pdao = new PairXmlDao(paramString);
 	}
 
 	private String getCurentAudioItem() {
@@ -73,15 +98,26 @@ public class Manager {
 	}
 
 	public void Load() {
-		this.pdao.load();
-		if ((getCurrentPair() == null)
-				|| (this.pdao.getPair(getCurrentPair().getEnglish()) != null))
+
+		workspace = pdao.load();
+
+		if (workspace.getDictioanries().size() > 0) {
+			currentDictionary = workspace.getDictioanries().get(0);
+		} else {
+			while(!addNewDictionary()){
+				//Have to specify at least one dictionary!
+			}
+		}		
+		
+		if ((getCurrentPair() == null)	|| (getPair(getCurrentPair().getEnglish()) != null)){
 			return;
+		}
+		
 		setCurWord(null);
 	}
 
 	public void saveInFile() {
-		this.pdao.save();
+		this.pdao.save(workspace);
 	}
 
 	public boolean addNew(String paramString) {
@@ -90,29 +126,44 @@ public class Manager {
 			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),
 					"Input word please:", "Add new word", 3);
 		if ((paramString != null) && (paramString.length() > 0)
-				&& (this.pdao.getPair(paramString) == null)) {
-			setCurWord(this.pdao.addNew(paramString));
+				&& (getPair(paramString) == null)) {
+
+			Pair fw = null;
+			if (paramString != null) {
+				fw = new Pair();
+				fw.setEnglish(paramString);
+				fw.setTranscription("");
+				fw.setTranscription("");
+				currentDictionary.getPairs().add(fw);
+			}
+			setCurWord(fw);
+
 			i = 1;
 		}
 		return getBool(i);
 	}
-	
+
 	public void selectDictionary(String name) {
-		pdao.setCurrentDict(pdao.getDictionary(name));
+		setCurrentDict(getDictionaryByName(name));
 	}
-	
+
 	public boolean addNewDictionary() {
-		
+
 		String paramString = null;
-		if ((paramString == null) || (paramString.trim().equals("")))
-			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),
-					"Input word please:", "Add new word", 3);
-		if ((paramString != null) && (paramString.length() > 0)
-				&& (this.pdao.getDictionary(paramString) == null)) {
-			 this.pdao.addNewDictionary(paramString);
+		
+		if ((paramString == null) || (paramString.trim().equals(""))){
+			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"), "Input dictionary name:", "Create new dictionary", 3);
 		}
 		
-		return true;
+		if ((paramString != null) && (paramString.length() > 0)	&& (getDictionaryByName(paramString) == null)) {
+			Dictionary res = new Dictionary();
+			res.setDisplayName(paramString);
+			workspace.getDictioanries().add(res);
+			currentDictionary = res;
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	private boolean getBool(int i) {
@@ -140,7 +191,7 @@ public class Manager {
 
 	public boolean setSelected(String paramString) {
 		int i = 0;
-		if (setCurWord(this.pdao.getPair(paramString)) != null)
+		if (setCurWord(getPair(paramString)) != null)
 			i = 1;
 		return getBool(i);
 	}
@@ -166,14 +217,14 @@ public class Manager {
 	}
 
 	public String[] getAllWords() {
-		return this.pdao.getAllEnglish();
+		return getAllEnglish();
 	}
 
 	public void removeCurrent() {
 		if (getCurrentPair() == null)
 			return;
 		this.audioMan.removeAllTightAudio(getCurrentPair().getEnglish());
-		Pair localPair = this.pdao.remove(getCurrentPair());
+		Pair localPair = remove(getCurrentPair());
 		setCurWord(localPair);
 		this.currSample = null;
 	}
@@ -183,9 +234,9 @@ public class Manager {
 			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),
 					"Input word please:", "Rename", 3);
 		if ((paramString != null) && (!(paramString.trim().equals("")))
-				&& (this.pdao.getPair(paramString) == null)) {
+				&& (getPair(paramString) == null)) {
 			getCurrentPair().setEnglish(paramString);
-			setCurWord(this.pdao.getPair(paramString));
+			setCurWord(getPair(paramString));
 		} else {
 			JOptionPane.showMessageDialog(new JFrame("Sorry"),
 					"Such word already exists, or empty.");
@@ -194,19 +245,20 @@ public class Manager {
 	}
 
 	public void remCurrSample() {
-		if (this.currSample != null)
-			getCurrentPair().removeSample(this.currSample);
-		this.currSample = null;
+		if (currSample != null)
+			getCurrentPair().removeSample(currSample);
+		currSample = null;
 	}
 
 	public void setCurrSample(String paramString) {
 		if (paramString == null)
-			this.currSample = null;
+			currSample = null;
 		else
 			for (String str : getCurrentPair().getSamples()) {
-				if (!(paramString.equals(str)))
+				if (!(paramString.equals(str))){
 					continue;
-				this.currSample = str;
+				}
+				currSample = str;
 			}
 	}
 
@@ -220,46 +272,14 @@ public class Manager {
 		getCurrentPair();
 	}
 
-	public String getCurrSample() {
-		return this.currSample;
-	}
+	public void playCurrentAudioRecord() {
 
-	public void playCurrentAudioRecord(boolean paramBoolean1,
-			boolean paramBoolean2) {
 		String str1;
-		if (!(paramBoolean2)) {
-			str1 = null;
-			if (getCurentAudioItem() != null) {
-				str1 = getCurentAudioItem();
-				this.audioMan.playRecording("audio/" + str1,
-						AudioManager.AUDIO_EXTs, paramBoolean1);
-			}
-		} else {
-			try {
-				str1 = getCurrentPair().getEnglish();
-				String str2 = str1 + ".mp3";
-				String str3 = "audio/online/" + str2;
-				if (!(new File(str3).exists())) {
-					URL localURL = new URL(
-							"http://www.english-easy.info/talker/words/" + str2);
-					URLConnection localURLConnection = localURL
-							.openConnection();
-					InputStream localInputStream = localURLConnection
-							.getInputStream();
-					FileOutputStream localFileOutputStream = new FileOutputStream(
-							str3);
-					byte[] arrayOfByte = new byte[10000];
-					int i;
-					while ((i = localInputStream.read(arrayOfByte)) > 0) {
-						localFileOutputStream.write(arrayOfByte, 0, i);
-					}
-					localInputStream.close();
-					localFileOutputStream.flush();
-					localFileOutputStream.close();
-				}
-				this.audioMan.playRecording(str3);
-			} catch (IOException localIOException) {
-			}
+		str1 = null;
+		if (getCurentAudioItem() != null) {
+			str1 = getCurentAudioItem();
+			this.audioMan.playRecording("audio/" + str1,
+					AudioManager.AUDIO_EXTs, true);
 		}
 	}
 
@@ -277,11 +297,14 @@ public class Manager {
 
 	public void startRecording(String paramString) {
 		String str = null;
-		if (getCurentAudioItem() != null)
-			if ((paramString == null) || (paramString.equals("")))
+		if (getCurentAudioItem() != null){
+			if ((paramString == null) || (paramString.equals(""))){
 				str = getCurentAudioItem() + ".wav";
-			else
+			}
+			else{
 				str = paramString + ".wav";
+			}
+		}
 		this.audioMan.startRecording("audio/" + str);
 	}
 
@@ -291,56 +314,12 @@ public class Manager {
 
 	public void runWord(boolean paramBoolean1, boolean paramBoolean2) {
 		saveInFile();
-		File localFile = new File("Words.xml");
-		TransformerFactory localTransformerFactory = TransformerFactory
-				.newInstance();
-		Transformer localTransformer = null;
-		try {
-			InputStream localInputStream = null;
-			if (!(paramBoolean1))
-				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_WORDS_XSL);
-			else if (!(paramBoolean2))
-				localInputStream = super.getClass().getClassLoader().getResourceAsStream(INUSE_WORDS_XSL);
-			else
-				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_SAMPLES_XSL);
-			if (localInputStream != null)
-				localTransformer = localTransformerFactory.newTransformer(new StreamSource(localInputStream));
-			else
-				System.out.println(localInputStream);
-		} catch (TransformerConfigurationException localTransformerConfigurationException) {
-			localTransformerConfigurationException.printStackTrace();
-		}
-		FileOutputStream localFileOutputStream = null;
-		try {
-			localFileOutputStream = new FileOutputStream("print.doc");
-		} catch (FileNotFoundException localFileNotFoundException) {
-			localFileNotFoundException.printStackTrace();
-		}
-		try {
-			localTransformer.transform(new StreamSource(localFile),	new StreamResult(localFileOutputStream));
-		} catch (Exception localException) {
-			localException.printStackTrace();
-		}
-		try {
-			localFileOutputStream.close();
-		} catch (IOException localIOException1) {
-			localIOException1.printStackTrace();
-		}
-		try {
-			if (new File(w1).exists())
-				Runtime.getRuntime().exec(w1 + " print.doc");
-			else if (new File(w2).exists())
-				Runtime.getRuntime().exec(w2 + " print.doc");
-			else
-				Runtime.getRuntime().exec("cmd /C print.doc");
-		} catch (IOException localIOException2) {
-			localIOException2.printStackTrace();
-		}
+		new DocConverter().runWord(paramBoolean1, paramBoolean2);
 	}
 
 	public Pair[] getAllInUsePairs() {
-		LinkedList localLinkedList = new LinkedList();
-		for (Pair localPair : this.pdao.getAllPairs()) {
+		LinkedList<Pair> localLinkedList = new LinkedList<Pair>();
+		for (Pair localPair : getAllPairs()) {
 			if (!(localPair.isInuse()))
 				continue;
 			localLinkedList.add(localPair);
@@ -350,8 +329,8 @@ public class Manager {
 	}
 
 	public String[] getAllInUseWords() {
-		LinkedList localLinkedList = new LinkedList();
-		for (Pair localPair : this.pdao.getAllPairs()) {
+		LinkedList<String> localLinkedList = new LinkedList<String>();
+		for (Pair localPair : getAllPairs()) {
 			if (!(localPair.isInuse()))
 				continue;
 			localLinkedList.add(localPair.getEnglish());
@@ -359,23 +338,39 @@ public class Manager {
 		return ((String[]) localLinkedList.toArray(new String[localLinkedList
 				.size()]));
 	}
-
-	public Pair[] getAllPairs() {
-		return this.pdao.getAllPairs();
+	
+	private Dictionary getDictionaryByName(String dictName) {
+		Dictionary res = null;
+		for (Dictionary dict : workspace.getDictioanries()) {
+			if (dict.getDisplayName().equals(dictName)) {
+				res = dict;
+			}
+		}
+		return res;
+	}
+	
+	public boolean isPlayOnSelections() {
+		return playOnSelections;
 	}
 
-	public void shuffle() {
-		this.pdao.shuffle();
+	public void setPlayOnSelections(boolean playOnSelections) {
+		this.playOnSelections = playOnSelections;
 	}
 
-
-	public Dictionary getCurrentDictrionary() {
-		return pdao.getCurrentDictionary();
+	public AudioManager getAudioMan() {
+		return audioMan;
 	}
+	
+	public Workspace getWorkspace() {
+		return workspace;
+	}
+
+	public Dictionary getCurrentDictionary() {
+		return currentDictionary;
+	}
+	
+	public String getCurrSample() {
+		return currSample;
+	}
+
 }
-
-/*
- * Location: E:\ATG\workspace\Dictionary.jar Qualified Name:
- * com.myjavaserver.aillusions.Dictionary Java Class Version: 5 (49.0) JD-Core
- * Version: 0.5.3
- */

@@ -153,7 +153,7 @@ public class MainDictPanelListener {
 	}
 
 	public void jButtPlayMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.playCurrentAudioRecord(true, false);
+		dictionary.playCurrentAudioRecord();
 	}
 
 	public void jButtDeleteRecordMouseReleased(MouseEvent paramMouseEvent) {

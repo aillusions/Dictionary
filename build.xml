@@ -18,7 +18,7 @@
 	
 	<target name="build" depends="clean">
 		<mkdir dir="bin" />	
-		<javac classpathref="top_bpath" srcdir="src" destdir="bin" encoding="UTF-8"/>
+		<javac classpathref="top_bpath" srcdir="src" destdir="bin" debug="true" encoding="UTF-8"/>
 	</target>
 
 	<target name="run" depends="build">

@@ -1,5 +1,6 @@
 package com.aillusions.dictionary.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -14,6 +15,9 @@ public class Workspace {
 	private  String defaultDictId;
 
 	public List<Dictionary> getDictioanries() {
+		if(dictioanries == null){
+			dictioanries = new ArrayList<Dictionary>();
+		}
 		return dictioanries;
 	}
 

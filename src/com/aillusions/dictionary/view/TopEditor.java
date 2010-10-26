@@ -298,7 +298,7 @@ public class TopEditor extends JFrame {
 						.getSelectedValue())) {
 					refresh(false, true);
 					if (dictionary.isPlayOnSelections())
-						dictionary.playCurrentAudioRecord(true, false);
+						dictionary.playCurrentAudioRecord();
 				}
 				WordsList_Lst.setSelectedValue(
 						WordsList_Lst.getSelectedValue(), true);
@@ -335,7 +335,7 @@ public class TopEditor extends JFrame {
 				if ((!(dictionary.isPlayOnSelections()))
 						|| (jListSamples.getSelectedIndex() == -1))
 					return;
-				dictionary.playCurrentAudioRecord(true, false);
+				dictionary.playCurrentAudioRecord();
 			}
 		};
 		jListSamples
@@ -508,7 +508,7 @@ public class TopEditor extends JFrame {
 			group.add(menuItem);
 			menuItem.addActionListener(menuListener);
 			menuItem.setActionCommand(MenuListener.SELECT_DICT);
-			if(dictionary.getCurrentDictrionary().getDisplayName().equals(d.getDisplayName())){
+			if(dictionary.getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
 				menuItem.setSelected(true);
 			}
 			submenu.add(menuItem);
