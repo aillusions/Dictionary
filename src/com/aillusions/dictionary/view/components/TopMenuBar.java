@@ -25,8 +25,6 @@ public class TopMenuBar extends JMenuBar{
 		JMenu menu, submenu;
 		JMenuItem menuItem;
 		JCheckBoxMenuItem cbMenuItem;
-
-		//menuBar = new JMenuBar();
 		
 		//---------------
 		menu = new JMenu("Dictionary");
