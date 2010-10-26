@@ -28,6 +28,7 @@ public class Manager {
 	private PairDao pdao = null;
 	private String currSample;
 	Trainer trainer;
+	private boolean playOnSelections;
 	private static String ALL_WORDS_XSL = "com/aillusions/dictionary/TransSheet.xsl";
 	private static String INUSE_WORDS_XSL = "com/aillusions/dictionary/TransSheetInUse.xsl";
 	private static String ALL_SAMPLES_XSL = "com/aillusions/dictionary/TransSheetSamples.xsl";
@@ -38,6 +39,17 @@ public class Manager {
 		this.trainer = new Trainer(this);
 		this.trainer.startTraining();
 	}
+	
+
+	public boolean isPlayOnSelections() {
+		return playOnSelections;
+	}
+
+
+	public void setPlayOnSelections(boolean playOnSelections) {
+		this.playOnSelections = playOnSelections;
+	}
+
 
 	public AudioManager getAudioMan() {
 		return this.audioMan;

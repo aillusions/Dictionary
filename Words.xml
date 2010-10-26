@@ -4,29 +4,10 @@
   <dictionaries>
     <dictionary id="english">
       <working-list>
-        <correspondence inuse="true">
-          <english>fsdfsd</english>
-          <russian>asdasd</russian>
-          <transcription>aSdasdasdasd--</transcription>
-          <sample>33333333333333333</sample>
-          <asksQuantity>0</asksQuantity>
-          <rightAnswerQuantity>0</rightAnswerQuantity>
-          <attemtpsQuantity>0</attemtpsQuantity>
-        </correspondence>
         <correspondence inuse="false">
-          <english>asdasdasdasd</english>
-          <russian>asdasd</russian>
-          <transcription>asdasd</transcription>
-          <sample>2222222222222222</sample>
-          <asksQuantity>0</asksQuantity>
-          <rightAnswerQuantity>0</rightAnswerQuantity>
-          <attemtpsQuantity>0</attemtpsQuantity>
-        </correspondence>
-        <correspondence inuse="false">
-          <english>asdasdasd</english>
-          <russian>asdasdasd</russian>
-          <transcription>asdasd</transcription>
-          <sample>1111111111111</sample>
+          <english>qweqweqwe</english>
+          <russian>adasda</russian>
+          <transcription>sdasdas</transcription>
           <asksQuantity>0</asksQuantity>
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
@@ -54,6 +35,65 @@
           <russian></russian>
           <transcription></transcription>
           <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="true">
+          <english>fsdfsd</english>
+          <russian>asdasd</russian>
+          <transcription>aSdasdasdasd--</transcription>
+          <sample>33333333333333333</sample>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>11111111111</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>asdasdasd</english>
+          <russian>asdasdasd</russian>
+          <transcription>asdasd</transcription>
+          <sample>1111111111111</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>asdasdasdasd</english>
+          <russian>asdasd</russian>
+          <transcription>asdasd</transcription>
+          <sample>2222222222222222</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>sdfasdfsdfsdfsdf</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>34234234234</english>
+          <russian>sdfvgsdfsdf</russian>
+          <transcription>θɛƷð-ɔɔwdc</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="true">
+          <english>sdfsdf</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>1</asksQuantity>
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
