@@ -28,7 +28,7 @@ import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import com.aillusions.dictionary.Manager;
+import com.aillusions.dictionary.manager.Manager;
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.components.AudioPanel;
 import com.aillusions.dictionary.view.components.KeyBoardPanel;
@@ -45,24 +45,22 @@ public class TopEditor extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	MenuListener menuListener;
+	public Manager manager;
 
-	public SpecialSymbolsPanel specialSymbolsPanel;
-	public KeyBoardPanel keyBoardPanel;
-	public MainDictPanelListener mainDictPanelListener;
-	public Manager dictionary;
+	public MainDictPanelListener mainDictPanelListener;		
+	
 	public int prevSelectedIndex;
 	public Random nextSelRandom;
 
+	public SpecialSymbolsPanel specialSymbolsPanel;
+	public KeyBoardPanel keyBoardPanel;
 	public JButton Remove_Btn;
 	public JButton Rename_Btn;
-
 	public JTextField Transcription_TextF;
 	public JTextField Translate_TextF;
 	public JTextField Word_TextF;
-
 	public JList WordsList_Lst;
 	public AudioPanel audioPanel;
-
 	public JScrollPane jScrollPane2;
 	public JScrollPane jScrollPane1;
 	public JScrollPane jScrollPane3;
@@ -78,23 +76,24 @@ public class TopEditor extends JFrame {
 	public JList jListSamples;
 
 	public TopEditor() {
+		
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 		} catch (Exception localException) {
 			localException.printStackTrace();
 		}
 
-		dictionary = new Manager("words.xml");
-		dictionary.Load();
+		manager = new Manager("words.xml");
+		manager.Load();
 		
-		menuListener = new MenuListener(dictionary, this);
-		mainDictPanelListener = new MainDictPanelListener(dictionary, this);
+		menuListener = new MenuListener(manager, this);
+		mainDictPanelListener = new MainDictPanelListener(manager, this);
 		prevSelectedIndex = 0;
 		nextSelRandom = new Random(0L);
 		initComponents();
-		setJMenuBar(new TopMenuBar(menuListener, dictionary));
+		setJMenuBar(new TopMenuBar(menuListener, manager));
 		
-		WordsList_Lst.setListData(dictionary.getAllWords());
+		WordsList_Lst.setListData(manager.getPairsManager().getAllKeys());
 		jListSamples.setListData(new String[0]);
 		refresh(true, true);
 		WordsList_Lst.setSelectedIndex(0);
@@ -290,15 +289,15 @@ public class TopEditor extends JFrame {
 			public void valueChanged(ListSelectionEvent paramListSelectionEvent) {
 				if (paramListSelectionEvent.getValueIsAdjusting())
 					return;
-				if ((dictionary.getCurrentPair() != null)
-						&& (!(dictionary.aplyCurrWordChanged(Translate_TextF
+				if ((manager.getPairsManager().getCurrentPair() != null)
+						&& (!(manager.getPairsManager().aplyCurrWordChanged(Translate_TextF
 								.getText(), Transcription_TextF.getText()))))
 					Alert("Your input was not aplyed!");
-				if (dictionary.setSelected((String) WordsList_Lst
+				if (manager.getPairsManager().setSelected((String) WordsList_Lst
 						.getSelectedValue())) {
 					refresh(false, true);
-					if (dictionary.isPlayOnSelections())
-						dictionary.playCurrentAudioRecord();
+					if (manager.getAudioMan().isPlayOnSelections())
+						manager.getAudioMan().playCurrentAudioRecord();
 				}
 				WordsList_Lst.setSelectedValue(
 						WordsList_Lst.getSelectedValue(), true);
@@ -328,14 +327,14 @@ public class TopEditor extends JFrame {
 				if (paramListSelectionEvent.getValueIsAdjusting())
 					return;
 				if (jListSamples.getSelectedIndex() == -1)
-					dictionary.setCurrSample(null);
+					manager.getPairsManager().setCurrSample(null);
 				else
-					dictionary.setCurrSample(jListSamples.getSelectedValue()
+					manager.getPairsManager().setCurrSample(jListSamples.getSelectedValue()
 							.toString());
-				if ((!(dictionary.isPlayOnSelections()))
+				if ((!(manager.getAudioMan().isPlayOnSelections()))
 						|| (jListSamples.getSelectedIndex() == -1))
 					return;
-				dictionary.playCurrentAudioRecord();
+				manager.getAudioMan().playCurrentAudioRecord();
 			}
 		};
 		jListSamples
@@ -415,21 +414,21 @@ public class TopEditor extends JFrame {
 	public void inUseListRefresh() {
 		int i = InUseJList.getSelectedIndex();
 		Object localObject = InUseJList.getSelectedValue();
-		InUseJList.setListData(dictionary.getAllInUseWords());
+		InUseJList.setListData(manager.getPairsManager().getAllInUseWords());
 		if (i == -1)
 			return;
-		if (i < dictionary.getAllInUseWords().length)
+		if (i < manager.getPairsManager().getAllInUseWords().length)
 			InUseJList.setSelectedIndex(i);
 		else
 			InUseJList
-					.setSelectedIndex(dictionary.getAllInUseWords().length - 1);
+					.setSelectedIndex(manager.getPairsManager().getAllInUseWords().length - 1);
 	}
 
 	public void refresh(boolean paramBoolean1, boolean paramBoolean2) {
-		if (dictionary.getAudioMan().recorder == null) {
+		if (manager.getAudioMan().recorder == null) {
 			audioPanel.jButtRecordding.setText("start");
 			audioPanel.jButtPlay.setEnabled(true);
-			if (dictionary.isCurrentItemAlreadyRecorded()) {
+			if (manager.getAudioMan().isCurrentItemAlreadyRecorded()) {
 				audioPanel.jButtPlay.setEnabled(true);
 				audioPanel.jButtDeleteRecord.setEnabled(true);
 				audioPanel.jButtRecordding.setEnabled(false);
@@ -443,7 +442,7 @@ public class TopEditor extends JFrame {
 			audioPanel.jButtPlay.setEnabled(false);
 		}
 		String str;
-		if (dictionary.getCurrentPair() == null) {
+		if (manager.getPairsManager().getCurrentPair() == null) {
 			setTitle("Top Dictionary - none : ");
 			Word_TextF.setText("");
 			Translate_TextF.setText("");
@@ -455,37 +454,37 @@ public class TopEditor extends JFrame {
 		} else {
 			setTitle("Top Dictionary - "
 					+ (WordsList_Lst.getSelectedIndex() + 1) + " : "
-					+ new Integer(dictionary.getAllWords().length).toString());
-			Word_TextF.setText(dictionary.getCurrentPair().getEnglish());
-			Translate_TextF.setText(dictionary.getCurrentPair().getRussian());
-			Transcription_TextF.setText(dictionary.getCurrentPair()
+					+ new Integer(manager.getPairsManager().getAllKeys().length).toString());
+			Word_TextF.setText(manager.getPairsManager().getCurrentPair().getEnglish());
+			Translate_TextF.setText(manager.getPairsManager().getCurrentPair().getRussian());
+			Transcription_TextF.setText(manager.getPairsManager().getCurrentPair()
 					.getTranscription());
 			if (paramBoolean2) {
 				str = null;
-				if (dictionary.getCurrSample() != null)
-					str = dictionary.getCurrSample();
-				if (dictionary.getCurrentPair().getSamples() != null)
-					jListSamples.setListData(dictionary.getCurrentPair()
+				if (manager.getPairsManager().getCurrSample() != null)
+					str = manager.getPairsManager().getCurrSample();
+				if (manager.getPairsManager().getCurrentPair().getSamples() != null)
+					jListSamples.setListData(manager.getPairsManager().getCurrentPair()
 							.getSamples());
 				else
 					jListSamples.setListData(new String[0]);
-				if (dictionary.getCurrentPair().getSamples() != null)
+				if (manager.getPairsManager().getCurrentPair().getSamples() != null)
 					jListSamples.setSelectedValue(str, true);
 			}
 		}
 		if (paramBoolean1) {
 			str = null;
-			if (dictionary.getCurrentPair() != null)
-				str = dictionary.getCurrentPair().getEnglish();
-			WordsList_Lst.setListData(dictionary.getAllWords());
-			if ((dictionary.setSelected(str))
-					&& (dictionary.getCurrentPair() != null))
-				WordsList_Lst.setSelectedValue(dictionary.getCurrentPair()
+			if (manager.getPairsManager().getCurrentPair() != null)
+				str = manager.getPairsManager().getCurrentPair().getEnglish();
+			WordsList_Lst.setListData(manager.getPairsManager().getAllKeys());
+			if ((manager.getPairsManager().setSelected(str))
+					&& (manager.getPairsManager().getCurrentPair() != null))
+				WordsList_Lst.setSelectedValue(manager.getPairsManager().getCurrentPair()
 						.getEnglish(), true);
 		}
-		if (dictionary.getCurrentPair() == null)
-			if (dictionary.getAllWords().length > 0)
-				WordsList_Lst.setSelectedValue(dictionary.getAllWords()[0],
+		if (manager.getPairsManager().getCurrentPair() == null)
+			if (manager.getPairsManager().getAllKeys().length > 0)
+				WordsList_Lst.setSelectedValue(manager.getPairsManager().getAllKeys()[0],
 						true);
 			else
 				WordsList_Lst.setSelectedValue(null, true);
@@ -500,7 +499,7 @@ public class TopEditor extends JFrame {
 		submenu = (JMenu)getJMenuBar().getMenu(0).getItem(3);
 		submenu.removeAll();	
 		
-		List<Dictionary> dictioanries = dictionary.getWorkspace().getDictioanries();
+		List<Dictionary> dictioanries = manager.getWorkspaceManager().getWorkspace().getDictioanries();
 		ButtonGroup group = new ButtonGroup();	
 		
 		for(Dictionary d : dictioanries){
@@ -508,7 +507,7 @@ public class TopEditor extends JFrame {
 			group.add(menuItem);
 			menuItem.addActionListener(menuListener);
 			menuItem.setActionCommand(MenuListener.SELECT_DICT);
-			if(dictionary.getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
+			if(manager.getWorkspaceManager().getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
 				menuItem.setSelected(true);
 			}
 			submenu.add(menuItem);

@@ -21,8 +21,7 @@ public class Main {
 				TopEditor localTopEditor = new TopEditor();
 				localTopEditor.setLocationRelativeTo(null);
 				localTopEditor.setVisible(true);
-				localTopEditor.setSize(TopEditor.WINDOW_WIDTH_SHORT,
-						TopEditor.WINDOW_HEIGHT);
+				localTopEditor.setSize(TopEditor.WINDOW_WIDTH_SHORT, TopEditor.WINDOW_HEIGHT);
 
 				Logger l = Logger.getLogger(Main.class);
 				l.log(Priority.INFO, "Started.");

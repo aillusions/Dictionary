@@ -4,6 +4,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.aillusions.dictionary.manager.Manager;
 import com.aillusions.dictionary.model.Pair;
 import com.aillusions.dictionary.view.TrainerView;
 import com.aillusions.dictionary.view.TrainerViewListener;
@@ -39,7 +40,7 @@ public class Trainer implements TrainerViewListener {
 	}
 
 	public Pair getMaxPriorityPair() {
-		return getMaxPriorityPair(this.dictionary.getAllInUsePairs());
+		return getMaxPriorityPair(this.dictionary.getPairsManager().getAllInUsePairs());
 	}
 
 	public Pair getMaxPriorityPair(Pair[] paramArrayOfPair) {
@@ -55,17 +56,17 @@ public class Trainer implements TrainerViewListener {
 	private String[] getVariants() {
 		int i = 6;
 		int j = this.generatorRightPosition.nextInt(i - 1);
-		int k = this.dictionary.getAllPairs().length;
+		int k = this.dictionary.getPairsManager().getAllPairs().length;
 		int l = 0;
 		ArrayList localArrayList = new ArrayList();
 		for (int i1 = 0; i1 < i; ++i1)
 			if (i1 != j) {
 				int i2 = this.generatorVariant.nextInt(k);
 				if (this.isEngRus)
-					localArrayList.add(this.dictionary.getAllPairs()[i2]
+					localArrayList.add(this.dictionary.getPairsManager().getAllPairs()[i2]
 							.getRussian());
 				else
-					localArrayList.add(this.dictionary.getAllPairs()[i2]
+					localArrayList.add(this.dictionary.getPairsManager().getAllPairs()[i2]
 							.getEnglish());
 			} else if (!(this.currentPair.getRussian().trim().equals(""))) {
 				if (this.isEngRus)
@@ -119,7 +120,7 @@ public class Trainer implements TrainerViewListener {
 	}
 
 	public void clearResults() {
-		for (Pair localPair : this.dictionary.getAllPairs())
+		for (Pair localPair : this.dictionary.getPairsManager().getAllPairs())
 			localPair.clearStatus();
 	}
 

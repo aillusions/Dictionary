@@ -11,7 +11,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 
-import com.aillusions.dictionary.Manager;
+import com.aillusions.dictionary.manager.Manager;
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.listener.MenuListener;
 
@@ -42,7 +42,7 @@ public class TopMenuBar extends JMenuBar{
 		menu.addSeparator();		
 		submenu = new JMenu("Select current > ");
 		
-		List<Dictionary> dictioanries = namager.getWorkspace().getDictioanries();
+		List<Dictionary> dictioanries = namager.getWorkspaceManager().getWorkspace().getDictioanries();
 		
 		ButtonGroup group = new ButtonGroup();	
 		
@@ -51,7 +51,7 @@ public class TopMenuBar extends JMenuBar{
 			group.add(menuItem1);
 			menuItem1.addActionListener(menuListener);
 			menuItem1.setActionCommand(MenuListener.SELECT_DICT);
-			if(namager.getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
+			if(namager.getWorkspaceManager().getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
 				menuItem1.setSelected(true);
 			}
 			submenu.add(menuItem1);
@@ -59,6 +59,7 @@ public class TopMenuBar extends JMenuBar{
 		menu.add(submenu);
 		
 		menuItem = new JMenuItem("Use current as default");
+		menuItem.setEnabled(false);
 		menuItem.addActionListener(menuListener);
 		menu.add(menuItem);		
 		menuItem = new JMenuItem("Create new");
@@ -97,6 +98,7 @@ public class TopMenuBar extends JMenuBar{
 		group = new ButtonGroup();	
 		
 		submenu = new JMenu("Language");
+		submenu.setEnabled(false);
 		menuItem = new JRadioButtonMenuItem("English");
 		menuItem.addActionListener(menuListener);
 		submenu.add(menuItem);
@@ -126,6 +128,7 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(MenuListener.MIX_WORDS);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("View removed words");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		menu.addSeparator();
 		menuItem = new JMenuItem("Edit current");
@@ -148,10 +151,13 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
 		menuItem = new JMenuItem("Paly");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Record");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Remove");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);		
 		menu.addSeparator();
 		cbMenuItem = new JCheckBoxMenuItem("Play on select");
@@ -166,8 +172,10 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
 		menuItem = new JMenuItem("Check for update");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		menuItem = new JCheckBoxMenuItem("Do not ask");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
 		//---------------
@@ -180,8 +188,10 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(MenuListener.RUN_TRAINER);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("View statistic");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Clear statistic");
+		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
 		//---------------

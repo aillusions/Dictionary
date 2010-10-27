@@ -13,7 +13,7 @@
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
         <correspondence inuse="true">
-          <english>weqweqwe</english>
+          <english>asdasdasdasdasd</english>
           <russian>qwe</russian>
           <transcription>qweqwe</transcription>
           <sample>qweqweqweqwe</sample>
@@ -176,6 +176,14 @@
           <russian>asd</russian>
           <transcription>∫asdasdʌ-:nb  uedeɔx</transcription>
           <sample>asdasdasdasd</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence inuse="false">
+          <english>asdasdasd</english>
+          <russian></russian>
+          <transcription></transcription>
           <asksQuantity>0</asksQuantity>
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>

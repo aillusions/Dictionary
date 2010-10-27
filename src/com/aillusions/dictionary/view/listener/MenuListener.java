@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
 
-import com.aillusions.dictionary.Manager;
+import com.aillusions.dictionary.manager.Manager;
 import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.TopEditor;
 import com.aillusions.dictionary.view.components.TopMenuBar;
@@ -51,12 +51,12 @@ public class MenuListener implements ActionListener {
 			}else if(e.getActionCommand().equals(RUN_TRAINER)){				
 				dictionary.runTrainer();
 			}else if(e.getActionCommand().equals(PLAY_ON_SELECTION)){				
-				dictionary.setPlayOnSelections(((JCheckBoxMenuItem)e.getSource()).isSelected());
+				dictionary.getAudioMan().setPlayOnSelections(((JCheckBoxMenuItem)e.getSource()).isSelected());
 			}else if(e.getActionCommand().equals(MIX_WORDS)){				
-				dictionary.shuffle();
+				dictionary.getPairsManager().shuffle();
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(SAVE)){				
-				dictionary.saveInFile();
+				dictionary.getWorkspaceManager().saveInFile();
 			}else if(e.getActionCommand().equals(LOAD)){				
 				dictionary.Load();
 				topEditor.refresh(true, true);
@@ -74,27 +74,27 @@ public class MenuListener implements ActionListener {
 					topEditor.setSize(TopEditor.WINDOW_WIDTH_EXPANDED, TopEditor.WINDOW_HEIGHT);
 				}
 			}else if(e.getActionCommand().equals(MOVE_SAMPLE_UP)){				
-				dictionary.upCurrentSample();
+				dictionary.getPairsManager().upCurrentSample();
 				topEditor.refresh(false, true);
 			}else if(e.getActionCommand().equals(EDIT_CURRENT)){				
-				if (dictionary.getCurrentPair() == null)
+				if (dictionary.getPairsManager().getCurrentPair() == null)
 					return;
-				dictionary.renameCurrent(null);
+				dictionary.getPairsManager().renameCurrent(null);
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(REMOVE_CURRENT_WORD)){				
-				if (dictionary.getCurrentPair() == null)
+				if (dictionary.getPairsManager().getCurrentPair() == null)
 					topEditor.Alert("You have to select one before!");
-				dictionary.removeCurrent();
+				dictionary.getPairsManager().removeCurrent();
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(ADD_NEW_DICT)){				
-				dictionary.addNewDictionary();
+				dictionary.getWorkspaceManager().addNewDictionary();
 				topEditor.refresh(true, true);
 				topEditor.regenDictList();
 			}else if(e.getActionCommand().equals(SELECT_DICT)){				
-				dictionary.selectDictionary(((JMenuItem)e.getSource()).getText());
+				dictionary.getWorkspaceManager().selectDictionary(((JMenuItem)e.getSource()).getText());
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(SAVE_EXIT)){				
-				dictionary.saveInFile();
+				dictionary.getWorkspaceManager().saveInFile();
 				System.exit(1);
 			}
 	}

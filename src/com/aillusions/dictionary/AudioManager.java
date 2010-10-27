@@ -1,13 +1,7 @@
-package com.aillusions.dictionary.audio;
+package com.aillusions.dictionary;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
@@ -19,15 +13,79 @@ import javax.sound.sampled.TargetDataLine;
 
 import com.aillusions.dictionary.audio.ConcurrentPlayer;
 import com.aillusions.dictionary.audio.SimpleAudioRecorder;
+import com.aillusions.dictionary.manager.Manager;
 
 public class AudioManager {
+	
 	public SimpleAudioRecorder recorder = null;
 	SourceDataLine line = null;
+	
+	private boolean playOnSelections;
 
+	private Manager manager;
+	
 	public static final String AUDIO_DIR = "audio/";
 	public static final String AUDIO_ONLINE_TEMP_DIR = "audio/online/";
 	public static final String[] AUDIO_EXTs = new String[]{".wav" , ".mp3"};
 	
+	public AudioManager(Manager manager){
+		this.manager = manager;
+	}
+	
+	public boolean isPlayOnSelections() {
+		return playOnSelections;
+	}
+	
+	public void setPlayOnSelections(boolean playOnSelections) {
+		this.playOnSelections = playOnSelections;
+	}
+	
+	private String getCurentAudioItem() {
+		String str = null;
+		if (manager.getPairsManager().getCurrSample() != null)
+			str = manager.getPairsManager().getCurrentPair().getEnglish() + "_"
+					+ manager.getPairsManager().getCurrSample().replaceAll("\\W", "-");
+		else if (manager.getPairsManager().getCurrentPair() != null)
+			str = manager.getPairsManager().getCurrentPair().getEnglish().replaceAll("\\W",
+					"-");
+		return str;
+	}
+	
+	public void playCurrentAudioRecord() {
+
+		String str1;
+		str1 = null;
+		if (getCurentAudioItem() != null) {
+			str1 = getCurentAudioItem();
+			playRecording("audio/" + str1,
+					AudioManager.AUDIO_EXTs, true);
+		}
+	}
+
+	public boolean isCurrentItemAlreadyRecorded() {
+		return isRecordingExist("audio/" + getCurentAudioItem(),
+				AudioManager.AUDIO_EXTs);
+	}
+
+	public void deleteCurrentAudioRecord() {
+		String str = null;
+		if (getCurentAudioItem() != null)
+			str = getCurentAudioItem();
+		deleteRecording("audio/" + str, AudioManager.AUDIO_EXTs);
+	}
+
+	public void startRecording(String paramString) {
+		String str = null;
+		if (getCurentAudioItem() != null) {
+			if ((paramString == null) || (paramString.equals(""))) {
+				str = getCurentAudioItem() + ".wav";
+			} else {
+				str = paramString + ".wav";
+			}
+		}
+		startRecording_("audio/" + str);
+	}
+
 	
 	public void removeAllTightAudio(final String eng) {
 		// deleting audio files
@@ -86,7 +144,7 @@ public class AudioManager {
 		}
 	}
 	
-	public boolean startRecording(String fWavName) {
+	public boolean startRecording_(String fWavName) {
 		boolean res = false;
 		if (fWavName != null && !fWavName.equals("")) {
 
@@ -156,4 +214,5 @@ public class AudioManager {
 				ConcurrentPlayer.playRecording(path, true);
 		}
 	}
+	
 }

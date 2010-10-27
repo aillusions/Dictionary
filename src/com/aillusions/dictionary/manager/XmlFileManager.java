@@ -1,4 +1,4 @@
-package com.aillusions.dictionary.dao;
+package com.aillusions.dictionary.manager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,12 +10,12 @@ import com.aillusions.dictionary.model.Workspace;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-public class XmlStorage{
+public class XmlFileManager{
 
 	private XStream xstream;
 	private String fName;
 
-	public XmlStorage(String fName) {
+	public XmlFileManager(String fName) {
 
 		this.fName = fName;
 		
