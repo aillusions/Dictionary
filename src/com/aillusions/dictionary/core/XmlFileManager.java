@@ -1,4 +1,4 @@
-package com.aillusions.dictionary.manager;
+package com.aillusions.dictionary.core;
 
 import java.io.File;
 import java.io.FileInputStream;

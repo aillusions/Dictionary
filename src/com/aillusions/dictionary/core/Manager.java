@@ -1,7 +1,5 @@
-package com.aillusions.dictionary.manager;
+package com.aillusions.dictionary.core;
 
-import com.aillusions.dictionary.AudioManager;
-import com.aillusions.dictionary.Trainer;
 import com.aillusions.dictionary.xsl.DocConverter;
 
 public class Manager {
@@ -9,27 +7,29 @@ public class Manager {
 	private AudioManager audioMan;
 	private WorkspaceManager workspaceManager;
 	private PairsManager pairsManager;
+	private CurrentPairManager currentPairManager;
 
-	private Trainer trainer;
+	private TrainerManager trainer;
 
 	public Manager(String fName) {
 		workspaceManager = new WorkspaceManager(fName);	
 		audioMan = new AudioManager(this);
-		pairsManager = new PairsManager(this);		
+		pairsManager = new PairsManager(this);	
+		currentPairManager = new CurrentPairManager(this);
 	}
 
 	public void runTrainer() {
-		this.trainer = new Trainer(this);
+		this.trainer = new TrainerManager(this);
 		this.trainer.startTraining();
 	}
 	
 	public void Load() {
 
 		workspaceManager.load();
-		if ((pairsManager.getCurrentPair() == null)	|| (pairsManager.getPairByKey(pairsManager.getCurrentPair().getEnglish()) != null)) {
+		if ((currentPairManager.getCurrentPair() == null)	|| (pairsManager.getPairByKey(currentPairManager.getCurrentPair().getEnglish()) != null)) {
 			return;
 		}
-		pairsManager.setCurWord(null);
+		currentPairManager.setCurrentPair(null);
 	}
 
 	public void runWord(boolean paramBoolean1, boolean paramBoolean2) {
@@ -48,5 +48,11 @@ public class Manager {
 	public WorkspaceManager getWorkspaceManager() {
 		return workspaceManager;
 	}
+
+	public CurrentPairManager getCurrentPairManager() {
+		return currentPairManager;
+	}
+	
+	
 	
 }

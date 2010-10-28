@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
 
-import com.aillusions.dictionary.manager.Manager;
+import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.TopEditor;
 import com.aillusions.dictionary.view.components.TopMenuBar;
@@ -74,17 +74,17 @@ public class MenuListener implements ActionListener {
 					topEditor.setSize(TopEditor.WINDOW_WIDTH_EXPANDED, TopEditor.WINDOW_HEIGHT);
 				}
 			}else if(e.getActionCommand().equals(MOVE_SAMPLE_UP)){				
-				dictionary.getPairsManager().upCurrentSample();
+				dictionary.getCurrentPairManager().upCurrentSample();
 				topEditor.refresh(false, true);
 			}else if(e.getActionCommand().equals(EDIT_CURRENT)){				
-				if (dictionary.getPairsManager().getCurrentPair() == null)
+				if (dictionary.getCurrentPairManager().getCurrentPair() == null)
 					return;
-				dictionary.getPairsManager().renameCurrent(null);
+				dictionary.getCurrentPairManager().renameCurrentPair(null);
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(REMOVE_CURRENT_WORD)){				
-				if (dictionary.getPairsManager().getCurrentPair() == null)
+				if (dictionary.getCurrentPairManager().getCurrentPair() == null)
 					topEditor.Alert("You have to select one before!");
-				dictionary.getPairsManager().removeCurrent();
+				dictionary.getCurrentPairManager().removeCurrentPair();
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(ADD_NEW_DICT)){				
 				dictionary.getWorkspaceManager().addNewDictionary();

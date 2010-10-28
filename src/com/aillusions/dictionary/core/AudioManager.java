@@ -1,4 +1,4 @@
-package com.aillusions.dictionary;
+package com.aillusions.dictionary.core;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -13,7 +13,6 @@ import javax.sound.sampled.TargetDataLine;
 
 import com.aillusions.dictionary.audio.ConcurrentPlayer;
 import com.aillusions.dictionary.audio.SimpleAudioRecorder;
-import com.aillusions.dictionary.manager.Manager;
 
 public class AudioManager {
 	
@@ -42,11 +41,12 @@ public class AudioManager {
 	
 	private String getCurentAudioItem() {
 		String str = null;
-		if (manager.getPairsManager().getCurrSample() != null)
-			str = manager.getPairsManager().getCurrentPair().getEnglish() + "_"
-					+ manager.getPairsManager().getCurrSample().replaceAll("\\W", "-");
-		else if (manager.getPairsManager().getCurrentPair() != null)
-			str = manager.getPairsManager().getCurrentPair().getEnglish().replaceAll("\\W",
+		CurrentPairManager cpm = manager.getCurrentPairManager();
+		if (cpm.getCurrSample() != null)
+			str = cpm.getCurrentPair().getEnglish() + "_"
+					+ cpm.getCurrSample().replaceAll("\\W", "-");
+		else if (cpm.getCurrentPair() != null)
+			str = cpm.getCurrentPair().getEnglish().replaceAll("\\W",
 					"-");
 		return str;
 	}

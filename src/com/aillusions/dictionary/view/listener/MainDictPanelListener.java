@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import com.aillusions.dictionary.manager.Manager;
+import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.model.Pair;
 import com.aillusions.dictionary.view.TopEditor;
 
@@ -22,11 +22,11 @@ public class MainDictPanelListener {
 	}
 	
 	public void literalButtonsMouseReleased(MouseEvent paramMouseEvent) {
-		if (this.dictionary.getPairsManager().getCurrentPair() != null) {
-			topEditor.Transcription_TextF.setText(this.dictionary.getPairsManager().getCurrentPair()
+		if (this.dictionary.getCurrentPairManager().getCurrentPair() != null) {
+			topEditor.Transcription_TextF.setText(this.dictionary.getCurrentPairManager().getCurrentPair()
 					.getTranscription()
 					+ ((JButton) paramMouseEvent.getSource()).getText());
-			if (this.dictionary.getPairsManager().aplyCurrWordChanged(topEditor.Translate_TextF
+			if (this.dictionary.getCurrentPairManager().aplyCurrWordChanged(topEditor.Translate_TextF
 					.getText(), topEditor.Transcription_TextF.getText()))
 				return;
 			Alert("Your input was not aplyed!");
@@ -36,21 +36,21 @@ public class MainDictPanelListener {
 	}
 	
 	public void Transcription_TextFKeyReleased(KeyEvent paramKeyEvent) {
-		if (dictionary.getPairsManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+		if (dictionary.getCurrentPairManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
 				topEditor.Transcription_TextF.getText()))
 			return;
 		Alert("Your input was not aplyed!");
 	}
 
 	public void Translate_TextFKeyReleased(KeyEvent paramKeyEvent) {
-		if (dictionary.getPairsManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+		if (dictionary.getCurrentPairManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
 				topEditor.Transcription_TextF.getText()))
 			return;
 		Alert("Your input was not aplyed!");
 	}
 
 	public void Word_TextFKeyReleased(KeyEvent paramKeyEvent) {
-		if (dictionary.getPairsManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+		if (dictionary.getCurrentPairManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
 				topEditor.Transcription_TextF.getText()))
 			return;
 		Alert("Your input was not aplyed!");
@@ -60,16 +60,16 @@ public class MainDictPanelListener {
 
 
 	public void Rename_BtnMouseReleased(MouseEvent paramMouseEvent) {
-		if (dictionary.getPairsManager().getCurrentPair() == null)
+		if (dictionary.getCurrentPairManager().getCurrentPair() == null)
 			return;
-		dictionary.getPairsManager().renameCurrent(null);
+		dictionary.getCurrentPairManager().renameCurrentPair(null);
 		topEditor.refresh(true, true);
 	}
 
 	public void Remove_BtnMouseReleased(MouseEvent paramMouseEvent) {
-		if (dictionary.getPairsManager().getCurrentPair() == null)
+		if (dictionary.getCurrentPairManager().getCurrentPair() == null)
 			Alert("You have to select one before!");
-		dictionary.getPairsManager().removeCurrent();
+		dictionary.getCurrentPairManager().removeCurrentPair();
 		topEditor.refresh(true, true);
 	}
 
@@ -134,12 +134,12 @@ public class MainDictPanelListener {
 	}
 
 	public void jButtRemSampleMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getPairsManager().remCurrSample();
+		dictionary.getCurrentPairManager().removeCurrSample();
 		topEditor.refresh(false, true);
 	}
 
 	public void jListSamplesMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getPairsManager().setCurrSample((String) topEditor.jListSamples
+		dictionary.getCurrentPairManager().setCurrSample((String) topEditor.jListSamples
 				.getSelectedValue());
 		topEditor.refresh(false, false);
 	}
@@ -167,7 +167,7 @@ public class MainDictPanelListener {
 		if ((paramKeyEvent.getKeyCode() == 155)
 				&& (topEditor.WordsList_Lst.getSelectedIndex() < dictionary.getPairsManager()
 						.getAllKeys().length)) {
-			dictionary.getPairsManager().getCurrentPair().setInuse(true);
+			dictionary.getCurrentPairManager().getCurrentPair().setInuse(true);
 			topEditor.WordsList_Lst.setSelectedIndex(topEditor.WordsList_Lst
 					.getSelectedIndex() + 1);
 		}
@@ -175,7 +175,7 @@ public class MainDictPanelListener {
 				|| (topEditor.WordsList_Lst.getSelectedIndex() >= dictionary.getPairsManager()
 						.getAllKeys().length))
 			return;
-		dictionary.getPairsManager().getCurrentPair().setInuse(false);
+		dictionary.getCurrentPairManager().getCurrentPair().setInuse(false);
 		topEditor.WordsList_Lst.setSelectedIndex(topEditor.WordsList_Lst
 				.getSelectedIndex() + 1);
 	}
@@ -194,7 +194,7 @@ public class MainDictPanelListener {
 		if ((paramKeyEvent.getKeyCode() == 127)
 				&& (topEditor.WordsList_Lst.getSelectedIndex() < dictionary.getPairsManager()
 						.getAllKeys().length)) {
-			dictionary.getPairsManager().getCurrentPair().setInuse(false);
+			dictionary.getCurrentPairManager().getCurrentPair().setInuse(false);
 			topEditor.WordsList_Lst.setSelectedIndex(topEditor.WordsList_Lst
 					.getSelectedIndex() + 1);
 		}
@@ -204,7 +204,7 @@ public class MainDictPanelListener {
 
 
 	public void addToRight_oneMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getPairsManager().getCurrentPair().setInuse(true);
+		dictionary.getCurrentPairManager().getCurrentPair().setInuse(true);
 		topEditor.inUseListRefresh();
 	}
 
@@ -215,7 +215,7 @@ public class MainDictPanelListener {
 	}
 
 	public void dellFromRight_oneMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getPairsManager().getCurrentPair().setInuse(false);
+		dictionary.getCurrentPairManager().getCurrentPair().setInuse(false);
 		topEditor.inUseListRefresh();
 	}
 
@@ -226,8 +226,8 @@ public class MainDictPanelListener {
 	}
 
 	public void selectNextRandomBtnMouseReleased(MouseEvent paramMouseEvent) {
-		String str = dictionary.getPairsManager().getAllInUseWords()[topEditor.nextSelRandom
-				.nextInt(dictionary.getPairsManager().getAllInUsePairs().length)];
+		String str = dictionary.getPairsManager().getAllInUseKeys()[topEditor.nextSelRandom
+				.nextInt(dictionary.getPairsManager().getAllInUsePairs().size())];
 		topEditor.InUseJList.setSelectedValue(str, true);
 	}
 

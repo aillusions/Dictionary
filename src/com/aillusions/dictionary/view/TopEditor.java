@@ -28,7 +28,7 @@ import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import com.aillusions.dictionary.manager.Manager;
+import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.components.AudioPanel;
 import com.aillusions.dictionary.view.components.KeyBoardPanel;
@@ -289,11 +289,11 @@ public class TopEditor extends JFrame {
 			public void valueChanged(ListSelectionEvent paramListSelectionEvent) {
 				if (paramListSelectionEvent.getValueIsAdjusting())
 					return;
-				if ((manager.getPairsManager().getCurrentPair() != null)
-						&& (!(manager.getPairsManager().aplyCurrWordChanged(Translate_TextF
+				if ((manager.getCurrentPairManager().getCurrentPair() != null)
+						&& (!(manager.getCurrentPairManager().aplyCurrWordChanged(Translate_TextF
 								.getText(), Transcription_TextF.getText()))))
 					Alert("Your input was not aplyed!");
-				if (manager.getPairsManager().setSelected((String) WordsList_Lst
+				if (manager.getCurrentPairManager().setCurrentPairByKey((String) WordsList_Lst
 						.getSelectedValue())) {
 					refresh(false, true);
 					if (manager.getAudioMan().isPlayOnSelections())
@@ -327,9 +327,9 @@ public class TopEditor extends JFrame {
 				if (paramListSelectionEvent.getValueIsAdjusting())
 					return;
 				if (jListSamples.getSelectedIndex() == -1)
-					manager.getPairsManager().setCurrSample(null);
+					manager.getCurrentPairManager().setCurrSample(null);
 				else
-					manager.getPairsManager().setCurrSample(jListSamples.getSelectedValue()
+					manager.getCurrentPairManager().setCurrSample(jListSamples.getSelectedValue()
 							.toString());
 				if ((!(manager.getAudioMan().isPlayOnSelections()))
 						|| (jListSamples.getSelectedIndex() == -1))
@@ -337,8 +337,7 @@ public class TopEditor extends JFrame {
 				manager.getAudioMan().playCurrentAudioRecord();
 			}
 		};
-		jListSamples
-				.addListSelectionListener((ListSelectionListener) localObject);
+		jListSamples.addListSelectionListener((ListSelectionListener) localObject);
 
 		Word_TextF.setEditable(false);
 		Word_TextF.setFont(new Font("Tahoma", 1, 11));
@@ -414,14 +413,14 @@ public class TopEditor extends JFrame {
 	public void inUseListRefresh() {
 		int i = InUseJList.getSelectedIndex();
 		Object localObject = InUseJList.getSelectedValue();
-		InUseJList.setListData(manager.getPairsManager().getAllInUseWords());
+		InUseJList.setListData(manager.getPairsManager().getAllInUseKeys());
 		if (i == -1)
 			return;
-		if (i < manager.getPairsManager().getAllInUseWords().length)
+		if (i < manager.getPairsManager().getAllInUseKeys().length)
 			InUseJList.setSelectedIndex(i);
 		else
 			InUseJList
-					.setSelectedIndex(manager.getPairsManager().getAllInUseWords().length - 1);
+					.setSelectedIndex(manager.getPairsManager().getAllInUseKeys().length - 1);
 	}
 
 	public void refresh(boolean paramBoolean1, boolean paramBoolean2) {
@@ -442,7 +441,7 @@ public class TopEditor extends JFrame {
 			audioPanel.jButtPlay.setEnabled(false);
 		}
 		String str;
-		if (manager.getPairsManager().getCurrentPair() == null) {
+		if (manager.getCurrentPairManager().getCurrentPair() == null) {
 			setTitle("Top Dictionary - none : ");
 			Word_TextF.setText("");
 			Translate_TextF.setText("");
@@ -455,34 +454,34 @@ public class TopEditor extends JFrame {
 			setTitle("Top Dictionary - "
 					+ (WordsList_Lst.getSelectedIndex() + 1) + " : "
 					+ new Integer(manager.getPairsManager().getAllKeys().length).toString());
-			Word_TextF.setText(manager.getPairsManager().getCurrentPair().getEnglish());
-			Translate_TextF.setText(manager.getPairsManager().getCurrentPair().getRussian());
-			Transcription_TextF.setText(manager.getPairsManager().getCurrentPair()
+			Word_TextF.setText(manager.getCurrentPairManager().getCurrentPair().getEnglish());
+			Translate_TextF.setText(manager.getCurrentPairManager().getCurrentPair().getRussian());
+			Transcription_TextF.setText(manager.getCurrentPairManager().getCurrentPair()
 					.getTranscription());
 			if (paramBoolean2) {
 				str = null;
-				if (manager.getPairsManager().getCurrSample() != null)
-					str = manager.getPairsManager().getCurrSample();
-				if (manager.getPairsManager().getCurrentPair().getSamples() != null)
-					jListSamples.setListData(manager.getPairsManager().getCurrentPair()
+				if (manager.getCurrentPairManager().getCurrSample() != null)
+					str = manager.getCurrentPairManager().getCurrSample();
+				if (manager.getCurrentPairManager().getCurrentPair().getSamples() != null)
+					jListSamples.setListData(manager.getCurrentPairManager().getCurrentPair()
 							.getSamples());
 				else
 					jListSamples.setListData(new String[0]);
-				if (manager.getPairsManager().getCurrentPair().getSamples() != null)
+				if (manager.getCurrentPairManager().getCurrentPair().getSamples() != null)
 					jListSamples.setSelectedValue(str, true);
 			}
 		}
 		if (paramBoolean1) {
 			str = null;
-			if (manager.getPairsManager().getCurrentPair() != null)
-				str = manager.getPairsManager().getCurrentPair().getEnglish();
+			if (manager.getCurrentPairManager().getCurrentPair() != null)
+				str = manager.getCurrentPairManager().getCurrentPair().getEnglish();
 			WordsList_Lst.setListData(manager.getPairsManager().getAllKeys());
-			if ((manager.getPairsManager().setSelected(str))
-					&& (manager.getPairsManager().getCurrentPair() != null))
-				WordsList_Lst.setSelectedValue(manager.getPairsManager().getCurrentPair()
+			if ((manager.getCurrentPairManager().setCurrentPairByKey(str))
+					&& (manager.getCurrentPairManager().getCurrentPair() != null))
+				WordsList_Lst.setSelectedValue(manager.getCurrentPairManager().getCurrentPair()
 						.getEnglish(), true);
 		}
-		if (manager.getPairsManager().getCurrentPair() == null)
+		if (manager.getCurrentPairManager().getCurrentPair() == null)
 			if (manager.getPairsManager().getAllKeys().length > 0)
 				WordsList_Lst.setSelectedValue(manager.getPairsManager().getAllKeys()[0],
 						true);

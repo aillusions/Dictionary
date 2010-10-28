@@ -1,4 +1,4 @@
-package com.aillusions.dictionary.manager;
+package com.aillusions.dictionary.core;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

@@ -11,7 +11,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 
-import com.aillusions.dictionary.manager.Manager;
+import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.listener.MenuListener;
 

@@ -1,2 +1,2 @@
-set JAVA_HOME=D:\bea100\jdk150_06
-set path=D:\bea100\jdk150_06\bin;%PATH%
+set JAVA_HOME=E:\env\bea100\jdk150_11
+set path=%JAVA_HOME%\bin;%PATH%

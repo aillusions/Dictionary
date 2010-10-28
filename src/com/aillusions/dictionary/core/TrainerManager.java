@@ -1,15 +1,15 @@
-package com.aillusions.dictionary;
+package com.aillusions.dictionary.core;
 
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-import com.aillusions.dictionary.manager.Manager;
 import com.aillusions.dictionary.model.Pair;
 import com.aillusions.dictionary.view.TrainerView;
 import com.aillusions.dictionary.view.TrainerViewListener;
 
-public class Trainer implements TrainerViewListener {
+public class TrainerManager implements TrainerViewListener {
 	private Manager dictionary;
 	private TrainerView view;
 	private boolean isEngRus;
@@ -19,7 +19,7 @@ public class Trainer implements TrainerViewListener {
 	Random generatorENG_RUS = new Random(0L);
 	private Pair currentPair = null;
 
-	public Trainer(Manager paramDictionary) {
+	public TrainerManager(Manager paramDictionary) {
 		this.dictionary = paramDictionary;
 	}
 
@@ -43,39 +43,42 @@ public class Trainer implements TrainerViewListener {
 		return getMaxPriorityPair(this.dictionary.getPairsManager().getAllInUsePairs());
 	}
 
-	public Pair getMaxPriorityPair(Pair[] paramArrayOfPair) {
-		if (paramArrayOfPair.length < 1) {
+	public Pair getMaxPriorityPair(List<Pair> paramArrayOfPair) {
+		if (paramArrayOfPair.size() < 1) {
 			return null;
 		}
 		Pair localPair = null;
-		int i = this.generatorQuestion.nextInt(paramArrayOfPair.length);
-		localPair = paramArrayOfPair[i];
+		int i = this.generatorQuestion.nextInt(paramArrayOfPair.size());
+		localPair = paramArrayOfPair.get(i);
 		return localPair;
 	}
 
 	private String[] getVariants() {
 		int i = 6;
 		int j = this.generatorRightPosition.nextInt(i - 1);
-		int k = this.dictionary.getPairsManager().getAllPairs().length;
-		int l = 0;
-		ArrayList localArrayList = new ArrayList();
-		for (int i1 = 0; i1 < i; ++i1)
+		int k = this.dictionary.getPairsManager().getAllPairs().size();
+		ArrayList<String> localArrayList = new ArrayList<String>();
+		
+		for (int i1 = 0; i1 < i; ++i1){
 			if (i1 != j) {
 				int i2 = this.generatorVariant.nextInt(k);
-				if (this.isEngRus)
-					localArrayList.add(this.dictionary.getPairsManager().getAllPairs()[i2]
-							.getRussian());
-				else
-					localArrayList.add(this.dictionary.getPairsManager().getAllPairs()[i2]
-							.getEnglish());
+				if (this.isEngRus){
+					localArrayList.add(this.dictionary.getPairsManager().getAllPairs().get(i2).getRussian());
+				}
+				else{
+					localArrayList.add(this.dictionary.getPairsManager().getAllPairs().get(i2).getEnglish());
+				}
 			} else if (!(this.currentPair.getRussian().trim().equals(""))) {
-				if (this.isEngRus)
+				if (this.isEngRus){
 					localArrayList.add(this.currentPair.getRussian());
-				else
+				}
+				else{
 					localArrayList.add(this.currentPair.getEnglish());
+				}
 			} else {
 				localArrayList.add("empty");
 			}
+		}
 		return ((String[]) localArrayList.toArray(new String[i]));
 	}
 
@@ -138,7 +141,7 @@ public class Trainer implements TrainerViewListener {
 				} catch (Exception localException) {
 					localException.printStackTrace();
 				}
-				Trainer.this.showQuestion();
+				TrainerManager.this.showQuestion();
 			}
 		}).start();
 	}
