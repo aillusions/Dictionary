@@ -42,7 +42,7 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(CommandsListener.LOAD);
 		menu.add(menuItem);
 		menu.addSeparator();		
-		submenu = new JMenu("Select current > ");
+		submenu = new JMenu("Select dictionary");
 		
 		List<Dictionary> dictioanries = namager.getWorkspaceManager().getWorkspace().getDictioanries();
 		
@@ -130,11 +130,11 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.setActionCommand(CommandsListener.MIX_WORDS);
 		menu.add(menuItem);
 		menu.addSeparator();
-		menuItem = new JMenuItem("Edit current");
+		menuItem = new JMenuItem("Edit word");
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.EDIT_CURRENT);
 		menu.add(menuItem);
-		menuItem = new JMenuItem("Remove current");
+		menuItem = new JMenuItem("Remove word");
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.REMOVE_CURRENT_WORD);
 		menu.add(menuItem);
