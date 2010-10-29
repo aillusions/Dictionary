@@ -22,8 +22,11 @@ public class AsynchronousVersionUpdater implements Runnable {
 	
 	private UpdateRepository updateRepo = UpdateRepository.getInstance();
 	
-	public AsynchronousVersionUpdater(JFrame currentContainer){
+	private boolean showMessageIfUpToDate;
+	
+	public AsynchronousVersionUpdater(JFrame currentContainer, boolean showMessageIfUpToDate){
 		this.currentContainer = currentContainer;
+		this.showMessageIfUpToDate =showMessageIfUpToDate;
 	}
 
 	public void run() {
@@ -31,7 +34,12 @@ public class AsynchronousVersionUpdater implements Runnable {
 		VersionChecker vc = new VersionChecker();
 		boolean continueAscting = vc.isNewerVersionAvailable();
 
+		if(showMessageIfUpToDate && !continueAscting){
+			JOptionPane.showConfirmDialog(null, "You have up to date version!");
+		}
+		
 		l.log(Priority.INFO, "Newer version available: " + continueAscting + "; current: " + vc.getCurrentVersion() + "; avail: " + vc.getLastAvailableVersion() );
+
 
 		if (continueAscting) {
 
@@ -90,4 +98,14 @@ public class AsynchronousVersionUpdater implements Runnable {
 			}
 		}
 	}
+
+	public boolean isShowMessageIfUpToDate() {
+		return showMessageIfUpToDate;
+	}
+
+	public void setShowMessageIfUpToDate(boolean showMessageIfUpToDate) {
+		this.showMessageIfUpToDate = showMessageIfUpToDate;
+	}
+	
+	
 }

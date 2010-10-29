@@ -31,7 +31,7 @@ public class Main {
 					IOTools.deleteDirectory(updateDir);
 				}
 
-				VersionChecker.checkVersionInSeparateThread(localTopEditor);
+				VersionChecker.checkVersionInSeparateThread(localTopEditor, false);
 
 			}
 		});

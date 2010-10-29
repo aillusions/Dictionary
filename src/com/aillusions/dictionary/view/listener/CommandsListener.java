@@ -121,7 +121,7 @@ public class CommandsListener implements ActionListener {
 				if (updateDir.exists()) {
 					IOTools.deleteDirectory(updateDir);
 				}
-				VersionChecker.checkVersionInSeparateThread(topEditor);
+				VersionChecker.checkVersionInSeparateThread(topEditor, true);
 			}
 	}
 
