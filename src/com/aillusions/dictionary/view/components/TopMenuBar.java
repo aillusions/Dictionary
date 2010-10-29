@@ -73,10 +73,6 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.OPEN_ALL_WORDS_IN_WORD);
 		menu.add(menuItem);
-		menuItem = new JMenuItem("Open selected in Word");
-		menuItem.addActionListener(cmdListener);
-		menuItem.setActionCommand(CommandsListener.OPEN_SELECTED_WORDS_IN_WORD);
-		menu.add(menuItem);
 		menuItem = new JMenuItem("Open examples in Word");
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.OPEN_SAMPLES_IN_WORD);
@@ -134,7 +130,7 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.EDIT_CURRENT);
 		menu.add(menuItem);
-		menuItem = new JMenuItem("Remove word");
+		menuItem = new JMenuItem("Delete word");
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.REMOVE_CURRENT_WORD);
 		menu.add(menuItem);
@@ -186,10 +182,7 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.RUN_TRAINER);
 		menu.add(menuItem);
-		menuItem = new JMenuItem("View statistic");
-		menuItem.setEnabled(false);
-		menu.add(menuItem);
-		menuItem = new JMenuItem("Clear statistic");
+		menuItem = new JMenuItem("Clear training statistic");
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
@@ -201,7 +194,11 @@ public class TopMenuBar extends JMenuBar{
 		menuItem = new JMenuItem("About Dictionary");
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.ABOUT);
-		menu.add(menuItem);		
+		menu.add(menuItem);	
+		menuItem = new JMenuItem("View statistic");
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.VIEW_STATISTIC);
+		menu.add(menuItem);
 
 	}
 }

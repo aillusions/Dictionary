@@ -3,18 +3,21 @@ package com.aillusions.dictionary.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import com.aillusions.dictionary.core.Manager;
+import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.util.update.VersionChecker;
 import com.aillusions.dictionary.view.layout.AnchorConstraint;
 import com.aillusions.dictionary.view.layout.AnchorLayout;
 
-public class About extends JFrame {
+public class Statistics extends JFrame {
+	public static final String NEW_LINE = "\r\n";
 	private static final long serialVersionUID = 1L;
 	private TrainerViewListener viewListener;
 	private JScrollPane jScrollPane1;
@@ -22,10 +25,13 @@ public class About extends JFrame {
 	private JPanel topPanel;
 	private VersionChecker vch = new VersionChecker();
 
-	public void frameConstructor() {
-
-		setTitle("About Top Dictionary");
+	Manager manager;
+	
+	public Statistics(Manager manager) {
+		this.manager = manager;
+		setTitle("Statistic");
 		setSize(648, 277);
+		//move(300, 300);
 		setBackground(Color.gray);
 		AnchorLayout localAnchorLayout = new AnchorLayout();
 		getContentPane().setLayout(localAnchorLayout);
@@ -40,11 +46,33 @@ public class About extends JFrame {
 		this.jScrollPane1.setPreferredSize(new Dimension(546, 157));
 		this.jTextArea1 = new JTextArea();
 		this.jScrollPane1.setViewportView(this.jTextArea1);
-		this.jTextArea1
-				.setText("Top Dictionary "
-						+ vch.getCurrentVersion()
-						+ " is a handy tool to keep and manage your foreging words its translation and transcription. \r\nauthor: Oleksandr Zalizniak (Alex).\r\nemail: aillusions@gmail.com\r\nEnjoy for free. If you would like to make some contribution:\r\nWeb Money:\r\n USD: Z230577301140\r\n EUR: E297731784822\r\n UAH: U295474096238\r\n\r\nHelp facility is comming soon. See news on http://aillusions.blogspot.com \r\n\r\nThank you for using Top Dictionary.");
-		this.jTextArea1.setPreferredSize(new Dimension(546, 157));
+		
+		
+		List<Dictionary> dicts = manager.getWorkspaceManager().getWorkspace().getDictioanries();
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("Your currently have: ");
+		
+		if(dicts.size() > 1){
+			sb.append(dicts.size() +  " dictionaries.");
+			sb.append(NEW_LINE);
+		}else{
+			sb.append("one dictionary.");
+			sb.append(NEW_LINE);
+		}
+		
+		for(Dictionary d : dicts){
+			sb.append(NEW_LINE).append("- ");
+			sb.append(d.getDisplayName() + ": ");
+			sb.append(NEW_LINE).append("     - ");
+			sb.append(d.getPairs().size() + " words");
+			sb.append(NEW_LINE).append("     - ");
+			sb.append(d.getTrash().size() + " removed words");
+		}
+		
+		jTextArea1.setText(sb.toString());
+		jTextArea1.setEditable(false);
+		jTextArea1.setPreferredSize(new Dimension(546, 157));
 	}
 
 }
