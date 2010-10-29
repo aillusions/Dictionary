@@ -4,15 +4,7 @@
   <dictionaries>
     <dictionary>
       <working-list>
-        <correspondence inuse="true">
-          <english>1111111</english>
-          <russian></russian>
-          <transcription></transcription>
-          <asksQuantity>0</asksQuantity>
-          <rightAnswerQuantity>0</rightAnswerQuantity>
-          <attemtpsQuantity>0</attemtpsQuantity>
-        </correspondence>
-        <correspondence inuse="true">
+        <correspondence>
           <english>asdasdasdasdasd</english>
           <russian>qwe</russian>
           <transcription>qweqwe</transcription>
@@ -23,7 +15,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>qweqweqwdfsf</english>
           <russian></russian>
           <transcription></transcription>
@@ -31,7 +23,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="true">
+        <correspondence>
           <english>qewrtfgdaeq34etgfd</english>
           <russian>qwe</russian>
           <transcription>qweqwe</transcription>
@@ -43,7 +35,7 @@
         </correspondence>
       </working-list>
       <removed-list>
-        <correspondence inuse="false">
+        <correspondence>
           <english>xdfsdfsdfs</english>
           <russian></russian>
           <transcription></transcription>
@@ -51,7 +43,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>dfsdfsd</english>
           <russian></russian>
           <transcription></transcription>
@@ -59,7 +51,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>qweqweqwe</english>
           <russian></russian>
           <transcription></transcription>
@@ -67,7 +59,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="true">
+        <correspondence>
           <english>fsdfsd</english>
           <russian>asdasd</russian>
           <transcription>aSdasdasdasd--</transcription>
@@ -76,7 +68,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>11111111111</english>
           <russian></russian>
           <transcription></transcription>
@@ -84,7 +76,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>asdasdasd</english>
           <russian>asdasdasd</russian>
           <transcription>asdasd</transcription>
@@ -93,7 +85,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>asdasdasdasd</english>
           <russian>asdasd</russian>
           <transcription>asdasd</transcription>
@@ -102,7 +94,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>sdfasdfsdfsdfsdf</english>
           <russian></russian>
           <transcription></transcription>
@@ -110,7 +102,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>34234234234</english>
           <russian>sdfvgsdfsdf</russian>
           <transcription>θɛƷð-ɔɔwdc</transcription>
@@ -118,7 +110,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="true">
+        <correspondence>
           <english>sdfsdf</english>
           <russian></russian>
           <transcription></transcription>
@@ -126,7 +118,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>qweqweqwe</english>
           <russian>adasda</russian>
           <transcription>sdasdas</transcription>
@@ -134,7 +126,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>123123123</english>
           <russian></russian>
           <transcription></transcription>
@@ -142,7 +134,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>123123123123123</english>
           <russian></russian>
           <transcription></transcription>
@@ -150,8 +142,16 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>123123123234re</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>1111111</english>
           <russian></russian>
           <transcription></transcription>
           <asksQuantity>0</asksQuantity>
@@ -163,7 +163,7 @@
     </dictionary>
     <dictionary>
       <working-list>
-        <correspondence inuse="false">
+        <correspondence>
           <english>qweqwe</english>
           <russian>asd</russian>
           <transcription>asdasdasd</transcription>
@@ -171,7 +171,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>aSDasASasaasd</english>
           <russian>asd</russian>
           <transcription>∫asdasdʌ-:nb  uedeɔx</transcription>
@@ -180,7 +180,7 @@
           <rightAnswerQuantity>0</rightAnswerQuantity>
           <attemtpsQuantity>0</attemtpsQuantity>
         </correspondence>
-        <correspondence inuse="false">
+        <correspondence>
           <english>asdasdasd</english>
           <russian></russian>
           <transcription></transcription>
@@ -193,7 +193,7 @@
     </dictionary>
     <dictionary>
       <working-list>
-        <correspondence inuse="false">
+        <correspondence>
           <english>3r4234234234</english>
           <russian></russian>
           <transcription></transcription>

@@ -8,24 +8,24 @@ public class Manager {
 	private AudioManager audioMan;
 	private WorkspaceManager workspaceManager;
 	private PairsManager pairsManager;
-	private CurrentPairManager currentPairManager;
+	private CurrentStateManager currentStateManager;
 	private TrashManager trashManager;
 
 	public Manager(String fName) {
-		workspaceManager = new WorkspaceManager(fName);	
+		workspaceManager = new WorkspaceManager(this, fName);	
 		audioMan = new AudioManager(this);
 		pairsManager = new PairsManager(this);	
-		currentPairManager = new CurrentPairManager(this);
+		currentStateManager = new CurrentStateManager(this);
 		trashManager = new TrashManager(this);
 	}
 	
 	public void Load() {
 
 		workspaceManager.load();
-		if ((currentPairManager.getCurrentPair() == null)	|| (pairsManager.getPairByKey(currentPairManager.getCurrentPair().getEnglish()) != null)) {
+		if ((currentStateManager.getCurrentPair() == null)	|| (pairsManager.getPairByKey(currentStateManager.getCurrentPair().getEnglish()) != null)) {
 			return;
 		}
-		currentPairManager.setCurrentPair(null);
+		currentStateManager.setCurrentPair(null);
 	}
 
 	public void runTrainer() {
@@ -53,8 +53,8 @@ public class Manager {
 		return workspaceManager;
 	}
 
-	public CurrentPairManager getCurrentPairManager() {
-		return currentPairManager;
+	public CurrentStateManager getCurrentStateManager() {
+		return currentStateManager;
 	}
 
 	public TrashManager getTrashManager() {

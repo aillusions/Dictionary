@@ -9,22 +9,15 @@ import com.aillusions.dictionary.model.Workspace;
 public class WorkspaceManager {
 	
 	private Workspace workspace;
-	private Dictionary currentDictionary;
+	private Manager manager;
+
 	private XmlFileManager pdao;
 	
-	public WorkspaceManager(String fName) {
+	public WorkspaceManager(Manager manager, String fName) {
+		this.manager = manager;
 		this.pdao = new XmlFileManager(fName);
 	}
 
-	public void setCurrentDict(Dictionary dict) {
-		if (dict == null) {
-			throw new RuntimeException("Dictionary can not be null.");
-		}
-		if (workspace.getDictioanries().contains(dict)) {
-			currentDictionary = dict;
-		}
-	}
-	
 	public boolean addNewDictionary() {
 
 		String paramString = null;
@@ -37,7 +30,7 @@ public class WorkspaceManager {
 			Dictionary res = new Dictionary();
 			res.setDisplayName(paramString);
 			workspace.getDictioanries().add(res);
-			currentDictionary = res;
+			manager.getCurrentStateManager().setCurrentDict(res);
 			return true;
 		}else{
 			return false;
@@ -58,7 +51,7 @@ public class WorkspaceManager {
 		workspace = pdao.load();
 
 		if (workspace.getDictioanries().size() > 0) {
-			currentDictionary = workspace.getDictioanries().get(0);
+			manager.getCurrentStateManager().setCurrentDict(workspace.getDictioanries().get(0));
 		} else {
 			while(!addNewDictionary()){
 				//Have to specify at least one dictionary!
@@ -67,7 +60,7 @@ public class WorkspaceManager {
 	}
 	
 	public void selectDictionary(String name) {
-		setCurrentDict(getDictionaryByName(name));
+		manager.getCurrentStateManager().setCurrentDict(getDictionaryByName(name));
 	}
 	
 	public void saveInFile() {
@@ -77,10 +70,5 @@ public class WorkspaceManager {
 	public Workspace getWorkspace() {
 		return workspace;
 	}
-
-	public Dictionary getCurrentDictionary() {
-		return currentDictionary;
-	}
-	
 	
 }

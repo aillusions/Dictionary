@@ -43,7 +43,7 @@ public class Trainer implements TrainerViewListener {
 	}
 
 	public Pair getMaxPriorityPair() {
-		return getMaxPriorityPair(this.dictionary.getPairsManager().getAllInUsePairs());
+		return getMaxPriorityPair(this.dictionary.getPairsManager().getAllPairs());
 	}
 
 	public Pair getMaxPriorityPair(List<Pair> paramArrayOfPair) {

@@ -7,11 +7,12 @@ import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
 
 import com.aillusions.dictionary.core.Manager;
+import com.aillusions.dictionary.model.Pair;
 import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.TopEditor;
 import com.aillusions.dictionary.view.components.TopMenuBar;
 
-public class MenuListener implements ActionListener {
+public class CommandsListener implements ActionListener {
 	
 	private Manager dictionary;
 	private TopEditor topEditor;
@@ -33,8 +34,9 @@ public class MenuListener implements ActionListener {
 	public static final String ADD_NEW_DICT = "15";
 	public static final String SELECT_DICT = "16";
 	public static final String SAVE_EXIT = "17";
+	public static final String RESTORE_SELECTED_REMOVED = "18";
 	
-	public MenuListener(Manager dictionary, TopEditor topEditor){
+	public CommandsListener(Manager dictionary, TopEditor topEditor){
 		this.dictionary = dictionary;
 		this.topEditor = topEditor;
 	}
@@ -66,25 +68,25 @@ public class MenuListener implements ActionListener {
 				localAbout.setVisible(true);
 			}else if(e.getActionCommand().equals(EXPAND)){		
 				JMenuItem munuItem = (JMenuItem)e.getSource();
-				if (munuItem.getText().equals("Reduce <")) {
-					munuItem.setText("Expand >");
+				if (munuItem.getText().equals(TopMenuBar.COLLAPSE_MENU_ITEM_NAME)) {
+					munuItem.setText(TopMenuBar.EXPAND_MENU_ITEM_NAME);
 					topEditor.setSize(TopEditor.WINDOW_WIDTH_SHORT, TopEditor.WINDOW_HEIGHT);
 				} else {
-					munuItem.setText("Reduce <");
+					munuItem.setText(TopMenuBar.COLLAPSE_MENU_ITEM_NAME);
 					topEditor.setSize(TopEditor.WINDOW_WIDTH_EXPANDED, TopEditor.WINDOW_HEIGHT);
 				}
 			}else if(e.getActionCommand().equals(MOVE_SAMPLE_UP)){				
-				dictionary.getCurrentPairManager().upCurrentSample();
+				dictionary.getCurrentStateManager().upCurrentSample();
 				topEditor.refresh(false, true);
 			}else if(e.getActionCommand().equals(EDIT_CURRENT)){				
-				if (dictionary.getCurrentPairManager().getCurrentPair() == null)
+				if (dictionary.getCurrentStateManager().getCurrentPair() == null)
 					return;
-				dictionary.getCurrentPairManager().renameCurrentPair(null);
+				dictionary.getCurrentStateManager().renameCurrentPair(null);
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(REMOVE_CURRENT_WORD)){				
-				if (dictionary.getCurrentPairManager().getCurrentPair() == null)
+				if (dictionary.getCurrentStateManager().getCurrentPair() == null)
 					topEditor.Alert("You have to select one before!");
-				dictionary.getCurrentPairManager().removeCurrentPair();
+				dictionary.getCurrentStateManager().removeCurrentPair();
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(ADD_NEW_DICT)){				
 				dictionary.getWorkspaceManager().addNewDictionary();
@@ -96,6 +98,12 @@ public class MenuListener implements ActionListener {
 			}else if(e.getActionCommand().equals(SAVE_EXIT)){				
 				dictionary.getWorkspaceManager().saveInFile();
 				System.exit(1);
+			}else if(e.getActionCommand().equals(RESTORE_SELECTED_REMOVED)){
+				Pair currPair = dictionary.getCurrentStateManager().getCurrentTrashPair();
+				if(currPair != null){
+					dictionary.getTrashManager().restorePair(currPair);
+					topEditor.refresh(true, true);
+				}
 			}
 	}
 

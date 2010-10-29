@@ -21,7 +21,17 @@ public class TrashManager {
 	}
 	
 	public List<Pair> getAllTrashPairs(){
-		return manager.getWorkspaceManager().getCurrentDictionary().getTrash();
+		return manager.getCurrentStateManager().getCurrentDictionary().getTrash();
+	}
+	
+	public Pair getPairByKey(String eng) {
+		Pair res = null;
+		for (Pair word : getAllTrashPairs()) {
+			if (word.getEnglish().equals(eng)) {
+				res = word;
+			}
+		}
+		return res;
 	}
 	
 	public String[] getAllKeys() {

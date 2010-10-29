@@ -13,13 +13,15 @@ import javax.swing.JRadioButtonMenuItem;
 
 import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.model.Dictionary;
-import com.aillusions.dictionary.view.listener.MenuListener;
+import com.aillusions.dictionary.view.listener.CommandsListener;
 
 public class TopMenuBar extends JMenuBar{
 	
 	private static final long serialVersionUID = 1L;
+	public final static String EXPAND_MENU_ITEM_NAME = "Show trash >";
+	public final static String COLLAPSE_MENU_ITEM_NAME = "< Hide trash";
 
-	public TopMenuBar(MenuListener menuListener, Manager namager) {
+	public TopMenuBar(CommandsListener cmdListener, Manager namager) {
 		
 		//JMenuBar menuBar;
 		JMenu menu, submenu;
@@ -32,12 +34,12 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);	
 		menuItem = new JMenuItem("Save");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.SAVE);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.SAVE);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Re load (undo all changes)");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.LOAD);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.LOAD);
 		menu.add(menuItem);
 		menu.addSeparator();		
 		submenu = new JMenu("Select current > ");
@@ -49,9 +51,9 @@ public class TopMenuBar extends JMenuBar{
 		for(Dictionary d : dictioanries){
 			JRadioButtonMenuItem menuItem1 = new JRadioButtonMenuItem(d.getDisplayName());
 			group.add(menuItem1);
-			menuItem1.addActionListener(menuListener);
-			menuItem1.setActionCommand(MenuListener.SELECT_DICT);
-			if(namager.getWorkspaceManager().getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
+			menuItem1.addActionListener(cmdListener);
+			menuItem1.setActionCommand(CommandsListener.SELECT_DICT);
+			if(namager.getCurrentStateManager().getCurrentDictionary().getDisplayName().equals(d.getDisplayName())){
 				menuItem1.setSelected(true);
 			}
 			submenu.add(menuItem1);
@@ -60,29 +62,29 @@ public class TopMenuBar extends JMenuBar{
 		
 		menuItem = new JMenuItem("Use current as default");
 		menuItem.setEnabled(false);
-		menuItem.addActionListener(menuListener);
+		menuItem.addActionListener(cmdListener);
 		menu.add(menuItem);		
 		menuItem = new JMenuItem("Create new");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.ADD_NEW_DICT);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.ADD_NEW_DICT);
 		menu.add(menuItem);			
 		menu.addSeparator();	
 		menuItem = new JMenuItem("Open all in Word");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.OPEN_ALL_WORDS_IN_WORD);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.OPEN_ALL_WORDS_IN_WORD);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Open selected in Word");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.OPEN_SELECTED_WORDS_IN_WORD);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.OPEN_SELECTED_WORDS_IN_WORD);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Open examples in Word");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.OPEN_SAMPLES_IN_WORD);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.OPEN_SAMPLES_IN_WORD);
 		menu.add(menuItem);
 		menu.addSeparator();	
 		menuItem = new JMenuItem("Save and exit");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.SAVE_EXIT);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.SAVE_EXIT);
 		menu.add(menuItem);
 		
 		//---------------
@@ -90,9 +92,9 @@ public class TopMenuBar extends JMenuBar{
 		menu.setMargin(new Insets(0, 0, 0, 0));
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
-		menuItem = new JMenuItem("Expand >");	
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.EXPAND);
+		menuItem = new JMenuItem(EXPAND_MENU_ITEM_NAME);	
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.EXPAND);
 		menu.add(menuItem);
 
 		group = new ButtonGroup();	
@@ -100,22 +102,22 @@ public class TopMenuBar extends JMenuBar{
 		submenu = new JMenu("Language");
 		submenu.setEnabled(false);
 		menuItem = new JRadioButtonMenuItem("English");
-		menuItem.addActionListener(menuListener);
+		menuItem.addActionListener(cmdListener);
 		submenu.add(menuItem);
 		group.add(menuItem);
 		menuItem = new JRadioButtonMenuItem("Italian");
-		menuItem.addActionListener(menuListener);
+		menuItem.addActionListener(cmdListener);
 		submenu.add(menuItem);
 		group.add(menuItem);
 		menuItem = new JRadioButtonMenuItem("Russian");
-		menuItem.addActionListener(menuListener);
+		menuItem.addActionListener(cmdListener);
 		submenu.add(menuItem);
 		group.add(menuItem);
 		menu.add(submenu);	
 		
 		menuItem = new JCheckBoxMenuItem("Always on top");	
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.SET_ALWAYS_ON_TOP);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.SET_ALWAYS_ON_TOP);
 		menu.add(menuItem);	
 		
 		//---------------
@@ -124,25 +126,22 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
 		menuItem = new JMenuItem("Mix words");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.MIX_WORDS);
-		menu.add(menuItem);
-		menuItem = new JMenuItem("View removed words");
-		menuItem.setEnabled(false);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.MIX_WORDS);
 		menu.add(menuItem);
 		menu.addSeparator();
 		menuItem = new JMenuItem("Edit current");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.EDIT_CURRENT);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.EDIT_CURRENT);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Remove current");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.REMOVE_CURRENT_WORD);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.REMOVE_CURRENT_WORD);
 		menu.add(menuItem);
 		menu.addSeparator();
 		menuItem = new JMenuItem("Move sample up");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.MOVE_SAMPLE_UP);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.MOVE_SAMPLE_UP);
 		menu.add(menuItem);
 		
 		//---------------
@@ -162,8 +161,8 @@ public class TopMenuBar extends JMenuBar{
 		menu.addSeparator();
 		cbMenuItem = new JCheckBoxMenuItem("Play on select");
 		cbMenuItem.setToolTipText("Play record by selection in navigator");
-		cbMenuItem.addActionListener(menuListener);
-		cbMenuItem.setActionCommand(MenuListener.PLAY_ON_SELECTION);
+		cbMenuItem.addActionListener(cmdListener);
+		cbMenuItem.setActionCommand(CommandsListener.PLAY_ON_SELECTION);
 		menu.add(cbMenuItem);
 		
 		//---------------
@@ -184,8 +183,8 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
 		menuItem = new JMenuItem("Run trainer");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.RUN_TRAINER);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.RUN_TRAINER);
 		menu.add(menuItem);
 		menuItem = new JMenuItem("View statistic");
 		menuItem.setEnabled(false);
@@ -200,8 +199,8 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
 		menuItem = new JMenuItem("About Dictionary");
-		menuItem.addActionListener(menuListener);
-		menuItem.setActionCommand(MenuListener.ABOUT);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.ABOUT);
 		menu.add(menuItem);		
 
 	}

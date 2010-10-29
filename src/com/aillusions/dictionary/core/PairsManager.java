@@ -1,7 +1,6 @@
 package com.aillusions.dictionary.core;
 
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -18,7 +17,7 @@ public class PairsManager {
 	}
 	
 	public  List<Pair> getAllPairs(){
-		return manager.getWorkspaceManager().getCurrentDictionary().getPairs();
+		return manager.getCurrentStateManager().getCurrentDictionary().getPairs();
 	}
 
 	public String[] getAllKeys() {
@@ -79,7 +78,7 @@ public class PairsManager {
 				fw.setTranscription("");
 				addNew(fw);
 			}
-			manager.getCurrentPairManager().setCurrentPair(fw);
+			manager.getCurrentStateManager().setCurrentPair(fw);
 
 			return true;
 		}
@@ -93,7 +92,7 @@ public class PairsManager {
 	public boolean addNewSample(String paramString) {
 		
 		boolean res = false;
-		if (manager.getCurrentPairManager().getCurrentPair() == null) {
+		if (manager.getCurrentStateManager().getCurrentPair() == null) {
 			JOptionPane.showMessageDialog(null, "Select word before!");
 			res = false;
 		} else {
@@ -101,16 +100,16 @@ public class PairsManager {
 				paramString = JOptionPane.showInputDialog(new JFrame(
 						"FrameDemo"), "Input word please:", "Add new word", 3);
 			if ((paramString != null) && (paramString.length() > 0)) {
-				manager.getCurrentPairManager().getCurrentPair().addSample(paramString);
+				manager.getCurrentStateManager().getCurrentPair().addSample(paramString);
 				res = true;
-				manager.getCurrentPairManager().setCurrSample(paramString);
+				manager.getCurrentStateManager().setCurrSample(paramString);
 			}
 		}
-		manager.getCurrentPairManager().upCurrentSample();
+		manager.getCurrentStateManager().upCurrentSample();
 		return res;
 	}
 
-	public LinkedList<Pair> getAllInUsePairs() {
+/*	public LinkedList<Pair> getAllInUsePairs() {
 		
 		LinkedList<Pair> localLinkedList = new LinkedList<Pair>();
 		for (Pair localPair : getAllPairs()) {
@@ -120,9 +119,9 @@ public class PairsManager {
 			localLinkedList.add(localPair);
 		}
 		return localLinkedList;
-	}
+	}*/
 
-	public String[] getAllInUseKeys() {
+/*	public String[] getAllInUseKeys() {
 		
 		LinkedList<String> localLinkedList = new LinkedList<String>();
 		
@@ -131,7 +130,7 @@ public class PairsManager {
 		}
 		
 		return ((String[]) localLinkedList.toArray(new String[localLinkedList.size()]));
-	}
+	}*/
 	
 
 }

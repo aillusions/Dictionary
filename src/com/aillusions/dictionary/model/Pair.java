@@ -22,8 +22,8 @@ public class Pair {
 	@XStreamImplicit(itemFieldName = "sample")
 	private List<String> samples;
 
-	@XStreamAsAttribute()
-	private boolean inuse;
+	//@XStreamAsAttribute()
+	//private boolean inuse;
 	
 	@XStreamAlias("asksQuantity")
 	private int asksQuantity; 
@@ -114,13 +114,13 @@ public class Pair {
 		
 	}
 	
-	public boolean isInuse() {
+/*	public boolean isInuse() {
 		return inuse;
 	}
 
 	public void setInuse(boolean inuse) {
 		this.inuse = inuse;
-	}
+	}*/
 
 	public Pair() {
 		super();
