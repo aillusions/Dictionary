@@ -76,9 +76,9 @@ public class MainDictPanelListener {
 	public void Add_btnMouseReleased(MouseEvent paramMouseEvent) {
 		boolean bool = false;
 		if (topEditor.jTxtSearch.getText().equals(""))
-			bool = dictionary.getPairsManager().addNew(null);
+			bool = dictionary.getPairsManager().addNewKey(null);
 		else
-			bool = dictionary.getPairsManager().addNew(topEditor.jTxtSearch.getText());
+			bool = dictionary.getPairsManager().addNewKey(topEditor.jTxtSearch.getText());
 		if (bool)
 			topEditor.jTxtSearch.setText("");
 		topEditor.refresh(true, true);
@@ -89,9 +89,9 @@ public class MainDictPanelListener {
 		if (paramKeyEvent.getKeyCode() == 10) {
 			boolean bool = false;
 			if (str.equals(""))
-				bool = dictionary.getPairsManager().addNew(null);
+				bool = dictionary.getPairsManager().addNewKey(null);
 			else
-				bool = dictionary.getPairsManager().addNew(str);
+				bool = dictionary.getPairsManager().addNewKey(str);
 			if (bool)
 				topEditor.jTxtSearch.setText("");
 			topEditor.refresh(true, true);

@@ -1,5 +1,6 @@
 package com.aillusions.dictionary.core;
 
+import com.aillusions.dictionary.Trainer;
 import com.aillusions.dictionary.xsl.DocConverter;
 
 public class Manager {
@@ -8,19 +9,14 @@ public class Manager {
 	private WorkspaceManager workspaceManager;
 	private PairsManager pairsManager;
 	private CurrentPairManager currentPairManager;
-
-	private TrainerManager trainer;
+	private TrashManager trashManager;
 
 	public Manager(String fName) {
 		workspaceManager = new WorkspaceManager(fName);	
 		audioMan = new AudioManager(this);
 		pairsManager = new PairsManager(this);	
 		currentPairManager = new CurrentPairManager(this);
-	}
-
-	public void runTrainer() {
-		this.trainer = new TrainerManager(this);
-		this.trainer.startTraining();
+		trashManager = new TrashManager(this);
 	}
 	
 	public void Load() {
@@ -32,11 +28,19 @@ public class Manager {
 		currentPairManager.setCurrentPair(null);
 	}
 
+	public void runTrainer() {
+		 new Trainer(this).startTraining();
+	}
+
 	public void runWord(boolean paramBoolean1, boolean paramBoolean2) {
 		workspaceManager.saveInFile();
 		new DocConverter().runWord(paramBoolean1, paramBoolean2);
 	}
-
+	
+	//
+	//Getters and setters
+	//
+	
 	public AudioManager getAudioMan() {
 		return audioMan;
 	}
@@ -52,7 +56,10 @@ public class Manager {
 	public CurrentPairManager getCurrentPairManager() {
 		return currentPairManager;
 	}
-	
+
+	public TrashManager getTrashManager() {
+		return trashManager;
+	}	
 	
 	
 }

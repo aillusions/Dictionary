@@ -42,12 +42,12 @@ public class PairsManager {
 		return res;
 	}
 	
-	public Pair removePairByKey(Pair pair) {
+	public Pair removePair(Pair pair) {
 		Pair res = null;
 		int indexDel = getAllPairs().indexOf(pair);
 		int indexSibl = -1;
 		getAllPairs().remove(pair);
-		manager.getWorkspaceManager().getCurrentDictionary().getTrash().add(pair);
+		manager.getTrashManager().addToTrash(pair);
 		if (getAllPairs().size() > indexDel) {
 			indexSibl = indexDel;
 		} else if (getAllPairs().size() > 0
@@ -63,7 +63,7 @@ public class PairsManager {
 		Collections.shuffle(getAllPairs());
 	}
 	
-	public boolean addNew(String paramString) {
+	public boolean addNewKey(String paramString) {
 
 		if ((paramString == null) || (paramString.trim().equals("")))
 			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),
@@ -77,7 +77,7 @@ public class PairsManager {
 				fw.setEnglish(paramString);
 				fw.setTranscription("");
 				fw.setTranscription("");
-				getAllPairs().add(fw);
+				addNew(fw);
 			}
 			manager.getCurrentPairManager().setCurrentPair(fw);
 
@@ -86,6 +86,10 @@ public class PairsManager {
 		return false;
 	}
 
+	public boolean addNew(Pair pair){
+		return getAllPairs().add(pair);
+	}
+	
 	public boolean addNewSample(String paramString) {
 		
 		boolean res = false;

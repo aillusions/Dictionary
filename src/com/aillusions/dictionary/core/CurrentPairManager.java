@@ -46,7 +46,7 @@ public class CurrentPairManager {
 			return;
 		}
 		manager.getAudioMan().removeAllTightAudio(getCurrentPair().getEnglish());
-		Pair localPair = manager.getPairsManager().removePairByKey(getCurrentPair());
+		Pair localPair = manager.getPairsManager().removePair(getCurrentPair());
 		setCurrentPair(localPair);
 		this.currSample = null;
 	}

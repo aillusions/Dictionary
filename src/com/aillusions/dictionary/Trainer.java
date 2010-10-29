@@ -1,16 +1,19 @@
-package com.aillusions.dictionary.core;
+package com.aillusions.dictionary;
 
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.model.Pair;
 import com.aillusions.dictionary.view.TrainerView;
 import com.aillusions.dictionary.view.TrainerViewListener;
 
-public class TrainerManager implements TrainerViewListener {
+public class Trainer implements TrainerViewListener {
+	
 	private Manager dictionary;
+	
 	private TrainerView view;
 	private boolean isEngRus;
 	Random generatorQuestion = new Random(0L);
@@ -19,7 +22,7 @@ public class TrainerManager implements TrainerViewListener {
 	Random generatorENG_RUS = new Random(0L);
 	private Pair currentPair = null;
 
-	public TrainerManager(Manager paramDictionary) {
+	public Trainer(Manager paramDictionary) {
 		this.dictionary = paramDictionary;
 	}
 
@@ -141,7 +144,7 @@ public class TrainerManager implements TrainerViewListener {
 				} catch (Exception localException) {
 					localException.printStackTrace();
 				}
-				TrainerManager.this.showQuestion();
+				Trainer.this.showQuestion();
 			}
 		}).start();
 	}
