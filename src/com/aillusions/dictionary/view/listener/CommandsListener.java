@@ -72,6 +72,7 @@ public class CommandsListener implements ActionListener {
 				About localAbout = new About();				
 				localAbout.setLocationRelativeTo(topEditor);
 				localAbout.setModal(true);
+				localAbout.setAlwaysOnTop(topEditor.isAlwaysOnTop());
 				localAbout.setVisible(true);
 			}else if(e.getActionCommand().equals(EXPAND)){		
 				JMenuItem munuItem = (JMenuItem)e.getSource();
@@ -115,6 +116,7 @@ public class CommandsListener implements ActionListener {
 				Statistics localAbout = new Statistics(manager);
 				localAbout.setLocationRelativeTo(topEditor);
 				localAbout.setModal(true);
+				localAbout.setAlwaysOnTop(topEditor.isAlwaysOnTop());
 				localAbout.setVisible(true);
 			}else if(e.getActionCommand().equals(CHECK_FOR_YPDATE)){				
 				File updateDir = new File("update");

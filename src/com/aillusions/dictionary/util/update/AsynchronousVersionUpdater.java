@@ -35,7 +35,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 		boolean continueAscting = vc.isNewerVersionAvailable();
 
 		if(showMessageIfUpToDate && !continueAscting){
-			JOptionPane.showConfirmDialog(null, "You have up to date version!");
+			JOptionPane.showMessageDialog(currentContainer, "You have up to date version!");
 		}
 		
 		l.log(Priority.INFO, "Newer version available: " + continueAscting + "; current: " + vc.getCurrentVersion() + "; avail: " + vc.getLastAvailableVersion() );
@@ -44,7 +44,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 		if (continueAscting) {
 
 			Object[] options = { "Yes", "No", "Never ask me" };
-			int n = JOptionPane.showOptionDialog(null,
+			int n = JOptionPane.showOptionDialog(currentContainer,
 					"Would you like to update Dictionary now?",
 					"Newer version is available!",
 					JOptionPane.YES_NO_CANCEL_OPTION,
@@ -72,7 +72,7 @@ public class AsynchronousVersionUpdater implements Runnable {
 		if (continueAscting) {
 
 			Object[] options1 = { "Yes", "No" };
-			int n1 = JOptionPane.showOptionDialog(null,
+			int n1 = JOptionPane.showOptionDialog(currentContainer,
 					"Can we restart Dictionary now?",
 					"Latest version will be installed!",
 					JOptionPane.YES_NO_CANCEL_OPTION,
