@@ -167,7 +167,8 @@ public class TopMenuBar extends JMenuBar{
 		menu.setFont(new Font("Arial", 0, 11));
 		add(menu);		
 		menuItem = new JMenuItem("Check for update");
-		menuItem.setEnabled(false);
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.CHECK_FOR_YPDATE);
 		menu.add(menuItem);
 		menuItem = new JCheckBoxMenuItem("Do not ask");
 		menuItem.setEnabled(false);

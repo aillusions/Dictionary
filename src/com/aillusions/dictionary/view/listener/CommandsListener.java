@@ -2,12 +2,15 @@ package com.aillusions.dictionary.view.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
 
 import com.aillusions.dictionary.core.Manager;
 import com.aillusions.dictionary.model.Pair;
+import com.aillusions.dictionary.util.IOTools;
+import com.aillusions.dictionary.util.update.VersionChecker;
 import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.Statistics;
 import com.aillusions.dictionary.view.TopEditor;
@@ -37,6 +40,7 @@ public class CommandsListener implements ActionListener {
 	public static final String SAVE_EXIT = "17";
 	public static final String RESTORE_SELECTED_REMOVED = "18";
 	public static final String VIEW_STATISTIC = "19";
+	public static final String CHECK_FOR_YPDATE = "20";
 	
 	public CommandsListener(Manager dictionary, TopEditor topEditor){
 		this.manager = dictionary;
@@ -66,8 +70,8 @@ public class CommandsListener implements ActionListener {
 				topEditor.refresh(true, true);
 			}else if(e.getActionCommand().equals(ABOUT)){				
 				About localAbout = new About();				
-				localAbout.frameConstructor();
 				localAbout.setLocationRelativeTo(topEditor);
+				localAbout.setModal(true);
 				localAbout.setVisible(true);
 			}else if(e.getActionCommand().equals(EXPAND)){		
 				JMenuItem munuItem = (JMenuItem)e.getSource();
@@ -110,7 +114,14 @@ public class CommandsListener implements ActionListener {
 			}else if(e.getActionCommand().equals(VIEW_STATISTIC)){				
 				Statistics localAbout = new Statistics(manager);
 				localAbout.setLocationRelativeTo(topEditor);
+				localAbout.setModal(true);
 				localAbout.setVisible(true);
+			}else if(e.getActionCommand().equals(CHECK_FOR_YPDATE)){				
+				File updateDir = new File("update");
+				if (updateDir.exists()) {
+					IOTools.deleteDirectory(updateDir);
+				}
+				VersionChecker.checkVersionInSeparateThread(topEditor);
 			}
 	}
 
