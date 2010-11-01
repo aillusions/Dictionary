@@ -64,11 +64,12 @@ public class PairsManager {
 	
 	public boolean addNewKey(String paramString) {
 
-		if ((paramString == null) || (paramString.trim().equals("")))
-			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),
-					"Input word please:", "Add new word", 3);
-		if ((paramString != null) && (paramString.length() > 0)
-				&& (getPairByKey(paramString) == null)) {
+		if ((paramString == null) || (paramString.trim().equals(""))){
+			
+			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"), "Input word please:", "Add new word", 3);
+		}
+		
+		if ((paramString != null) && (paramString.length() > 0)) {
 
 			Pair fw = null;
 			if (paramString != null) {
@@ -76,17 +77,21 @@ public class PairsManager {
 				fw.setEnglish(paramString);
 				fw.setTranscription("");
 				fw.setTranscription("");
-				addNew(fw);
+				return addNew(fw);
 			}
-			manager.getCurrentStateManager().setCurrentPair(fw);
-
+	
 			return true;
 		}
 		return false;
 	}
 
 	public boolean addNew(Pair pair){
-		return getAllPairs().add(pair);
+		if(manager.getTrashManager().getPairByKey(pair.getEnglish()) == null && getPairByKey(pair.getEnglish()) == null){
+			boolean res = getAllPairs().add(pair);
+			manager.getCurrentStateManager().setCurrentPair(pair);
+			return res;
+		}
+		return false;
 	}
 	
 	public boolean addNewSample(String paramString) {
@@ -109,28 +114,6 @@ public class PairsManager {
 		return res;
 	}
 
-/*	public LinkedList<Pair> getAllInUsePairs() {
-		
-		LinkedList<Pair> localLinkedList = new LinkedList<Pair>();
-		for (Pair localPair : getAllPairs()) {
-			if (!(localPair.isInuse())){
-				continue;
-			}
-			localLinkedList.add(localPair);
-		}
-		return localLinkedList;
-	}*/
 
-/*	public String[] getAllInUseKeys() {
-		
-		LinkedList<String> localLinkedList = new LinkedList<String>();
-		
-		for (Pair localPair : getAllInUsePairs()) {
-			localLinkedList.add(localPair.getEnglish());
-		}
-		
-		return ((String[]) localLinkedList.toArray(new String[localLinkedList.size()]));
-	}*/
-	
 
 }
