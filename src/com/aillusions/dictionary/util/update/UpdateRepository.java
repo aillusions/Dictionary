@@ -38,14 +38,7 @@ public class UpdateRepository {
 		String lastAvailableVersion = null;
 		
 		try {			
-			HttpURLConnection ucn = (HttpURLConnection)new URL(Config.getConfig().getUpdateRepoURL() + "?param=" + System.currentTimeMillis()).openConnection();
-			
-			ucn.setDefaultUseCaches(false);
-			ucn.setUseCaches(false);
-			ucn.setRequestProperty("Cache-Control", "no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-			ucn.setRequestProperty("Expires", "0");
-			ucn.setRequestProperty("Pragma", "no-cache");
-			ucn.setRequestProperty("Content-Type", "text/html");
+			HttpURLConnection ucn = (HttpURLConnection)new URL(Config.getConfig().getUpdateRepoURL()).openConnection();
 			
 			String content = IOTools.readStreamAsString(ucn.getInputStream());
 			int indexOfLastDict = content.indexOf(".zip\">Dictionary-");
@@ -87,7 +80,7 @@ public class UpdateRepository {
 		URLConnection ucn = null;
 
 		try {
-			ucn = new URL(Config.getConfig().getUpdateRepoURL() + "/" +getUpdateZipFileName(lastAvailableVersion)).openConnection();
+			ucn = new URL(Config.getConfig().getUpdateDownloadRepoURL() + "/" +getUpdateZipFileName(lastAvailableVersion)).openConnection();
 		} catch (MalformedURLException e) {
 			l.log(Priority.ERROR, e);
 		} catch (IOException e) {

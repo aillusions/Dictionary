@@ -49,4 +49,8 @@ public class Config {
 	public String getUpdateRepoURL(){
 		return getPropertyValue("updateRepoURL");
 	}
+	
+	public String getUpdateDownloadRepoURL(){
+		return getPropertyValue("updateDownloadRepoURL");
+	}
 }

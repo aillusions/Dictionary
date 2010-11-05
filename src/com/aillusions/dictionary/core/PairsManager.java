@@ -86,12 +86,23 @@ public class PairsManager {
 	}
 
 	public boolean addNew(Pair pair){
-		if(manager.getTrashManager().getPairByKey(pair.getEnglish()) == null && getPairByKey(pair.getEnglish()) == null){
-			boolean res = getAllPairs().add(pair);
+		
+		if(getPairByKey(pair.getEnglish()) == null){
+			
+			if(manager.getTrashManager().getPairByKey(pair.getEnglish()) == null){
+				boolean res = getAllPairs().add(pair);
+				manager.getCurrentStateManager().setCurrentPair(pair);
+				return res;
+			}else{
+				Pair pairTemp = manager.getTrashManager().getPairByKey(pair.getEnglish());
+				boolean res = manager.getTrashManager().restorePair(pairTemp);
+				manager.getCurrentStateManager().setCurrentPair(pairTemp);
+				return res;
+			}
+		}else{
 			manager.getCurrentStateManager().setCurrentPair(pair);
-			return res;
 		}
-		return false;
+		return true;
 	}
 	
 	public boolean addNewSample(String paramString) {
