@@ -77,6 +77,10 @@ public class TopMenuBar extends JMenuBar{
 		menuItem.addActionListener(cmdListener);
 		menuItem.setActionCommand(CommandsListener.OPEN_SAMPLES_IN_WORD);
 		menu.add(menuItem);
+		menuItem = new JMenuItem("Open details in Word");
+		menuItem.addActionListener(cmdListener);
+		menuItem.setActionCommand(CommandsListener.OPEN_FULL_WORDS_DETAILS_IN_WORD);
+		menu.add(menuItem);
 		menu.addSeparator();	
 		menuItem = new JMenuItem("Save and exit");
 		menuItem.addActionListener(cmdListener);

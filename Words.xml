@@ -3,9 +3,2604 @@
 <workspace>
   <dictionaries>
     <dictionary>
-      <working-list/>
-      <removed-list/>
+      <working-list>
+        <correspondence>
+          <english>sbadato</english>
+          <russian>рассеянный</russian>
+          <transcription>zbaˈdato</transcription>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>1</rightAnswerQuantity>
+          <attemtpsQuantity>8</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>notte</english>
+          <russian>ночь</russian>
+          <transcription>&apos;nɔtte</transcription>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>valore</english>
+          <russian>цена, стоимость</russian>
+          <transcription>va&apos;lore</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>poltrone</english>
+          <russian>лентяй</russian>
+          <transcription>polˈtrone</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>capello</english>
+          <russian>волос, шляпа?</russian>
+          <transcription>kap&apos;pɛllo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>zaino</english>
+          <russian>рюкзак</russian>
+          <transcription>ˈdzajno</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sciupare</english>
+          <russian>портить</russian>
+          <transcription>∫u&apos;pare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>schivare</english>
+          <russian>избегать; уклоняться</russian>
+          <transcription>ski&apos;vare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>circa</english>
+          <russian>около, приблизительно, что касается</russian>
+          <transcription>&apos;t∫irka</transcription>
+          <sample>circa mille lire</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>avere</english>
+          <russian>иметь, обладать, владеть</russian>
+          <transcription>aˈvere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sporco</english>
+          <russian>грязный, мерзкий</russian>
+          <transcription>&apos;spɔrko</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>orologiaio</english>
+          <russian>часовщик</russian>
+          <transcription>oroloˈdʒajo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mezzo</english>
+          <russian>половина, наполовину, средний</russian>
+          <transcription>&apos;mɛddzo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gentilezza</english>
+          <russian>вежливость, любезность</russian>
+          <transcription>dʒentiˈlettsa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sciarpa</english>
+          <russian>шарф</russian>
+          <transcription>&apos;∫arpa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ogni</english>
+          <russian>всякий, каждый, все</russian>
+          <transcription>ˈoɲɲi</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>prezzo</english>
+          <russian>цена, стоимость</russian>
+          <transcription>ˈprɛttso</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>male</english>
+          <russian>плохо</russian>
+          <transcription>&apos;male</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scegliere</english>
+          <russian>выбирать</russian>
+          <transcription>ˈʃeʎʎere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>giorno</english>
+          <russian>день, сутки</russian>
+          <transcription>&apos;dƷorno</transcription>
+          <sample>Parola del Giorno</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gita</english>
+          <russian>прогулка, экскурсия</russian>
+          <transcription>&apos;dƷita</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>camera</english>
+          <russian>комната</russian>
+          <transcription>&apos;kamera</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>genio</english>
+          <russian>гений</russian>
+          <transcription>&apos;dƷɛnio</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>quotidiano</english>
+          <russian>ежедневный, бытовой, будничный</russian>
+          <transcription>kwotiˈdjano</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>questo</english>
+          <russian>этот, это</russian>
+          <transcription>k&apos;uesto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>tirare</english>
+          <russian>тянуть, тащить</russian>
+          <transcription>ti&apos;rare</transcription>
+          <sample>spingere o tirare</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scendere</english>
+          <russian>сходить, спускаться</russian>
+          <transcription>&apos;∫endere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>palla</english>
+          <russian>мяч, шар</russian>
+          <transcription>ˈpalla</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>corpo</english>
+          <russian>тело</russian>
+          <transcription>&apos;kɔrpo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>potere</english>
+          <russian>мочь, иметь возможность</russian>
+          <transcription>po&apos;tere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>poltrona</english>
+          <russian>кресло</russian>
+          <transcription>polˈtrona</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scopo</english>
+          <russian>цель</russian>
+          <transcription>&apos;skɔpo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>capire</english>
+          <russian>понимать</russian>
+          <transcription>ka&apos;pire</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gusto</english>
+          <russian>вкус, вкусовое ощущение</russian>
+          <transcription>&apos;gusto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scherzoso</english>
+          <russian>шуточный, шутливый</russian>
+          <transcription>sker&apos;tsoso</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>qualcosa</english>
+          <russian>что-нибудь, что-то, кое-что</russian>
+          <transcription>kwalˈkɔsa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mondo</english>
+          <russian>чистый, опрятный, мир, вселенная</russian>
+          <transcription></transcription>
+          <sample>E&apos; uno dei tecnici migliori del mondo.</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>felice</english>
+          <russian>счастливый, довольный</russian>
+          <transcription>feˈlitʃe</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>testa</english>
+          <russian>голова, головная часть</russian>
+          <transcription>&apos;tɛsta</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gli</english>
+          <russian>ему</russian>
+          <transcription>ʎi</transcription>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>1</rightAnswerQuantity>
+          <attemtpsQuantity>5</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sdoganare</english>
+          <russian>растаможивать</russian>
+          <transcription>zdogaˈnare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>giardino</english>
+          <russian>сад</russian>
+          <transcription>dƷar&apos;dino</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>giusto</english>
+          <russian>правильный, точный</russian>
+          <transcription>&apos;dƷusto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>capo</english>
+          <russian>голова</russian>
+          <transcription>&apos;kapo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>quello</english>
+          <russian>тот</russian>
+          <transcription>ku&apos;ello</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>smettere</english>
+          <russian>оставлять, бросать, переставать</russian>
+          <transcription>&apos;zmettere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>pollo</english>
+          <russian>курица, петух</russian>
+          <transcription>ˈpollo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sera</english>
+          <russian>вечер</russian>
+          <transcription>&apos;sera</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mille</english>
+          <russian>тысяча</russian>
+          <transcription>&apos;mille</transcription>
+          <sample>circa mille lire</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sole</english>
+          <russian>солнце</russian>
+          <transcription>&apos;sole</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>subito</english>
+          <russian>внезапно, сейчас, сразу</russian>
+          <transcription>&apos;subito</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>rosso</english>
+          <russian>красный</russian>
+          <transcription>&apos;rosso</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ora</english>
+          <russian>час, время</russian>
+          <transcription>&apos;ora</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>polo</english>
+          <russian>полюс</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>pala</english>
+          <russian>лопата</russian>
+          <transcription>ˈpala</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gente</english>
+          <russian>люди</russian>
+          <transcription>ˈdʒɛnte</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>spingere</english>
+          <russian>толкать, от себя</russian>
+          <transcription>ˈspindʒere</transcription>
+          <sample>spingere o tirare</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>pensare</english>
+          <russian>думать</russian>
+          <transcription>pen&apos;sare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>calo</english>
+          <russian>уменьшение, снижение</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sveglia</english>
+          <russian>будильник, пробуждение</russian>
+          <transcription>&apos;zveʎa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>moglie</english>
+          <russian>жена</russian>
+          <transcription>&apos;moʎʎe</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>braccio</english>
+          <russian>рука (от плеча до кисти)</russian>
+          <transcription>&apos;bratt∫o</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>piede</english>
+          <russian>нога, стопа, ступня</russian>
+          <transcription>ˈpjɛde</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cassa</english>
+          <russian>ящик, касса</russian>
+          <transcription>&apos;kassa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>casa</english>
+          <russian>дом, квартира</russian>
+          <transcription>&apos;kasa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>caso</english>
+          <russian>случай, случайность</russian>
+          <transcription>&apos;kazo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sciare</english>
+          <russian>кататься на лыжах</russian>
+          <transcription>ʃiˈare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>duro</english>
+          <russian>твёрдый</russian>
+          <transcription>&apos;duro</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cena</english>
+          <russian>ужин, банкет</russian>
+          <transcription>&apos;t∫ena</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ciascuno</english>
+          <russian>каждый, всякий</russian>
+          <transcription>t∫as&apos;kuno</transcription>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>suo</english>
+          <russian>его, её</russian>
+          <transcription>ˈsuo</transcription>
+          <sample>suo babbo - его отец</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>metà</english>
+          <russian>половина, середина</russian>
+          <transcription>meˈta</transcription>
+          <sample>a metà prezzo</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mese</english>
+          <russian>месяц</russian>
+          <transcription>ˈmese</transcription>
+          <sample>mese corrente — текущий месяц</sample>
+          <sample>mesi</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>doppio</english>
+          <russian>двойной, в два раза больший</russian>
+          <transcription>ˈdoppjo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>rospo</english>
+          <russian>жаба</russian>
+          <transcription>ˈrɔspo</transcription>
+          <sample>ingoiare il rospo - to bite the bullet</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sapere</english>
+          <russian>знать, уметь</russian>
+          <transcription>saˈpere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sbagliare</english>
+          <russian>ошибаться, делать ошибку</russian>
+          <transcription>zbaʎˈʎare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cerca</english>
+          <russian>поиски, розыски, поиск (кнопка)</russian>
+          <transcription>tʃerka</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cercare</english>
+          <russian>искать, разыскивать</russian>
+          <transcription>tʃerˈkare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>nome</english>
+          <russian>имя, название</russian>
+          <transcription>ˈnome</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>andare</english>
+          <russian>ходить, идти; ездить, ехать</russian>
+          <transcription>anˈdare</transcription>
+          <sample>andare in città - to go into town</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>lasciare</english>
+          <russian>оставлять, покидать, бросать</russian>
+          <transcription>laʃˈʃare</transcription>
+          <sample>Lasciatemi cantare</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>religione</english>
+          <russian>религия; вера</russian>
+          <transcription>reliˈdʒone</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>noi</english>
+          <russian>мы</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>voi</english>
+          <russian>вы</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>lui</english>
+          <russian>он</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>lei</english>
+          <russian>она</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>loro</english>
+          <russian>они</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>domani</english>
+          <russian>завтра</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>pronto</english>
+          <russian>готовый, алло</russian>
+          <transcription>ˈpronto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>contare</english>
+          <russian>считать, подсчитывать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bacio</english>
+          <russian>поцелуй</russian>
+          <transcription>batʃo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>baciare</english>
+          <russian>целовать</russian>
+          <transcription>baˈtʃare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bellissimo</english>
+          <russian>wonderful, very beautiful </russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
+      <removed-list>
+        <correspondence>
+          <english>scusare</english>
+          <russian>извинять, прощать</russian>
+          <transcription>sku&apos;zare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ho</english>
+          <russian>у меня есть</russian>
+          <transcription>ɔ</transcription>
+          <sample>io non ho paura</sample>
+          <sample>io ho</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>il</english>
+          <russian>определенный артикль</russian>
+          <transcription>il</transcription>
+          <sample>lo, l&apos;, gli</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>qweryu</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ciao</english>
+          <russian>чао! пока! привет!</russian>
+          <transcription>&apos;t∫ao</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>penna</english>
+          <russian>перо, ручка</russian>
+          <transcription>ˈpenna</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>caffè</english>
+          <russian>кафе, кофе</russian>
+          <transcription>kafˈfɛ</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gomma</english>
+          <russian>резина</russian>
+          <transcription>ˈgomma</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>Euròpa</english>
+          <russian>Европа</russian>
+          <transcription>eu&apos;rɔpa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>riva</english>
+          <russian>берег</russian>
+          <transcription>&apos;riva</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cucina</english>
+          <russian>кухня</russian>
+          <transcription>ku&apos;t∫ina</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ha</english>
+          <russian>имеет</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mamma</english>
+          <russian>мама</russian>
+          <transcription>&apos;mamma</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>paura</english>
+          <russian>страх, боязнь</russian>
+          <transcription>pa&apos;ura</transcription>
+          <sample>io non ho paura</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scrivere</english>
+          <russian>писать</russian>
+          <transcription>ˈskrivere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bagno</english>
+          <russian>ванна, купание</russian>
+          <transcription>ˈbaɲɲo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ricco</english>
+          <russian>богатый</russian>
+          <transcription>&apos;rikko</transcription>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>1</rightAnswerQuantity>
+          <attemtpsQuantity>1</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>santo</english>
+          <russian>святой</russian>
+          <transcription>&apos;santo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>donna</english>
+          <russian>женщина, жена</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>Enzo</english>
+          <russian>Энцо</russian>
+          <transcription>Энцо</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>padre</english>
+          <russian>отец</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>colleghi</english>
+          <russian>коллеги</russian>
+          <transcription>kol&apos;lɛgi</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>callo</english>
+          <russian>мозоль</russian>
+          <transcription>ˈkallo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>don</english>
+          <russian>господин, дон</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>o</english>
+          <russian>или, либо; то есть</russian>
+          <transcription></transcription>
+          <sample>o che..., o che</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sci</english>
+          <russian>лыжи</russian>
+          <transcription>∫i</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>figlio</english>
+          <russian>сын</russian>
+          <transcription>ˈfiʎʎo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>in</english>
+          <russian>в, на</russian>
+          <transcription></transcription>
+          <sample>andare in città - to go into town</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>e</english>
+          <russian>и</russian>
+          <transcription></transcription>
+          <sample>padre e madre</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>io</english>
+          <russian>я</russian>
+          <transcription></transcription>
+          <sample>io ho</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>quindici</english>
+          <russian>пятнадцать</russian>
+          <transcription>ku&apos;indit∫i</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>volgare</english>
+          <russian>вульгарный</russian>
+          <transcription>volˈgare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scatola</english>
+          <russian>коробка</russian>
+          <transcription>&apos;skatola</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gamba</english>
+          <russian>нога</russian>
+          <transcription>&apos;gamba</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>lungo</english>
+          <russian>длинный</russian>
+          <transcription>&apos;luŋgo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>barche</english>
+          <russian>лодки</russian>
+          <transcription>&apos;barke</transcription>
+          <sample>barca - лодка</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>banchi</english>
+          <russian>скамейки</russian>
+          <transcription>&apos;baŋki</transcription>
+          <sample>banco - скамья, лавка</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>svago</english>
+          <russian>веселье</russian>
+          <transcription>ˈzvago</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>friggere</english>
+          <russian>жарить</russian>
+          <transcription>ˈfriddʒere</transcription>
+          <sample>Friggere le erbe</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bagnare</english>
+          <russian>купать, мыть</russian>
+          <transcription>baɲˈɲare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>svagare</english>
+          <russian>развлекать</russian>
+          <transcription>zvaˈgare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>doppiare</english>
+          <russian>удваивать</russian>
+          <transcription>dopˈpjare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bicicletta</english>
+          <russian>велосипед</russian>
+          <transcription>bitʃiˈkletta</transcription>
+          <sample>Cicciobello impara ad andare in bicicletta</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cantare</english>
+          <russian>петь, быть певцом</russian>
+          <transcription>kanˈtare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>chitarra</english>
+          <russian>гитара</russian>
+          <transcription>kiˈtarra</transcription>
+          <sample>con la chitarra in mano</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>gnomo</english>
+          <russian>гном</russian>
+          <transcription>ˈɲɔmo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scarpa</english>
+          <russian>ботинок, туфля</russian>
+          <transcription>&apos;skarpa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>governo</english>
+          <russian>правительство</russian>
+          <transcription>go&apos;vɛrno</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>glicerina</english>
+          <russian>глицерин</russian>
+          <transcription>glit∫e&apos;rina</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>collega</english>
+          <russian>коллега</russian>
+          <transcription>kol&apos;lɛga</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sciopero</english>
+          <russian>забастовка</russian>
+          <transcription>&apos;∫ɔpero</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>quanto</english>
+          <russian>сколько</russian>
+          <transcription>ku&apos;anto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>conto</english>
+          <russian>счёт, расчёт</russian>
+          <transcription>&apos;konto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mano</english>
+          <russian>рука (кисть)</russian>
+          <transcription>&apos;mano</transcription>
+          <sample>chitarra in mano</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>babbo</english>
+          <russian>папа</russian>
+          <transcription>ˈbabbo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>montagna</english>
+          <russian>гора, горная местность</russian>
+          <transcription>monˈtaɲɲa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>causa</english>
+          <russian>причина</russian>
+          <transcription>&apos;kauza</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fare</english>
+          <russian>делать</russian>
+          <transcription>ˈfare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>porta</english>
+          <russian>дверь, ворота</russian>
+          <transcription>ˈpɔrta</transcription>
+          <sample>porta bello</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>zero</english>
+          <russian>ноль</russian>
+          <transcription>ˈdzɛro</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>rosa</english>
+          <russian>роза</russian>
+          <transcription>&apos;roza</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>petto</english>
+          <russian>грудь</russian>
+          <transcription>&apos;pɛtto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>madre</english>
+          <russian>мать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>aglio</english>
+          <russian>чеснок</russian>
+          <transcription>ˈaʎʎo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cura</english>
+          <russian>забота, старание, лечение</russian>
+          <transcription>&apos;kura</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>macchina</english>
+          <russian>машина</russian>
+          <transcription>ˈmakkina</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bello</english>
+          <russian>красивый, прекрасный</russian>
+          <transcription>&apos;bɛllo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fine</english>
+          <russian>конец</russian>
+          <transcription>&apos;fine</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>tu</english>
+          <russian>ты</russian>
+          <transcription>tu</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>città</english>
+          <russian>город</russian>
+          <transcription>tʃitˈta</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>non</english>
+          <russian>не, бес-, без-</russian>
+          <transcription></transcription>
+          <sample>io non ho paura</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>corrente</english>
+          <russian>текущий, бегущий</russian>
+          <transcription>korˈrɛnte</transcription>
+          <sample>mese corrente</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>parola</english>
+          <russian>слово</russian>
+          <transcription>paˈrɔla</transcription>
+          <sample>Parola del Giorno</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>inglese</english>
+          <russian>английский</russian>
+          <transcription>inˈglese</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>strada</english>
+          <russian>дорога, улица</russian>
+          <transcription>&apos;strada</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>parlare</english>
+          <russian>говорить</russian>
+          <transcription>parˈlare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ingoiare</english>
+          <russian>глотать, проглатывать</russian>
+          <transcription>ingoˈjare</transcription>
+          <sample>ingoiare il rospo - to bite the bullet</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>nonna</english>
+          <russian>бабушка</russian>
+          <transcription>&apos;nonna</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>che</english>
+          <russian>который, что, как</russian>
+          <transcription>ke</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>zio</english>
+          <russian>дядя</russian>
+          <transcription>ˈtsio</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>nero</english>
+          <russian>чёрный, тёмный</russian>
+          <transcription>&apos;nero</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>tazza</english>
+          <russian>чашка, чаша</russian>
+          <transcription>ˈtattsa</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>vela</english>
+          <russian>парус</russian>
+          <transcription>ˈvela</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>grande</english>
+          <russian>большой</russian>
+          <transcription>ˈgrande</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>me</english>
+          <russian>меня</russian>
+          <transcription></transcription>
+          <sample>su di me — на мне</sample>
+          <sample>a me — мне</sample>
+          <sample>di me — обо мне</sample>
+          <sample>da me — у меня; ко мне; от меня</sample>
+          <sample>in me — в меня; во мне</sample>
+          <sample>con me — со мной</sample>
+          <sample>per me — для меня; за меня; для себя; за себя</sample>
+          <sample>fra me e te — между мной и тобой</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>credere</english>
+          <russian>верить</russian>
+          <transcription>&apos;kredere</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>partire</english>
+          <russian>уезжать, уходить</russian>
+          <transcription>par&apos;tire</transcription>
+          <asksQuantity>1</asksQuantity>
+          <rightAnswerQuantity>1</rightAnswerQuantity>
+          <attemtpsQuantity>1</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cento</english>
+          <russian>сто, большое количество</russian>
+          <transcription>&apos;t∫ɛnto</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mio</english>
+          <russian>мой</russian>
+          <transcription></transcription>
+          <sample>mio babbo - мой отец</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ciuffo</english>
+          <russian>чуб, чёлка</russian>
+          <transcription>&apos;t∫uffo</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>grazie</english>
+          <russian>спасибо</russian>
+          <transcription>ˈgrattsje</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>erba</english>
+          <russian>трава, зелень</russian>
+          <transcription>ˈɛrba</transcription>
+          <sample>Friggere le erbe </sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>amore</english>
+          <russian>любовь</russian>
+          <transcription>aˈmore</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sdraia</english>
+          <russian>шезлонг</russian>
+          <transcription>&apos;zdraia</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>dare</english>
+          <russian>давать</russian>
+          <transcription>ˈdare</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bella</english>
+          <russian>красавица</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bene</english>
+          <russian>благо, хорошо</russian>
+          <transcription>&apos;bɛne</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>felicità</english>
+          <russian>счастье, удача, успех</russian>
+          <transcription>felitʃiˈta</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>perché</english>
+          <russian>почему, зачем, для чего</russian>
+          <transcription>perˈke</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ransack</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>learn by heart</english>
+          <russian>учить наизусть</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </removed-list>
+      <display-name>Italian</display-name>
+    </dictionary>
+    <dictionary>
+      <working-list>
+        <correspondence>
+          <english>dawn</english>
+          <russian>рассвет</russian>
+          <transcription>dɔ:n</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>yell</english>
+          <russian>крик, кричать</russian>
+          <transcription>jel</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fray</english>
+          <russian>стычка, ссора</russian>
+          <transcription>frei</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>virtue</english>
+          <russian>достоинство, преимущество</russian>
+          <transcription>&apos;və:t∫u:</transcription>
+          <sample>the virtues of C++</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>scourge</english>
+          <russian>плеть, бич, наказание</russian>
+          <transcription>skə:dƷ</transcription>
+          <sample>Line endings… the scourge of every Windows-based dev</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>mingle</english>
+          <russian>смешиваться, смешивать</russian>
+          <transcription>&apos;miŋgl</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>magnitude</english>
+          <russian>величина, размеры</russian>
+          <transcription>&apos;mægnitju:d</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>tackle</english>
+          <russian>биться, пытаться найти решение</russian>
+          <transcription>&apos;tækl</transcription>
+          <sample>new frameworks are emerging to tackle different aspect of development</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>holistic</english>
+          <russian>единый, целостный</russian>
+          <transcription>həu&apos;listik</transcription>
+          <sample>ATG is providing a holistic solution to choreograph the purchase process over time and across channels including the Web site, call center, in-store kiosks, social networks, and mobile devices</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>tradeoff</english>
+          <russian>компромисс, обмен, альтернатива</russian>
+          <transcription>&apos;treidɔf</transcription>
+          <sample>To optimize the tradeoff between accuracy and resource use</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>back order</english>
+          <russian>задержанный заказ</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>testament</english>
+          <russian>свидетельство, доказательство</russian>
+          <transcription>&apos;testəmənt</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>loft</english>
+          <russian>чердак</russian>
+          <transcription>lɔft</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>plywood</english>
+          <russian>фанера</russian>
+          <transcription>&apos;plaiwud</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>solitude</english>
+          <russian>одиночество, изоляция</russian>
+          <transcription>&apos;sɔlitju:d</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>setback</english>
+          <russian>регресс, неудача</russian>
+          <transcription>&apos;setbæk</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>exposed</english>
+          <russian>уязвимый, беззащитный</russian>
+          <transcription>ik&apos;spəuzd</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>prefab</english>
+          <russian>сборный дом</russian>
+          <transcription>&apos;pri:fæb</transcription>
+          <sample>prefabricated</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>advice</english>
+          <russian>совет, рекомендация</russian>
+          <transcription>əd&apos;vais</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>advise</english>
+          <russian>советовать</russian>
+          <transcription>əd&apos;vaiz</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>heist</english>
+          <russian>кража, ограбление</russian>
+          <transcription>haist</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>merchandise</english>
+          <russian>товары, рекламировать</russian>
+          <transcription>&apos;mə:t∫(ə)ndaiz</transcription>
+          <sample>merchandise can be broken up into two groups: Hard Goods and Electronic Goods</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>tangible</english>
+          <russian>вещественный, материальный</russian>
+          <transcription>&apos;tændƷəbl</transcription>
+          <sample>tangible product requires shipping</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>premise</english>
+          <russian>предположение</russian>
+          <transcription>&apos;premis</transcription>
+          <sample>basic premise</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>per annum</english>
+          <russian>ежегодно</russian>
+          <transcription>pə(r)&apos;ænəm</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sign up</english>
+          <russian>записаться</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>sign in</english>
+          <russian>регистрировать прибытие</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>streak</english>
+          <russian>жилка, черта (характера)</russian>
+          <transcription>stri:k</transcription>
+          <sample>Do you have an entrepreneurial streak?</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>breadth</english>
+          <russian>ширина</russian>
+          <transcription>bredθ</transcription>
+          <sample>depth and breadth of your expertise</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>camomile</english>
+          <russian>ромашка</russian>
+          <transcription>&apos;kæməmail</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>constellation</english>
+          <russian>созвездие</russian>
+          <transcription>kɔn(t)stə&apos;ləi∫(ə)n</transcription>
+          <sample>the constellation Cancer</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>attic</english>
+          <russian>чердак</russian>
+          <transcription>&apos;ætik</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>inheritance</english>
+          <russian>наследование, наследие</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>expertise</english>
+          <russian>квалификация, компетентность</russian>
+          <transcription>ekspə:&apos;ti:z</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>encompass</english>
+          <russian>выполнять, осуществлять, окружать</russian>
+          <transcription>in&apos;kʌmpəs</transcription>
+          <sample>A project is a persistent entity that encompasses additions, changes and deletions to a set of assets. </sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>coward</english>
+          <russian>трусливый, трус</russian>
+          <transcription>&apos;kauəd</transcription>
+          <sample>a bully is always a coward</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>plaza</english>
+          <russian>(рын-я) площадь, торговый комплекс</russian>
+          <transcription>&apos;pla:za</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>squad</english>
+          <russian>группа, команда, отделение</russian>
+          <transcription>skwɔd</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>massacre</english>
+          <russian>резня, бойня</russian>
+          <transcription>&apos;mæsəkə</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bully</english>
+          <russian>задира, забияка, хулиган</russian>
+          <transcription>&apos;buli</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>whirlpool</english>
+          <russian>вихрь, водоворот</russian>
+          <transcription>&apos;(h)wə:lpu:l</transcription>
+          <sample>Cooke &amp; Lewis Baths And Whirlpools</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>extinction</english>
+          <russian></russian>
+          <transcription></transcription>
+          <sample>how do you think humans can protect animals from extinction?</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>code of conduct</english>
+          <russian>кодекс поведения</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>collude</english>
+          <russian>сговариваться, вступать в сговор</russian>
+          <transcription>kə&apos;lu:d</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>discretion</english>
+          <russian>осторожность, осмотрительность</russian>
+          <transcription>di&apos;skre∫(ə)n</transcription>
+          <sample>treated with discretion</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>records</english>
+          <russian>документы</russian>
+          <transcription></transcription>
+          <sample>company records</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>maternity</english>
+          <russian>материнский, материнство</russian>
+          <transcription></transcription>
+          <sample>ordinary maternity leave</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>antenatal</english>
+          <russian>дородовой, предродовой</russian>
+          <transcription>ænti&apos;neit(ə)l</transcription>
+          <sample>antenatal care</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>annual leave</english>
+          <russian>ежегодный отпуск</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>exhilaration</english>
+          <russian>веселье</russian>
+          <transcription>igzil(ə)&apos;rei∫(ə)n</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>abolish</english>
+          <russian>аннулировать, отменять</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>spectator</english>
+          <russian>зритель, посетитель, наблюдатель</russian>
+          <transcription>spek&apos;teitə</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>canteen</english>
+          <russian>буфет, столовая</russian>
+          <transcription>kæn&apos;ti:n</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>milling machine</english>
+          <russian>фрезерный станок</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>dictation</english>
+          <russian>диктант</russian>
+          <transcription>dik&apos;tei∫(ə)n</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>suburb</english>
+          <russian>окраина, пригород, окрестности</russian>
+          <transcription>&apos;sʌbə:b</transcription>
+          <sample>suburbs</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>outskirts</english>
+          <russian>окраина, предместья</russian>
+          <transcription>&apos;autskə:ts</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>designate</english>
+          <russian>обозначать, предназначать</russian>
+          <transcription>&apos;dezigneit</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>designated</english>
+          <russian>назначенный</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>muddling</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>muddle</english>
+          <russian>путаница, неразбериха</russian>
+          <transcription>&apos;mʌdl</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>nerdy</english>
+          <russian>тупой, ботан</russian>
+          <transcription>&apos;nə:di</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>ransack</english>
+          <russian>искать, обыскивать, обшаривать</russian>
+          <transcription>&apos;rænsæk</transcription>
+          <sample>shop was done over by a street gang</sample>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>learn by heart</english>
+          <russian>учить наизусть</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>beat up</english>
+          <russian>избивать, обходиться с жестокостью</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>con</english>
+          <russian>чить наизусть, зубрить, заучивать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>in the middle of nowhere</english>
+          <russian>непонятно где, в неизвестном месте</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>betray</english>
+          <russian>изменять, предавать</russian>
+          <transcription>bi&apos;trei</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>guerilla</english>
+          <russian>партизан</russian>
+          <transcription>gə&apos;rilə</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>lucrative</english>
+          <russian>прибыльный, рентабельный</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
+      <removed-list>
+        <correspondence>
+          <english>orphan</english>
+          <russian>сирота</russian>
+          <transcription>&apos;ɔ:f(ə)n</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>daffodil</english>
+          <russian>жёлтый нарцисс</russian>
+          <transcription>&apos;dæfədil</transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </removed-list>
       <display-name>English</display-name>
     </dictionary>
+    <dictionary>
+      <working-list>
+        <correspondence>
+          <english>add up to</english>
+          <russian>сводиться к, equal</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>back up</english>
+          <russian>to support or assist, резервн. копир.</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>blow up</english>
+          <russian>раздувать, дуть, to explode</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>break down</english>
+          <russian>распадаться, разрушать(ся), get upset</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>break in</english>
+          <russian>вламываться, вмешаться, прервать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>break up</english>
+          <russian>прекращать, расходиться</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>break out</english>
+          <russian>сбегать, escape</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bring down</english>
+          <russian>make unhappy</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>bring up</english>
+          <russian>вскармливать, воспитывать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>call off</english>
+          <russian>отменять, откладывать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>call on</english>
+          <russian>призывать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>call up</english>
+          <russian>вызывать по телефону</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>catch up</english>
+          <russian>догнать, нагнать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cheer up</english>
+          <russian>become or make happier</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>chip in</english>
+          <russian>принимать участие, входить в долю</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>come across</english>
+          <russian>find unexpectedly</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>come apart</english>
+          <russian>ломаться, распадаться</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>come down with</english>
+          <russian>become sick</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>come forward</english>
+          <russian>volunteer for a task or to give evidence</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>count on</english>
+          <russian>рассчитывать, to rely or depend on</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cut back on</english>
+          <russian>consume less</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cut down</english>
+          <russian>to make something fall to the ground</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cut in</english>
+          <russian>вмешаться, вклиниваться, включать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cut off</english>
+          <russian>отрезать, отключать, прекр-ть подачу</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>cut out</english>
+          <russian>вырезать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>do over</english>
+          <russian>измочалить, отделать, избить</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>do away with</english>
+          <russian>избавиться, покончить с</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>do up</english>
+          <russian>fasten, close</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>dress up</english>
+          <russian>наряжать; наряжаться</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>drop back</english>
+          <russian>отставать, замедлять темп</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>drop in</english>
+          <russian>visit without an arrangement</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>drop off</english>
+          <russian>высаживать, ссаживать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>come over</english>
+          <russian>заезжать, заходить (ненадолго)</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>drop out</english>
+          <russian>выбывать, бросать (учёбу, работу)</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>end up</english>
+          <russian>eventually reach / do / decide</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fall apart</english>
+          <russian>разваливаться</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fall down</english>
+          <russian>падать, потерпеть неудачу</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fall out</english>
+          <russian>выпадать, выбывать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fill in</english>
+          <russian>заполнять (бланк)</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>fill up</english>
+          <russian>наполнять до верху, заполнять</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>drop by</english>
+          <russian>pay a brief visit</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>drop over</english>
+          <russian>visit for a short time</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>break off</english>
+          <russian>отламывать(ся), прекращать</russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </working-list>
+      <removed-list>
+        <correspondence>
+          <english>blow something up</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>back someone up</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>call back</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+        <correspondence>
+          <english>call around</english>
+          <russian></russian>
+          <transcription></transcription>
+          <asksQuantity>0</asksQuantity>
+          <rightAnswerQuantity>0</rightAnswerQuantity>
+          <attemtpsQuantity>0</attemtpsQuantity>
+        </correspondence>
+      </removed-list>
+      <display-name>Phrasal verbs</display-name>
+    </dictionary>
   </dictionaries>
+  <default-dict-id>
+		Italian
+	</default-dict-id>
 </workspace>

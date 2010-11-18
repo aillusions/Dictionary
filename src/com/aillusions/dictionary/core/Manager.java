@@ -2,6 +2,7 @@ package com.aillusions.dictionary.core;
 
 import com.aillusions.dictionary.Trainer;
 import com.aillusions.dictionary.xsl.DocConverter;
+import com.aillusions.dictionary.xsl.DocConverter.DocViewMode;
 
 public class Manager {
 
@@ -32,9 +33,9 @@ public class Manager {
 		 new Trainer(this).startTraining();
 	}
 
-	public void runWord(boolean paramBoolean1, boolean paramBoolean2) {
+	public void runWord(DocViewMode docViewMode) {
 		workspaceManager.saveInFile();
-		new DocConverter().runWord(paramBoolean1, paramBoolean2);
+		new DocConverter().runWord(docViewMode);
 	}
 	
 	//

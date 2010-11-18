@@ -15,6 +15,7 @@ import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.Statistics;
 import com.aillusions.dictionary.view.TopEditor;
 import com.aillusions.dictionary.view.components.TopMenuBar;
+import com.aillusions.dictionary.xsl.DocConverter.DocViewMode;
 
 public class CommandsListener implements ActionListener {
 	
@@ -22,7 +23,7 @@ public class CommandsListener implements ActionListener {
 	private TopEditor topEditor;
 
 	public static final String OPEN_ALL_WORDS_IN_WORD = "1";
-	public static final String OPEN_SELECTED_WORDS_IN_WORD = "2";
+	public static final String OPEN_FULL_WORDS_DETAILS_IN_WORD = "2";
 	public static final String OPEN_SAMPLES_IN_WORD = "3";
 	public static final String SET_ALWAYS_ON_TOP = "4";
 	public static final String RUN_TRAINER = "5";
@@ -49,11 +50,11 @@ public class CommandsListener implements ActionListener {
 	
 	public void actionPerformed(ActionEvent e) {
 			if(e.getActionCommand().equals(OPEN_ALL_WORDS_IN_WORD))	{
-				manager.runWord(false, false);
-			}else if(e.getActionCommand().equals(OPEN_SELECTED_WORDS_IN_WORD))	{
-				manager.runWord(true, false);;
+				manager.runWord(DocViewMode.ALL_WORDS_XSL);
+			}else if(e.getActionCommand().equals(OPEN_FULL_WORDS_DETAILS_IN_WORD))	{
+				manager.runWord(DocViewMode.WORD_TRANSL_SAMPLE);
 			}else if(e.getActionCommand().equals(OPEN_SAMPLES_IN_WORD))	{
-				manager.runWord(true, true);
+				manager.runWord(DocViewMode.ALL_SAMPLES_XSL);
 			}else if(e.getActionCommand().equals(SET_ALWAYS_ON_TOP)){				
 				topEditor.setAlwaysOnTop(((JCheckBoxMenuItem)e.getSource()).isSelected());
 			}else if(e.getActionCommand().equals(RUN_TRAINER)){				

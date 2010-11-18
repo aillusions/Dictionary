@@ -14,13 +14,34 @@ import javax.xml.transform.stream.StreamSource;
 
 public class DocConverter {
 	
-	private static String ALL_WORDS_XSL = "com/aillusions/dictionary/xsl/TransSheet.xsl";
-	private static String INUSE_WORDS_XSL = "com/aillusions/dictionary/xsl/TransSheetInUse.xsl";
-	private static String ALL_SAMPLES_XSL = "com/aillusions/dictionary/xsl/TransSheetSamples.xsl";
+	public static String xslLocationPkg = "com/aillusions/dictionary/xsl";
+	
+	private static String ALL_WORDS_XSL_ = "TransSheet.xsl";
+	private static String ALL_SAMPLES_XSL_ = "TransSheetSamples.xsl";
+	private static String WORD_TRANSL_SAMPLE_ = "WordTranscrTranslSample.xsl";
+	
+	public enum DocViewMode{
+		
+		ALL_WORDS_XSL(ALL_WORDS_XSL_), 
+		ALL_SAMPLES_XSL(ALL_SAMPLES_XSL_), 
+		WORD_TRANSL_SAMPLE(WORD_TRANSL_SAMPLE_);
+		
+		private String path;
+		
+		DocViewMode(String path){
+			this.path = path;
+		}	
+		
+		public String getPath(){
+			return path;
+		}
+	}
+	
+	
 	private static String w1 = "c:\\Program Files\\MSOffice\\OFFICE11\\WINWORD.EXE";
 	private static String w2 = "c:\\Program Files\\Microsoft Office\\OFFICE11\\WINWORD.EXE";
 
-	public void runWord(boolean paramBoolean1, boolean paramBoolean2) {
+	public void runWord(DocViewMode mode) {
 
 		File localFile = new File("Words.xml");
 		TransformerFactory localTransformerFactory = TransformerFactory
@@ -28,12 +49,16 @@ public class DocConverter {
 		Transformer localTransformer = null;
 		try {
 			InputStream localInputStream = null;
-			if (!(paramBoolean1))
+			
+			localInputStream = super.getClass().getClassLoader().getResourceAsStream(xslLocationPkg + "/" + mode.getPath());
+			
+/*			if (!(paramBoolean1))
 				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_WORDS_XSL);
 			else if (!(paramBoolean2))
 				localInputStream = super.getClass().getClassLoader().getResourceAsStream(INUSE_WORDS_XSL);
 			else
-				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_SAMPLES_XSL);
+				localInputStream = super.getClass().getClassLoader().getResourceAsStream(ALL_SAMPLES_XSL);*/
+			
 			if (localInputStream != null)
 				localTransformer = localTransformerFactory.newTransformer(new StreamSource(localInputStream));
 			else
