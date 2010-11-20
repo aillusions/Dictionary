@@ -1,66 +1,73 @@
 package com.aillusions.dictionary.core;
 
+import org.apache.log4j.Logger;
+
 import com.aillusions.dictionary.Trainer;
+import com.aillusions.dictionary.util.Config;
 import com.aillusions.dictionary.xsl.DocConverter;
 import com.aillusions.dictionary.xsl.DocConverter.DocViewMode;
 
 public class Manager {
+	private static final Logger l = Logger.getLogger(Config.class);
 
-	private AudioManager audioMan;
-	private WorkspaceManager workspaceManager;
-	private PairsManager pairsManager;
-	private CurrentStateManager currentStateManager;
-	private TrashManager trashManager;
+	private final AudioManager audioMan;
+	private final WorkspaceManager workspaceManager;
+	private final PairsManager pairsManager;
+	private final CurrentStateManager currentStateManager;
+	private final TrashManager trashManager;
 
-	public Manager(String fName) {
-		workspaceManager = new WorkspaceManager(this, fName);	
-		audioMan = new AudioManager(this);
-		pairsManager = new PairsManager(this);	
-		currentStateManager = new CurrentStateManager(this);
-		trashManager = new TrashManager(this);
+	public Manager(final String fName) {
+		l.info("Constructor");
+
+		this.workspaceManager = new WorkspaceManager(this, fName.trim());
+		this.audioMan = new AudioManager(this);
+		this.pairsManager = new PairsManager(this);
+		this.currentStateManager = new CurrentStateManager(this);
+		this.trashManager = new TrashManager(this);
+		Load();
 	}
-	
+
 	public void Load() {
 
-		workspaceManager.load();
-		if ((currentStateManager.getCurrentPair() == null)	|| (pairsManager.getPairByKey(currentStateManager.getCurrentPair().getEnglish()) != null)) {
+		this.workspaceManager.load();
+		if ((this.currentStateManager.getCurrentPair() == null)
+				|| (this.pairsManager.getPairByKey(this.currentStateManager.getCurrentPair().getEnglish()) != null)) {
 			return;
 		}
-		currentStateManager.setCurrentPair(null);
+		this.currentStateManager.setCurrentPair(null);
 	}
 
 	public void runTrainer() {
-		 new Trainer(this).startTraining();
+		new Trainer(this).startTraining();
 	}
 
-	public void runWord(DocViewMode docViewMode) {
-		workspaceManager.saveInFile();
+	public void runWord(final DocViewMode docViewMode) {
+		this.workspaceManager.saveInFile();
 		new DocConverter().runWord(docViewMode);
 	}
-	
+
 	//
-	//Getters and setters
+	// Getters and setters
 	//
-	
+
 	public AudioManager getAudioMan() {
-		return audioMan;
+		return this.audioMan;
 	}
 
 	public PairsManager getPairsManager() {
-		return pairsManager;
+		return this.pairsManager;
 	}
 
 	public WorkspaceManager getWorkspaceManager() {
-		return workspaceManager;
+		return this.workspaceManager;
 	}
 
 	public CurrentStateManager getCurrentStateManager() {
-		return currentStateManager;
+		return this.currentStateManager;
 	}
 
 	public TrashManager getTrashManager() {
-		return trashManager;
-	}	
-	
-	
+		return this.trashManager;
+	}
+
 }
