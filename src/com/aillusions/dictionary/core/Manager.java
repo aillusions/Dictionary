@@ -24,17 +24,6 @@ public class Manager {
 		this.pairsManager = new PairsManager(this);
 		this.currentStateManager = new CurrentStateManager(this);
 		this.trashManager = new TrashManager(this);
-		Load();
-	}
-
-	public void Load() {
-
-		this.workspaceManager.load();
-		if ((this.currentStateManager.getCurrentPair() == null)
-				|| (this.pairsManager.getPairByKey(this.currentStateManager.getCurrentPair().getWord()) != null)) {
-			return;
-		}
-		this.currentStateManager.setCurrentPair(null);
 	}
 
 	public void runTrainer() {

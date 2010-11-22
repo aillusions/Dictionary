@@ -7,41 +7,43 @@ import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.model.Pair;
 
 public class CurrentStateManager {
-	
+
 	private Pair currentPair;
 	private Pair currentTrashPair;
 	private String currSample;
 	private Dictionary currentDictionary;
-	
-	private Manager manager;	
-	
+
+	private Manager manager;
+
 	public void setCurrentDict(Dictionary dict) {
 		if (dict == null) {
 			throw new RuntimeException("Dictionary can not be null.");
 		}
 		if (manager.getWorkspaceManager().getWorkspace().getDictioanries().contains(dict)) {
 			currentDictionary = dict;
+			if (dict.getPairs().size() > 0) {
+				setCurrentPair(dict.getPairs().get(0));
+			}
 		}
 	}
-	
-	public CurrentStateManager(Manager manager){
+
+	public CurrentStateManager(Manager manager) {
 		this.manager = manager;
 	}
 
 	public boolean setCurrentPairByKey(String paramString) {
-		if (setCurrentPair(manager.getPairsManager().getPairByKey(paramString)) != null){
+		if (setCurrentPair(manager.getPairsManager().getPairByKey(paramString)) != null) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	public Pair setCurrentPair(Pair paramPair) {
 		this.currentPair = paramPair;
 		this.currSample = null;
 		return currentPair;
 	}
-	
-	
+
 	public boolean aplyCurrWordChanged(String paramString1, String paramString2) {
 
 		if (getCurrentPair() != null) {
@@ -51,10 +53,10 @@ public class CurrentStateManager {
 		}
 		return false;
 	}
-	
+
 	public void removeCurrentPair() {
-		
-		if (getCurrentPair() == null){
+
+		if (getCurrentPair() == null) {
 			return;
 		}
 		manager.getAudioMan().removeAllTightAudio(getCurrentPair().getWord());
@@ -64,12 +66,12 @@ public class CurrentStateManager {
 	}
 
 	public void renameCurrentPair(String paramString) {
-		
-		if ((paramString == null) || (paramString.trim().equals(""))){
-			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"),	"Input word please:", "Rename", 3);
+
+		if ((paramString == null) || (paramString.trim().equals(""))) {
+			paramString = JOptionPane.showInputDialog(new JFrame("FrameDemo"), "Input word please:", "Rename", 3);
 		}
-		
-		if ((paramString != null) && (!(paramString.trim().equals("")))	&& (manager.getPairsManager().getPairByKey(paramString) == null)) {
+
+		if ((paramString != null) && (!(paramString.trim().equals(""))) && (manager.getPairsManager().getPairByKey(paramString) == null)) {
 			getCurrentPair().setWord(paramString);
 			setCurrentPair(manager.getPairsManager().getPairByKey(paramString));
 		} else {
@@ -77,10 +79,10 @@ public class CurrentStateManager {
 		}
 		this.currSample = null;
 	}
-	
+
 	public void upCurrentSample() {
-		
-		if ((getCurrSample() == null) || (getCurrSample().trim().equals(""))){
+
+		if ((getCurrSample() == null) || (getCurrSample().trim().equals(""))) {
 			return;
 		}
 		getCurrentPair().upSample(getCurrSample());
@@ -93,19 +95,18 @@ public class CurrentStateManager {
 	}
 
 	public void setCurrSample(String paramString) {
-		if (paramString == null){
+		if (paramString == null) {
 			currSample = null;
-		}
-		else{
+		} else {
 			for (String str : getCurrentPair().getSamples()) {
-				if (!(paramString.equals(str))){
+				if (!(paramString.equals(str))) {
 					continue;
 				}
 				currSample = str;
 			}
 		}
 	}
-		
+
 	public Pair getCurrentTrashPair() {
 		return currentTrashPair;
 	}
@@ -117,7 +118,7 @@ public class CurrentStateManager {
 	public Pair getCurrentPair() {
 		return this.currentPair;
 	}
-	
+
 	public String getCurrSample() {
 		return currSample;
 	}
@@ -127,7 +128,7 @@ public class CurrentStateManager {
 	}
 
 	public void setCurrentTrashPairByKey(String selectedValue) {
-		currentTrashPair=manager.getTrashManager().getPairByKey(selectedValue);		
-	}	
-	
+		currentTrashPair = manager.getTrashManager().getPairByKey(selectedValue);
+	}
+
 }
