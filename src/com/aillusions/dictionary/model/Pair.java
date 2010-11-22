@@ -10,10 +10,10 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 public class Pair {
 
 	@XStreamAlias("english")
-	private String english;
+	private String word;
 	
 	@XStreamAlias("russian")
-	private String russian;
+	private String translation;
 	
 	@XStreamAlias("transcription")
 	private String transcription;
@@ -55,20 +55,20 @@ public class Pair {
 		this.rightAnswerQuantity++;
 	}
 
-	public String getEnglish() {
-		return english;
+	public String getWord() {
+		return word;
 	}
 
-	public void setEnglish(String english) {
-		this.english = english;
+	public void setWord(String english) {
+		this.word = english;
 	}
 
-	public String getRussian() {
-		return russian;
+	public String getTranslation() {
+		return translation;
 	}
 
-	public void setRussian(String russian) {
-		this.russian = russian;
+	public void setTranslation(String russian) {
+		this.translation = russian;
 	}
 
 	public String getTranscription() {

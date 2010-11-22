@@ -43,10 +43,10 @@ public class AudioManager {
 		String str = null;
 		CurrentStateManager cpm = manager.getCurrentStateManager();
 		if (cpm.getCurrSample() != null)
-			str = cpm.getCurrentPair().getEnglish() + "_"
+			str = cpm.getCurrentPair().getWord() + "_"
 					+ cpm.getCurrSample().replaceAll("\\W", "-");
 		else if (cpm.getCurrentPair() != null)
-			str = cpm.getCurrentPair().getEnglish().replaceAll("\\W",
+			str = cpm.getCurrentPair().getWord().replaceAll("\\W",
 					"-");
 		return str;
 	}

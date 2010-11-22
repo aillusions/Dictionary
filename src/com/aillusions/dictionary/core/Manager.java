@@ -31,7 +31,7 @@ public class Manager {
 
 		this.workspaceManager.load();
 		if ((this.currentStateManager.getCurrentPair() == null)
-				|| (this.pairsManager.getPairByKey(this.currentStateManager.getCurrentPair().getEnglish()) != null)) {
+				|| (this.pairsManager.getPairByKey(this.currentStateManager.getCurrentPair().getWord()) != null)) {
 			return;
 		}
 		this.currentStateManager.setCurrentPair(null);

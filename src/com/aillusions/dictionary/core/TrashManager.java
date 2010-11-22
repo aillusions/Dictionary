@@ -27,7 +27,7 @@ public class TrashManager {
 	public Pair getPairByKey(String eng) {
 		Pair res = null;
 		for (Pair word : getAllTrashPairs()) {
-			if (word.getEnglish().equals(eng)) {
+			if (word.getWord().equals(eng)) {
 				res = word;
 			}
 		}
@@ -38,7 +38,7 @@ public class TrashManager {
 		String[] res = new String[getAllTrashPairs().size()];
 		int i = 0;
 		for (Pair word : getAllTrashPairs()) {
-			res[i] = word.getEnglish();
+			res[i] = word.getWord();
 			i++;
 		}
 

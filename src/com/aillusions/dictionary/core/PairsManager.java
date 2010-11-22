@@ -24,7 +24,7 @@ public class PairsManager {
 		String[] res = new String[getAllPairs().size()];
 		int i = 0;
 		for (Pair word : getAllPairs()) {
-			res[i] = word.getEnglish();
+			res[i] = word.getWord();
 			i++;
 		}
 
@@ -34,7 +34,7 @@ public class PairsManager {
 	public Pair getPairByKey(String eng) {
 		Pair res = null;
 		for (Pair word : getAllPairs()) {
-			if (word.getEnglish().equals(eng)) {
+			if (word.getWord().equals(eng)) {
 				res = word;
 			}
 		}
@@ -74,7 +74,7 @@ public class PairsManager {
 			Pair fw = null;
 			if (paramString != null) {
 				fw = new Pair();
-				fw.setEnglish(paramString);
+				fw.setWord(paramString);
 				fw.setTranscription("");
 				fw.setTranscription("");
 				return addNew(fw);
@@ -87,14 +87,14 @@ public class PairsManager {
 
 	public boolean addNew(Pair pair){
 		
-		if(getPairByKey(pair.getEnglish()) == null){
+		if(getPairByKey(pair.getWord()) == null){
 			
-			if(manager.getTrashManager().getPairByKey(pair.getEnglish()) == null){
+			if(manager.getTrashManager().getPairByKey(pair.getWord()) == null){
 				boolean res = getAllPairs().add(pair);
 				manager.getCurrentStateManager().setCurrentPair(pair);
 				return res;
 			}else{
-				Pair pairTemp = manager.getTrashManager().getPairByKey(pair.getEnglish());
+				Pair pairTemp = manager.getTrashManager().getPairByKey(pair.getWord());
 				boolean res = manager.getTrashManager().restorePair(pairTemp);
 				manager.getCurrentStateManager().setCurrentPair(pairTemp);
 				return res;

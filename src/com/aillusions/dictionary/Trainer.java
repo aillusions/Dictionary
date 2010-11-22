@@ -66,17 +66,17 @@ public class Trainer implements TrainerViewListener {
 			if (i1 != j) {
 				int i2 = this.generatorVariant.nextInt(k);
 				if (this.isEngRus){
-					localArrayList.add(this.dictionary.getPairsManager().getAllPairs().get(i2).getRussian());
+					localArrayList.add(this.dictionary.getPairsManager().getAllPairs().get(i2).getTranslation());
 				}
 				else{
-					localArrayList.add(this.dictionary.getPairsManager().getAllPairs().get(i2).getEnglish());
+					localArrayList.add(this.dictionary.getPairsManager().getAllPairs().get(i2).getWord());
 				}
-			} else if (!(this.currentPair.getRussian().trim().equals(""))) {
+			} else if (!(this.currentPair.getTranslation().trim().equals(""))) {
 				if (this.isEngRus){
-					localArrayList.add(this.currentPair.getRussian());
+					localArrayList.add(this.currentPair.getTranslation());
 				}
 				else{
-					localArrayList.add(this.currentPair.getEnglish());
+					localArrayList.add(this.currentPair.getWord());
 				}
 			} else {
 				localArrayList.add("empty");
@@ -88,12 +88,12 @@ public class Trainer implements TrainerViewListener {
 	public boolean onChuseAnsversVariant(String paramString) {
 		this.currentPair.incrAttemttsQuantity();
 		if (this.isEngRus) {
-			if ((this.currentPair.getRussian().equalsIgnoreCase(paramString))
+			if ((this.currentPair.getTranslation().equalsIgnoreCase(paramString))
 					|| (paramString.equals("empty"))) {
 				this.currentPair.incrRightAnswerQuantity();
 				return true;
 			}
-		} else if ((this.currentPair.getEnglish().equalsIgnoreCase(paramString))
+		} else if ((this.currentPair.getWord().equalsIgnoreCase(paramString))
 				|| (paramString.equals("empty"))) {
 			this.currentPair.incrRightAnswerQuantity();
 			return true;
@@ -117,10 +117,10 @@ public class Trainer implements TrainerViewListener {
 		} else {
 			this.currentPair.incrAsksQuantity();
 			if (this.isEngRus)
-				this.view.setPairtForQuastion(this.currentPair.getEnglish(),
+				this.view.setPairtForQuastion(this.currentPair.getWord(),
 						this.currentPair.getTranscription(), getVariants());
 			else
-				this.view.setPairtForQuastion(this.currentPair.getRussian(),
+				this.view.setPairtForQuastion(this.currentPair.getTranslation(),
 						"", getVariants());
 		}
 	}

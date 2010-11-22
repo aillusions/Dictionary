@@ -403,8 +403,8 @@ public class TopEditor extends JFrame
         {
             setTitle("Top Dictionary - " + (this.WordsList_Lst.getSelectedIndex() + 1) + " : "
                     + new Integer(this.manager.getPairsManager().getAllKeys().length).toString());
-            this.Word_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getEnglish());
-            this.Translate_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getRussian());
+            this.Word_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getWord());
+            this.Translate_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getTranslation());
             this.Transcription_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getTranscription());
             if(paramBoolean2)
             {
@@ -423,12 +423,12 @@ public class TopEditor extends JFrame
         {
             str = null;
             if(this.manager.getCurrentStateManager().getCurrentPair() != null)
-                str = this.manager.getCurrentStateManager().getCurrentPair().getEnglish();
+                str = this.manager.getCurrentStateManager().getCurrentPair().getWord();
             this.WordsList_Lst.setListData(this.manager.getPairsManager().getAllKeys());
             if((this.manager.getCurrentStateManager().setCurrentPairByKey(str))
                     && (this.manager.getCurrentStateManager().getCurrentPair() != null))
                 this.WordsList_Lst.setSelectedValue(
-                        this.manager.getCurrentStateManager().getCurrentPair().getEnglish(), true);
+                        this.manager.getCurrentStateManager().getCurrentPair().getWord(), true);
         }
         if(this.manager.getCurrentStateManager().getCurrentPair() == null)
             if(this.manager.getPairsManager().getAllKeys().length > 0)

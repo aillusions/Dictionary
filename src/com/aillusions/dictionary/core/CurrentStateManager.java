@@ -45,7 +45,7 @@ public class CurrentStateManager {
 	public boolean aplyCurrWordChanged(String paramString1, String paramString2) {
 
 		if (getCurrentPair() != null) {
-			getCurrentPair().setRussian(paramString1);
+			getCurrentPair().setTranslation(paramString1);
 			getCurrentPair().setTranscription(paramString2);
 			return true;
 		}
@@ -57,7 +57,7 @@ public class CurrentStateManager {
 		if (getCurrentPair() == null){
 			return;
 		}
-		manager.getAudioMan().removeAllTightAudio(getCurrentPair().getEnglish());
+		manager.getAudioMan().removeAllTightAudio(getCurrentPair().getWord());
 		Pair localPair = manager.getPairsManager().removePair(getCurrentPair());
 		setCurrentPair(localPair);
 		this.currSample = null;
@@ -70,7 +70,7 @@ public class CurrentStateManager {
 		}
 		
 		if ((paramString != null) && (!(paramString.trim().equals("")))	&& (manager.getPairsManager().getPairByKey(paramString) == null)) {
-			getCurrentPair().setEnglish(paramString);
+			getCurrentPair().setWord(paramString);
 			setCurrentPair(manager.getPairsManager().getPairByKey(paramString));
 		} else {
 			JOptionPane.showMessageDialog(new JFrame("Sorry"), "Such word already exists, or empty.");
