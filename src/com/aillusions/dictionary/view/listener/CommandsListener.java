@@ -14,14 +14,14 @@ import com.aillusions.dictionary.util.IOTools;
 import com.aillusions.dictionary.util.update.VersionChecker;
 import com.aillusions.dictionary.view.About;
 import com.aillusions.dictionary.view.Statistics;
-import com.aillusions.dictionary.view.TopEditor;
+import com.aillusions.dictionary.view.TopEditorFrame;
 import com.aillusions.dictionary.view.components.TopMenuBar;
 import com.aillusions.dictionary.xsl.DocConverter.DocViewMode;
 
 public class CommandsListener implements ActionListener {
 
 	private Manager manager;
-	private TopEditor topEditor;
+	private TopEditorFrame topEditor;
 
 	public static final String OPEN_ALL_WORDS_IN_WORD = "1";
 	public static final String OPEN_FULL_WORDS_DETAILS_IN_WORD = "2";
@@ -44,9 +44,8 @@ public class CommandsListener implements ActionListener {
 	public static final String VIEW_STATISTIC = "19";
 	public static final String CHECK_FOR_YPDATE = "20";
 
-	public CommandsListener(Manager dictionary, TopEditor topEditor) {
-		this.manager = dictionary;
-		this.topEditor = topEditor;
+	public CommandsListener() {
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -61,7 +60,7 @@ public class CommandsListener implements ActionListener {
 		} else if (e.getActionCommand().equals(RUN_TRAINER)) {
 			manager.runTrainer();
 		} else if (e.getActionCommand().equals(PLAY_ON_SELECTION)) {
-			manager.getAudioMan().setPlayOnSelections(((JCheckBoxMenuItem) e.getSource()).isSelected());
+			manager.getAudioManager().setPlayOnSelections(((JCheckBoxMenuItem) e.getSource()).isSelected());
 		} else if (e.getActionCommand().equals(MIX_WORDS)) {
 			manager.getPairsManager().shuffle();
 			topEditor.refresh(true, true);
@@ -86,10 +85,10 @@ public class CommandsListener implements ActionListener {
 			JMenuItem munuItem = (JMenuItem) e.getSource();
 			if (munuItem.getText().equals(TopMenuBar.COLLAPSE_MENU_ITEM_NAME)) {
 				munuItem.setText(TopMenuBar.EXPAND_MENU_ITEM_NAME);
-				topEditor.setSize(TopEditor.WINDOW_WIDTH_SHORT, TopEditor.WINDOW_HEIGHT);
+				topEditor.setSize(TopEditorFrame.WINDOW_WIDTH_SHORT, TopEditorFrame.WINDOW_HEIGHT);
 			} else {
 				munuItem.setText(TopMenuBar.COLLAPSE_MENU_ITEM_NAME);
-				topEditor.setSize(TopEditor.WINDOW_WIDTH_EXPANDED, TopEditor.WINDOW_HEIGHT);
+				topEditor.setSize(TopEditorFrame.WINDOW_WIDTH_EXPANDED, TopEditorFrame.WINDOW_HEIGHT);
 			}
 		} else if (e.getActionCommand().equals(MOVE_SAMPLE_UP)) {
 			manager.getCurrentStateManager().upCurrentSample();
@@ -133,6 +132,22 @@ public class CommandsListener implements ActionListener {
 			}
 			VersionChecker.checkVersionInSeparateThread(topEditor, true);
 		}
+	}
+
+	public Manager getManager() {
+		return manager;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+	public TopEditorFrame getTopEditor() {
+		return topEditor;
+	}
+
+	public void setTopEditor(TopEditorFrame topEditor) {
+		this.topEditor = topEditor;
 	}
 
 }

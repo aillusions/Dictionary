@@ -8,7 +8,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
-import java.util.Random;
 
 import javax.swing.AbstractListModel;
 import javax.swing.BorderFactory;
@@ -28,8 +27,9 @@ import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import org.apache.log4j.Logger;
+
 import com.aillusions.dictionary.core.Manager;
-import com.aillusions.dictionary.core.WorkspaceManager.DictionaryHasToBeCreated;
 import com.aillusions.dictionary.model.Dictionary;
 import com.aillusions.dictionary.view.components.AudioPanel;
 import com.aillusions.dictionary.view.components.KeyBoardPanel;
@@ -38,21 +38,20 @@ import com.aillusions.dictionary.view.components.TopMenuBar;
 import com.aillusions.dictionary.view.listener.CommandsListener;
 import com.aillusions.dictionary.view.listener.MainDictPanelListener;
 
-public class TopEditor extends JFrame {
+public class TopEditorFrame extends JFrame {
+
+	protected final static Logger l = Logger.getLogger(TopEditorFrame.class);
 
 	public static final int WINDOW_WIDTH_EXPANDED = 790;
 	public static final int WINDOW_WIDTH_SHORT = 570;
 	public static final int WINDOW_HEIGHT = 343;
 	private static final long serialVersionUID = 1L;
 
-	CommandsListener cmdListener;
+	private CommandsListener cmdListener;
+	private Manager manager;
+	private MainDictPanelListener mainDictPanelListener;
 
-	public Manager manager;
-
-	public MainDictPanelListener mainDictPanelListener;
-
-	public int prevSelectedIndex;
-	public Random nextSelRandom;
+	private int prevSelectedIndex;
 
 	public SpecialSymbolsPanel specialSymbolsPanel;
 	public KeyBoardPanel keyBoardPanel;
@@ -61,7 +60,7 @@ public class TopEditor extends JFrame {
 	public JTextField Transcription_TextF;
 	public JTextField Translate_TextF;
 	public JTextField Word_TextF;
-	public JList WordsList_Lst;
+	public JList wordsLst;
 	public AudioPanel audioPanel;
 	public JScrollPane jScrollPane2;
 	public JScrollPane jScrollPane1;
@@ -71,36 +70,20 @@ public class TopEditor extends JFrame {
 	public JTextField jTextSamplesSearch;
 	public JTextField jTxtSearch;
 	public JButton jButtRemSample;
-	public JList jListSamples;
+	public JList samplesLst;
 
-	public TopEditor() {
+	public TopEditorFrame(MainDictPanelListener mainDictPanelListener, Manager manager, CommandsListener cmdListener) {
 
-		try {
-			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-		} catch (Exception localException) {
-			localException.printStackTrace();
-		}
+		this.manager = manager;
+		this.mainDictPanelListener = mainDictPanelListener;
+		this.cmdListener = cmdListener;
 
-		this.manager = new Manager("words.xml");
-		try {
-			manager.getWorkspaceManager().load();
-		} catch (DictionaryHasToBeCreated e) {
-			while (!manager.getWorkspaceManager().addNewDictionary()) {
-				// Have to specify at least one dictionary!
-			}
-		}
-
-		this.cmdListener = new CommandsListener(this.manager, this);
-		this.mainDictPanelListener = new MainDictPanelListener(this.manager, this);
-		this.prevSelectedIndex = 0;
-		this.nextSelRandom = new Random(0L);
+		prevSelectedIndex = 0;
 		initComponents();
-		setJMenuBar(new TopMenuBar(this.cmdListener, this.manager));
 
-		this.WordsList_Lst.setListData(this.manager.getPairsManager().getAllKeys());
-		this.jListSamples.setListData(new String[0]);
-		refresh(true, true);
-		this.WordsList_Lst.setSelectedIndex(0);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setSize(TopEditorFrame.WINDOW_WIDTH_SHORT, TopEditorFrame.WINDOW_HEIGHT);
 	}
 
 	public void Alert(final String paramString) {
@@ -108,6 +91,14 @@ public class TopEditor extends JFrame {
 	}
 
 	private void initComponents() {
+
+		setJMenuBar(new TopMenuBar(cmdListener, manager));
+
+		try {
+			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+		} catch (Exception localException) {
+			l.error(localException);
+		}
 
 		getContentPane().setLayout(null);
 
@@ -151,7 +142,7 @@ public class TopEditor extends JFrame {
 		this.jButtRemSample.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(final MouseEvent paramMouseEvent) {
-				TopEditor.this.mainDictPanelListener.jButtRemSampleMouseReleased(paramMouseEvent);
+				TopEditorFrame.this.mainDictPanelListener.jButtRemSampleMouseReleased(paramMouseEvent);
 			}
 		});
 
@@ -159,7 +150,7 @@ public class TopEditor extends JFrame {
 		this.jTxtSearch.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(final KeyEvent paramKeyEvent) {
-				TopEditor.this.mainDictPanelListener.jTxtSearchKeyReleased(paramKeyEvent);
+				TopEditorFrame.this.mainDictPanelListener.jTxtSearchKeyReleased(paramKeyEvent);
 			}
 		});
 
@@ -167,7 +158,7 @@ public class TopEditor extends JFrame {
 		this.jTextSamplesSearch.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(final KeyEvent paramKeyEvent) {
-				TopEditor.this.mainDictPanelListener.jTextSamplesSearchKeyReleased(paramKeyEvent);
+				TopEditorFrame.this.mainDictPanelListener.jTextSamplesSearchKeyReleased(paramKeyEvent);
 			}
 		});
 
@@ -190,7 +181,7 @@ public class TopEditor extends JFrame {
 
 		ListSelectionListener localObject = new ListSelectionListener() {
 			public void valueChanged(final ListSelectionEvent paramListSelectionEvent) {
-				TopEditor.this.mainDictPanelListener.InUseJListMouseReleased(paramListSelectionEvent);
+				TopEditorFrame.this.mainDictPanelListener.InUseJListMouseReleased(paramListSelectionEvent);
 			}
 		};
 
@@ -200,61 +191,61 @@ public class TopEditor extends JFrame {
 		add(this.jScrollPane1);
 		this.jScrollPane1.setBounds(393, 12, 164, 251);
 		localDefaultComboBoxModel = new DefaultComboBoxModel(new String[] { "Item One", "Item Two" });
-		this.WordsList_Lst = new JList();
-		this.jScrollPane1.setViewportView(this.WordsList_Lst);
-		this.WordsList_Lst.setModel(localDefaultComboBoxModel);
-		this.WordsList_Lst.setBounds(393, 12, 164, 251);
-		this.WordsList_Lst.setFont(new Font("Arial", 0, 11));
-		this.WordsList_Lst.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(255, 255, 255)));
-		this.WordsList_Lst.setForeground(new Color(0, 0, 0));
+		this.wordsLst = new JList();
+		this.jScrollPane1.setViewportView(this.wordsLst);
+		this.wordsLst.setModel(localDefaultComboBoxModel);
+		this.wordsLst.setBounds(393, 12, 164, 251);
+		this.wordsLst.setFont(new Font("Arial", 0, 11));
+		this.wordsLst.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(255, 255, 255)));
+		this.wordsLst.setForeground(new Color(0, 0, 0));
 
 		localObject = new ListSelectionListener() {
 			public void valueChanged(final ListSelectionEvent paramListSelectionEvent) {
 				if (paramListSelectionEvent.getValueIsAdjusting())
 					return;
-				if ((TopEditor.this.manager.getCurrentStateManager().getCurrentPair() != null)
-						&& (!(TopEditor.this.manager.getCurrentStateManager().aplyCurrWordChanged(TopEditor.this.Translate_TextF.getText(),
-								TopEditor.this.Transcription_TextF.getText()))))
+				if ((TopEditorFrame.this.manager.getCurrentStateManager().getCurrentPair() != null)
+						&& (!(TopEditorFrame.this.manager.getCurrentStateManager().aplyCurrWordChanged(TopEditorFrame.this.Translate_TextF
+								.getText(), TopEditorFrame.this.Transcription_TextF.getText()))))
 					Alert("Your input was not aplyed!");
-				if (TopEditor.this.manager.getCurrentStateManager().setCurrentPairByKey(
-						(String) TopEditor.this.WordsList_Lst.getSelectedValue())) {
+				if (TopEditorFrame.this.manager.getCurrentStateManager().setCurrentPairByKey(
+						(String) TopEditorFrame.this.wordsLst.getSelectedValue())) {
 					refresh(false, true);
-					if (TopEditor.this.manager.getAudioMan().isPlayOnSelections())
-						TopEditor.this.manager.getAudioMan().playCurrentAudioRecord();
+					if (TopEditorFrame.this.manager.getAudioManager().isPlayOnSelections())
+						TopEditorFrame.this.manager.getAudioManager().playCurrentAudioRecord();
 				}
-				TopEditor.this.WordsList_Lst.setSelectedValue(TopEditor.this.WordsList_Lst.getSelectedValue(), true);
+				TopEditorFrame.this.wordsLst.setSelectedValue(TopEditorFrame.this.wordsLst.getSelectedValue(), true);
 			}
 		};
-		this.WordsList_Lst.addListSelectionListener(localObject);
+		this.wordsLst.addListSelectionListener(localObject);
 
 		this.jScrollPane2 = new JScrollPane();
 		add(this.jScrollPane2);
 		this.jScrollPane2.setBounds(6, 210, 379, 55);
 		localDefaultComboBoxModel = new DefaultComboBoxModel(new String[] { "Item One", "Item Two" });
-		this.jListSamples = new JList();
-		this.jScrollPane2.setViewportView(this.jListSamples);
-		this.jListSamples.setModel(localDefaultComboBoxModel);
-		this.jListSamples.setBounds(6, 210, 379, 55);
-		this.jListSamples.setFont(new Font("Arial", 0, 13));
-		this.jListSamples.addMouseListener(new MouseAdapter() {
+		this.samplesLst = new JList();
+		this.jScrollPane2.setViewportView(this.samplesLst);
+		this.samplesLst.setModel(localDefaultComboBoxModel);
+		this.samplesLst.setBounds(6, 210, 379, 55);
+		this.samplesLst.setFont(new Font("Arial", 0, 13));
+		this.samplesLst.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(final MouseEvent paramMouseEvent) {
-				TopEditor.this.mainDictPanelListener.jListSamplesMouseReleased(paramMouseEvent);
+				TopEditorFrame.this.mainDictPanelListener.jListSamplesMouseReleased(paramMouseEvent);
 			}
 		});
 		localObject = new ListSelectionListener() {
 			public void valueChanged(final ListSelectionEvent paramListSelectionEvent) {
 				if (paramListSelectionEvent.getValueIsAdjusting())
 					return;
-				if (TopEditor.this.jListSamples.getSelectedIndex() == -1)
-					TopEditor.this.manager.getCurrentStateManager().setCurrSample(null);
+				if (TopEditorFrame.this.samplesLst.getSelectedIndex() == -1)
+					TopEditorFrame.this.manager.getCurrentStateManager().setCurrSample(null);
 				else
-					TopEditor.this.manager.getCurrentStateManager()
-							.setCurrSample(TopEditor.this.jListSamples.getSelectedValue().toString());
-				if ((!(TopEditor.this.manager.getAudioMan().isPlayOnSelections()))
-						|| (TopEditor.this.jListSamples.getSelectedIndex() == -1))
+					TopEditorFrame.this.manager.getCurrentStateManager().setCurrSample(
+							TopEditorFrame.this.samplesLst.getSelectedValue().toString());
+				if ((!(TopEditorFrame.this.manager.getAudioManager().isPlayOnSelections()))
+						|| (TopEditorFrame.this.samplesLst.getSelectedIndex() == -1))
 					return;
-				TopEditor.this.manager.getAudioMan().playCurrentAudioRecord();
+				TopEditorFrame.this.manager.getAudioManager().playCurrentAudioRecord();
 			}
 		};
 
@@ -264,13 +255,13 @@ public class TopEditor extends JFrame {
 		this.Word_TextF.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(final KeyEvent paramKeyEvent) {
-				TopEditor.this.mainDictPanelListener.Word_TextFKeyReleased(paramKeyEvent);
+				TopEditorFrame.this.mainDictPanelListener.Word_TextFKeyReleased(paramKeyEvent);
 			}
 		});
 		this.Translate_TextF.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(final KeyEvent paramKeyEvent) {
-				TopEditor.this.mainDictPanelListener.Translate_TextFKeyReleased(paramKeyEvent);
+				TopEditorFrame.this.mainDictPanelListener.Translate_TextFKeyReleased(paramKeyEvent);
 			}
 		});
 		this.Transcription_TextF.setFont(new Font("Lucida Sans Unicode", 0, 14));
@@ -278,11 +269,11 @@ public class TopEditor extends JFrame {
 		this.Transcription_TextF.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(final KeyEvent paramKeyEvent) {
-				TopEditor.this.mainDictPanelListener.Transcription_TextFKeyReleased(paramKeyEvent);
+				TopEditorFrame.this.mainDictPanelListener.Transcription_TextFKeyReleased(paramKeyEvent);
 			}
 		});
 
-		this.WordsList_Lst.setModel(new AbstractListModel() {
+		this.wordsLst.setModel(new AbstractListModel() {
 			private static final long serialVersionUID = 1L;
 			String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
 
@@ -302,7 +293,7 @@ public class TopEditor extends JFrame {
 		this.Remove_Btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(final MouseEvent paramMouseEvent) {
-				TopEditor.this.mainDictPanelListener.Remove_BtnMouseReleased(paramMouseEvent);
+				TopEditorFrame.this.mainDictPanelListener.Remove_BtnMouseReleased(paramMouseEvent);
 			}
 		});
 
@@ -313,7 +304,7 @@ public class TopEditor extends JFrame {
 		this.Rename_Btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(final MouseEvent paramMouseEvent) {
-				TopEditor.this.mainDictPanelListener.Rename_BtnMouseReleased(paramMouseEvent);
+				TopEditorFrame.this.mainDictPanelListener.Rename_BtnMouseReleased(paramMouseEvent);
 			}
 		});
 
@@ -341,10 +332,10 @@ public class TopEditor extends JFrame {
 	}
 
 	public void refresh(final boolean paramBoolean1, final boolean paramBoolean2) {
-		if (this.manager.getAudioMan().recorder == null) {
+		if (this.manager.getAudioManager().recorder == null) {
 			this.audioPanel.jButtRecordding.setText("start");
 			this.audioPanel.jButtPlay.setEnabled(true);
-			if (this.manager.getAudioMan().isCurrentItemAlreadyRecorded()) {
+			if (this.manager.getAudioManager().isCurrentItemAlreadyRecorded()) {
 				this.audioPanel.jButtPlay.setEnabled(true);
 				this.audioPanel.jButtDeleteRecord.setEnabled(true);
 				this.audioPanel.jButtRecordding.setEnabled(false);
@@ -363,12 +354,12 @@ public class TopEditor extends JFrame {
 			this.Word_TextF.setText("");
 			this.Translate_TextF.setText("");
 			this.Transcription_TextF.setText("");
-			this.jListSamples.setListData(new String[0]);
+			this.samplesLst.setListData(new String[0]);
 			this.audioPanel.jButtPlay.setEnabled(false);
 			this.audioPanel.jButtDeleteRecord.setEnabled(false);
 			this.audioPanel.jButtRecordding.setEnabled(false);
 		} else {
-			setTitle("Top Dictionary - " + (this.WordsList_Lst.getSelectedIndex() + 1) + " : "
+			setTitle("Top Dictionary - " + (this.wordsLst.getSelectedIndex() + 1) + " : "
 					+ new Integer(this.manager.getPairsManager().getAllKeys().length).toString());
 			this.Word_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getWord());
 			this.Translate_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getTranslation());
@@ -378,27 +369,27 @@ public class TopEditor extends JFrame {
 				if (this.manager.getCurrentStateManager().getCurrSample() != null)
 					str = this.manager.getCurrentStateManager().getCurrSample();
 				if (this.manager.getCurrentStateManager().getCurrentPair().getSamples() != null)
-					this.jListSamples.setListData(this.manager.getCurrentStateManager().getCurrentPair().getSamples());
+					this.samplesLst.setListData(this.manager.getCurrentStateManager().getCurrentPair().getSamples());
 				else
-					this.jListSamples.setListData(new String[0]);
+					this.samplesLst.setListData(new String[0]);
 				if (this.manager.getCurrentStateManager().getCurrentPair().getSamples() != null)
-					this.jListSamples.setSelectedValue(str, true);
+					this.samplesLst.setSelectedValue(str, true);
 			}
 		}
 		if (paramBoolean1) {
 			str = null;
 			if (this.manager.getCurrentStateManager().getCurrentPair() != null)
 				str = this.manager.getCurrentStateManager().getCurrentPair().getWord();
-			this.WordsList_Lst.setListData(this.manager.getPairsManager().getAllKeys());
+			this.wordsLst.setListData(this.manager.getPairsManager().getAllKeys());
 			if ((this.manager.getCurrentStateManager().setCurrentPairByKey(str))
 					&& (this.manager.getCurrentStateManager().getCurrentPair() != null))
-				this.WordsList_Lst.setSelectedValue(this.manager.getCurrentStateManager().getCurrentPair().getWord(), true);
+				this.wordsLst.setSelectedValue(this.manager.getCurrentStateManager().getCurrentPair().getWord(), true);
 		}
 		if (this.manager.getCurrentStateManager().getCurrentPair() == null)
 			if (this.manager.getPairsManager().getAllKeys().length > 0)
-				this.WordsList_Lst.setSelectedValue(this.manager.getPairsManager().getAllKeys()[0], true);
+				this.wordsLst.setSelectedValue(this.manager.getPairsManager().getAllKeys()[0], true);
 			else
-				this.WordsList_Lst.setSelectedValue(null, true);
+				this.wordsLst.setSelectedValue(null, true);
 		inUseListRefresh();
 	}
 
@@ -424,4 +415,21 @@ public class TopEditor extends JFrame {
 			submenu.add(menuItem);
 		}
 	}
+
+	public MainDictPanelListener getMainDictPanelListener() {
+		return mainDictPanelListener;
+	}
+
+	public void setMainDictPanelListener(MainDictPanelListener mainDictPanelListener) {
+		this.mainDictPanelListener = mainDictPanelListener;
+	}
+
+	public int getPrevSelectedIndex() {
+		return prevSelectedIndex;
+	}
+
+	public void setPrevSelectedIndex(int prevSelectedIndex) {
+		this.prevSelectedIndex = prevSelectedIndex;
+	}
+
 }

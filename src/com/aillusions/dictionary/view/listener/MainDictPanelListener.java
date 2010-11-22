@@ -9,76 +9,71 @@ import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 
 import com.aillusions.dictionary.core.Manager;
-import com.aillusions.dictionary.view.TopEditor;
+import com.aillusions.dictionary.view.TopEditorFrame;
 
 public class MainDictPanelListener {
-	
-	private Manager dictionary;
-	private TopEditor topEditor;
-	
-	public MainDictPanelListener(Manager dictionary, TopEditor topEditor){
-		this.dictionary = dictionary;
-		this.topEditor = topEditor;
+
+	private Manager manager;
+	private TopEditorFrame topEditor;
+
+	public MainDictPanelListener() {
+
 	}
-	
+
 	public void literalButtonsMouseReleased(MouseEvent paramMouseEvent) {
-		if (this.dictionary.getCurrentStateManager().getCurrentPair() != null) {
-			topEditor.Transcription_TextF.setText(this.dictionary.getCurrentStateManager().getCurrentPair()
-					.getTranscription()
+		if (this.manager.getCurrentStateManager().getCurrentPair() != null) {
+			topEditor.Transcription_TextF.setText(this.manager.getCurrentStateManager().getCurrentPair().getTranscription()
 					+ ((JButton) paramMouseEvent.getSource()).getText());
-			if (this.dictionary.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF
-					.getText(), topEditor.Transcription_TextF.getText()))
+			if (this.manager.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+					topEditor.Transcription_TextF.getText()))
 				return;
 			Alert("Your input was not aplyed!");
 		} else {
 			Alert("You mast select one before!");
 		}
 	}
-	
+
 	public void Transcription_TextFKeyReleased(KeyEvent paramKeyEvent) {
-		if (dictionary.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+		if (manager.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
 				topEditor.Transcription_TextF.getText()))
 			return;
 		Alert("Your input was not aplyed!");
 	}
 
 	public void Translate_TextFKeyReleased(KeyEvent paramKeyEvent) {
-		if (dictionary.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+		if (manager.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
 				topEditor.Transcription_TextF.getText()))
 			return;
 		Alert("Your input was not aplyed!");
 	}
 
 	public void Word_TextFKeyReleased(KeyEvent paramKeyEvent) {
-		if (dictionary.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
+		if (manager.getCurrentStateManager().aplyCurrWordChanged(topEditor.Translate_TextF.getText(),
 				topEditor.Transcription_TextF.getText()))
 			return;
 		Alert("Your input was not aplyed!");
 	}
 
-
-
-
 	public void Rename_BtnMouseReleased(MouseEvent paramMouseEvent) {
-		if (dictionary.getCurrentStateManager().getCurrentPair() == null)
+		if (manager.getCurrentStateManager().getCurrentPair() == null)
 			return;
-		dictionary.getCurrentStateManager().renameCurrentPair(null);
+		manager.getCurrentStateManager().renameCurrentPair(null);
 		topEditor.refresh(true, true);
 	}
 
 	public void Remove_BtnMouseReleased(MouseEvent paramMouseEvent) {
-		if (dictionary.getCurrentStateManager().getCurrentPair() == null)
+		if (manager.getCurrentStateManager().getCurrentPair() == null)
 			Alert("You have to select one before!");
-		dictionary.getCurrentStateManager().removeCurrentPair();
+		manager.getCurrentStateManager().removeCurrentPair();
 		topEditor.refresh(true, true);
 	}
 
 	public void Add_btnMouseReleased(MouseEvent paramMouseEvent) {
 		boolean bool = false;
 		if (topEditor.jTxtSearch.getText().equals(""))
-			bool = dictionary.getPairsManager().addNewKey(null);
+			bool = manager.getPairsManager().addNewKey(null);
 		else
-			bool = dictionary.getPairsManager().addNewKey(topEditor.jTxtSearch.getText());
+			bool = manager.getPairsManager().addNewKey(topEditor.jTxtSearch.getText());
 		if (bool)
 			topEditor.jTxtSearch.setText("");
 		topEditor.refresh(true, true);
@@ -89,36 +84,32 @@ public class MainDictPanelListener {
 		if (paramKeyEvent.getKeyCode() == 10) {
 			boolean bool = false;
 			if (str.equals(""))
-				bool = dictionary.getPairsManager().addNewKey(null);
+				bool = manager.getPairsManager().addNewKey(null);
 			else
-				bool = dictionary.getPairsManager().addNewKey(str);
+				bool = manager.getPairsManager().addNewKey(str);
 			if (bool)
 				topEditor.jTxtSearch.setText("");
 			topEditor.refresh(true, true);
 		} else {
 			if (str.equals(""))
 				return;
-			for (int i = topEditor.prevSelectedIndex + 1; i < dictionary.getPairsManager()
-					.getAllKeys().length; ++i) {
-				if (dictionary.getPairsManager().getAllKeys()[i].indexOf(str) == 0) {
-					topEditor.WordsList_Lst.setSelectedValue(dictionary.getPairsManager()
-							.getAllKeys()[i], true);
-					topEditor.prevSelectedIndex = i;
+			for (int i = topEditor.getPrevSelectedIndex() + 1; i < manager.getPairsManager().getAllKeys().length; ++i) {
+				if (manager.getPairsManager().getAllKeys()[i].indexOf(str) == 0) {
+					topEditor.wordsLst.setSelectedValue(manager.getPairsManager().getAllKeys()[i], true);
+					topEditor.setPrevSelectedIndex(i);
 					return;
 				}
-				if (i != dictionary.getPairsManager().getAllKeys().length - 1)
+				if (i != manager.getPairsManager().getAllKeys().length - 1)
 					continue;
-				topEditor.prevSelectedIndex = 0;
+				topEditor.setPrevSelectedIndex(0);
 			}
 		}
 	}
 
-
 	public void jButtAddSampleMouseReleased(MouseEvent paramMouseEvent) {
 		if (topEditor.jTextSamplesSearch.getText().equals(""))
-			dictionary.getPairsManager().addNewSample(null);
-		else if (dictionary.getPairsManager()
-				.addNewSample(topEditor.jTextSamplesSearch.getText()))
+			manager.getPairsManager().addNewSample(null);
+		else if (manager.getPairsManager().addNewSample(topEditor.jTextSamplesSearch.getText()))
 			topEditor.jTextSamplesSearch.setText("");
 		topEditor.refresh(false, true);
 	}
@@ -127,53 +118,68 @@ public class MainDictPanelListener {
 		if (paramKeyEvent.getKeyCode() != 10)
 			return;
 		if ((!(topEditor.jTextSamplesSearch.getText().equals("")))
-				&& (dictionary.getPairsManager().addNewSample(topEditor.jTextSamplesSearch
-						.getText())))
+				&& (manager.getPairsManager().addNewSample(topEditor.jTextSamplesSearch.getText())))
 			topEditor.jTextSamplesSearch.setText("");
 		topEditor.refresh(false, true);
 	}
 
 	public void jButtRemSampleMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getCurrentStateManager().removeCurrSample();
+		manager.getCurrentStateManager().removeCurrSample();
 		topEditor.refresh(false, true);
 	}
 
 	public void jListSamplesMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getCurrentStateManager().setCurrSample((String) topEditor.jListSamples
-				.getSelectedValue());
+		manager.getCurrentStateManager().setCurrSample((String) topEditor.samplesLst.getSelectedValue());
 		topEditor.refresh(false, false);
 	}
 
 	public void jButtRecordMouseReleased(MouseEvent paramMouseEvent) {
-		if (dictionary.getAudioMan().recorder == null)
-			dictionary.getAudioMan().startRecording(null);
+		if (manager.getAudioManager().recorder == null)
+			manager.getAudioManager().startRecording(null);
 		else
-			dictionary.getAudioMan().stopRecording();
+			manager.getAudioManager().stopRecording();
 		topEditor.refresh(false, false);
 	}
 
 	public void jButtPlayMouseReleased(MouseEvent paramMouseEvent) {
-		dictionary.getAudioMan().playCurrentAudioRecord();
+		manager.getAudioManager().playCurrentAudioRecord();
 	}
 
 	public void jButtDeleteRecordMouseReleased(MouseEvent paramMouseEvent) {
-		if (!(dictionary.getAudioMan().isCurrentItemAlreadyRecorded()))
+		if (!(manager.getAudioManager().isCurrentItemAlreadyRecorded()))
 			return;
-		dictionary.getAudioMan().deleteCurrentAudioRecord();
+		manager.getAudioManager().deleteCurrentAudioRecord();
 		topEditor.refresh(false, false);
 	}
 
 	public void Alert(String paramString) {
 		JOptionPane.showMessageDialog(new JFrame("FrameDemo"), paramString);
 	}
-	
+
 	public void InUseJListMouseReleased(ListSelectionEvent paramListSelectionEvent) {
-		if( topEditor.InUseJList.getSelectedValue() != null){
+		if (topEditor.InUseJList.getSelectedValue() != null) {
 			String selectedValue = topEditor.InUseJList.getSelectedValue().toString();
-			dictionary.getCurrentStateManager().setCurrentTrashPairByKey(selectedValue);
-		}else{
-			dictionary.getCurrentStateManager().setCurrentTrashPair(null);
+			manager.getCurrentStateManager().setCurrentTrashPairByKey(selectedValue);
+		} else {
+			manager.getCurrentStateManager().setCurrentTrashPair(null);
 		}
-		
+
 	}
+
+	public Manager getManager() {
+		return manager;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+	public TopEditorFrame getTopEditor() {
+		return topEditor;
+	}
+
+	public void setTopEditor(TopEditorFrame topEditor) {
+		this.topEditor = topEditor;
+	}
+
 }

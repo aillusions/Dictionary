@@ -10,20 +10,14 @@ import com.aillusions.dictionary.xsl.DocConverter.DocViewMode;
 public class Manager {
 	private static final Logger l = Logger.getLogger(Config.class);
 
-	private final AudioManager audioMan;
-	private final WorkspaceManager workspaceManager;
-	private final PairsManager pairsManager;
-	private final CurrentStateManager currentStateManager;
-	private final TrashManager trashManager;
+	private AudioManager audioManager;
+	private WorkspaceManager workspaceManager;
+	private PairsManager pairsManager;
+	private CurrentStateManager currentStateManager;
+	private TrashManager trashManager;
 
-	public Manager(final String fName) {
+	public Manager() {
 		l.info("Constructor");
-
-		this.workspaceManager = new WorkspaceManager(this, fName.trim());
-		this.audioMan = new AudioManager(this);
-		this.pairsManager = new PairsManager(this);
-		this.currentStateManager = new CurrentStateManager(this);
-		this.trashManager = new TrashManager(this);
 	}
 
 	public void runTrainer() {
@@ -35,28 +29,44 @@ public class Manager {
 		new DocConverter().runWord(docViewMode);
 	}
 
-	//
-	// Getters and setters
-	//
-
-	public AudioManager getAudioMan() {
-		return this.audioMan;
+	public AudioManager getAudioManager() {
+		return audioManager;
 	}
 
-	public PairsManager getPairsManager() {
-		return this.pairsManager;
+	public void setAudioManager(AudioManager audioManager) {
+		this.audioManager = audioManager;
 	}
 
 	public WorkspaceManager getWorkspaceManager() {
-		return this.workspaceManager;
+		return workspaceManager;
+	}
+
+	public void setWorkspaceManager(WorkspaceManager workspaceManager) {
+		this.workspaceManager = workspaceManager;
+	}
+
+	public PairsManager getPairsManager() {
+		return pairsManager;
+	}
+
+	public void setPairsManager(PairsManager pairsManager) {
+		this.pairsManager = pairsManager;
 	}
 
 	public CurrentStateManager getCurrentStateManager() {
-		return this.currentStateManager;
+		return currentStateManager;
+	}
+
+	public void setCurrentStateManager(CurrentStateManager currentStateManager) {
+		this.currentStateManager = currentStateManager;
 	}
 
 	public TrashManager getTrashManager() {
-		return this.trashManager;
+		return trashManager;
+	}
+
+	public void setTrashManager(TrashManager trashManager) {
+		this.trashManager = trashManager;
 	}
 
 }

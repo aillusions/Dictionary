@@ -16,12 +16,7 @@ public class WorkspaceManager {
 	private Workspace workspace;
 	private Manager manager;
 
-	private XmlFileManager pdao;
-
-	public WorkspaceManager(Manager manager, String fName) {
-		this.manager = manager;
-		this.pdao = new XmlFileManager(fName);
-	}
+	private XmlFileManager xmlFileManager;
 
 	public boolean addNewDictionary() {
 
@@ -54,7 +49,7 @@ public class WorkspaceManager {
 
 	public void load() throws DictionaryHasToBeCreated {
 
-		workspace = pdao.load();
+		workspace = xmlFileManager.load();
 		loaded = true;
 
 		if (workspace.getDictioanries().size() > 0) {
@@ -69,7 +64,7 @@ public class WorkspaceManager {
 	}
 
 	public void saveInFile() {
-		this.pdao.save(workspace);
+		this.xmlFileManager.save(workspace);
 	}
 
 	public Workspace getWorkspace() {
@@ -78,6 +73,22 @@ public class WorkspaceManager {
 
 	public boolean isLoaded() {
 		return loaded;
+	}
+
+	public Manager getManager() {
+		return manager;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+	public XmlFileManager getXmlFileManager() {
+		return xmlFileManager;
+	}
+
+	public void setXmlFileManager(XmlFileManager xmlFileManager) {
+		this.xmlFileManager = xmlFileManager;
 	}
 
 }

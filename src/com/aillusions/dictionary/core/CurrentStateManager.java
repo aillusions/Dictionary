@@ -59,7 +59,7 @@ public class CurrentStateManager {
 		if (getCurrentPair() == null) {
 			return;
 		}
-		manager.getAudioMan().removeAllTightAudio(getCurrentPair().getWord());
+		manager.getAudioManager().removeAllTightAudio(getCurrentPair().getWord());
 		Pair localPair = manager.getPairsManager().removePair(getCurrentPair());
 		setCurrentPair(localPair);
 		this.currSample = null;

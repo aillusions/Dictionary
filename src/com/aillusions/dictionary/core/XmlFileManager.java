@@ -46,12 +46,8 @@ public class XmlFileManager {
 	public void save(final Workspace workspace) {
 		try {
 			FileOutputStream fos = new FileOutputStream(this.fName);
-			fos
-					.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
-							.getBytes());
-			fos
-					.write("\r\n<?xml-stylesheet type=\"text/xsl\" href=\"words_prn.xsl\"?>\r\n"
-							.getBytes());
+			fos.write("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>".getBytes());
+			fos.write("\r\n<?xml-stylesheet type=\"text/xsl\" href=\"words_prn.xsl\"?>\r\n".getBytes());
 			fos.write(this.xstream.toXML(workspace).getBytes("UTF-8"));
 			fos.flush();
 			fos.close();
